@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState('home');
@@ -13,6 +13,43 @@ export default function Navbar() {
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.3, // Trigger when 30% of section is visible
+      rootMargin: '-80px 0px -50% 0px', // Account for navbar height
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          const correspondingLink = navLinks.find(link =>
+            link.href === `#${sectionId}`
+          );
+
+          if (correspondingLink) {
+            setActiveLink(correspondingLink.name.toLowerCase());
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    navLinks.forEach((link) => {
+      const section = document.querySelector(link.href);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    // Cleanup observer on unmount
+    return () => observer.disconnect();
+  }, []);
+
+  const handleLinkClick = (linkName) => {
+    setActiveLink(linkName.toLowerCase());
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-foreground/10">
@@ -46,7 +83,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setActiveLink(link.name.toLowerCase())}
+                onClick={() => handleLinkClick(link.name)}
                 className={`font-space-grotesk text-sm font-medium transition-colors duration-300 relative group ${
                   activeLink === link.name.toLowerCase()
                     ? 'text-foreground'
@@ -114,7 +151,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => {
-                setActiveLink(link.name.toLowerCase());
+                handleLinkClick(link.name);
                 document.getElementById('mobile-menu')?.classList.add('hidden');
               }}
               className={`block font-space-grotesk text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
