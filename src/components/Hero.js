@@ -50,7 +50,7 @@ export default function Hero() {
       <div className="absolute bottom-[3%] left-[3%] sm:bottom-[5%] sm:left-[5%] z-10">
         <div className="flex gap-1.5 sm:gap-2 items-center">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/qamr0sh/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
@@ -64,7 +64,7 @@ export default function Hero() {
               </div>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/qamr0sh/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
@@ -78,7 +78,7 @@ export default function Hero() {
               </div>
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=100012883470553"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
@@ -92,7 +92,7 @@ export default function Hero() {
               </div>
             </a>
             <a
-              href="https://pinterest.com"
+              href="https://www.pinterest.com/QamroshNazar/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
@@ -106,7 +106,7 @@ export default function Hero() {
               </div>
             </a>
             <a
-              href="https://discord.com"
+              href="https://discord.com/users/1098012603005009951"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
@@ -120,7 +120,7 @@ export default function Hero() {
               </div>
             </a>
             <a
-              href="https://t.me"
+              href="https://http://t.me/qamr0sh"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
@@ -134,7 +134,8 @@ export default function Hero() {
               </div>
             </a>
             <a
-              href="https://wa.me"
+              href="https://wa.me/923168661932?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!
+"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
