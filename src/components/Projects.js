@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedDesign, setSelectedDesign] = useState(null);
-  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [displayCount, setDisplayCount] = useState(3);
 
   const designShowcase = {
     5: { // Green Metro Coaches UK
@@ -255,7 +255,7 @@ export default function Projects() {
         }
       });
 
-  const displayedProjects = showAllProjects ? filteredProjects : filteredProjects.slice(0, 3);
+  const displayedProjects = filteredProjects.slice(0, displayCount);
 
   return (
     <section id="projects" className="relative min-h-screen px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-b from-background to-background/95">
@@ -385,23 +385,29 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Show All Projects Button */}
-        {!showAllProjects && filteredProjects.length > 3 && (
+        {/* Load More Button */}
+        {filteredProjects.length > displayCount && (
           <div className="flex justify-center mt-12">
             <button
-              onClick={() => setShowAllProjects(true)}
+              onClick={() => {
+                if (displayCount + 3 >= filteredProjects.length) {
+                  setDisplayCount(filteredProjects.length);
+                } else {
+                  setDisplayCount(displayCount + 3);
+                }
+              }}
               className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-space-grotesk font-semibold rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
-              Show All Projects ({filteredProjects.length})
+              Load More Projects ({filteredProjects.length - displayCount} remaining)
             </button>
           </div>
         )}
 
         {/* Show Less Projects Button */}
-        {showAllProjects && (
+        {displayCount > 3 && (
           <div className="flex justify-center mt-12">
             <button
-              onClick={() => setShowAllProjects(false)}
+              onClick={() => setDisplayCount(3)}
               className="px-8 py-4 bg-foreground/10 text-foreground font-space-grotesk font-semibold rounded-full hover:bg-foreground/20 transition-all duration-300"
             >
               Show Less Projects

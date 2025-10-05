@@ -15,36 +15,43 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.3, // Trigger when 30% of section is visible
-      rootMargin: '-80px 0px -50% 0px', // Account for navbar height
-    };
+    // Dynamic scroll-based detection using actual section positions
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200; // Account for navbar height
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const sectionId = entry.target.id;
-          const correspondingLink = navLinks.find(link =>
-            link.href === `#${sectionId}`
-          );
+      navLinks.forEach((link) => {
+        const section = document.querySelector(link.href);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionBottom = sectionTop + sectionHeight;
 
-          if (correspondingLink) {
-            setActiveLink(correspondingLink.name.toLowerCase());
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            console.log('Dynamic scroll detected:', link.href, 'Position:', scrollPosition);
+            setActiveLink(link.name.toLowerCase());
           }
         }
       });
-    }, observerOptions);
+    };
 
-    // Observe all sections
-    navLinks.forEach((link) => {
-      const section = document.querySelector(link.href);
-      if (section) {
-        observer.observe(section);
-      }
-    });
+    // Throttled scroll handler for better performance
+    let scrollTimeout;
+    const throttledScroll = () => {
+      if (scrollTimeout) return;
+      scrollTimeout = setTimeout(() => {
+        handleScroll();
+        scrollTimeout = null;
+      }, 50);
+    };
 
-    // Cleanup observer on unmount
-    return () => observer.disconnect();
+    // Initial check and scroll listener
+    setTimeout(handleScroll, 100);
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    };
   }, []);
 
   const handleLinkClick = (linkName) => {

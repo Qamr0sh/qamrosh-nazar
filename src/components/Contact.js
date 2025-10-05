@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,11 +11,79 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters long';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const sendEmail = (data) => {
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Portfolio Contact: ${data.subject}`);
+    const body = encodeURIComponent(
+      `Name: ${data.name}\n` +
+      `Email: ${data.email}\n\n` +
+      `Message:\n${data.message}`
+    );
+
+    const mailtoUrl = `mailto:qamrosh55@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open default email client
+    window.location.href = mailtoUrl;
+
+    return { success: true };
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add actual form submission logic here
+
+    if (!validateForm()) {
+      setSubmitMessage('Please fill in all required fields correctly.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const result = await sendEmail(formData);
+
+      if (result.success) {
+        setSubmitMessage('Opening your email client... Please send the email to complete your message.');
+        // Don't reset form since user needs to send from their email client
+      } else {
+        setSubmitMessage('Unable to open email client. Please contact qamrosh55@gmail.com directly.');
+      }
+    } catch (error) {
+      setSubmitMessage('Unable to open email client. Please contact qamrosh55@gmail.com directly.');
+    }
+
+    setIsSubmitting(false);
   };
 
   const handleChange = (e) => {
@@ -66,7 +135,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-space-grotesk font-semibold text-foreground">Email</p>
-                  <p className="text-sm text-foreground/60">qamrosh.nazar@example.com</p>
+                  <p className="text-sm text-foreground/60">qamrosh55@gmail.com</p>
                 </div>
               </div>
 
@@ -78,7 +147,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-space-grotesk font-semibold text-foreground">Phone</p>
-                  <p className="text-sm text-foreground/60">+1 (555) 123-4567</p>
+                  <p className="text-sm text-foreground/60">+92 (316) 866-1932</p>
                 </div>
               </div>
 
@@ -91,7 +160,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-space-grotesk font-semibold text-foreground">Location</p>
-                  <p className="text-sm text-foreground/60">San Francisco, CA</p>
+                  <p className="text-sm text-foreground/60">Kotli AJ&K, Pakistan</p>
                 </div>
               </div>
             </div>
@@ -99,21 +168,112 @@ export default function Contact() {
             {/* Social Links */}
             <div>
               <h4 className="font-space-grotesk font-semibold text-foreground mb-4">Connect With Me</h4>
-              <div className="flex space-x-4">
-                {[
-                  { name: 'LinkedIn', icon: 'linkedin', color: 'hover:text-blue-500' },
-                  { name: 'GitHub', icon: 'github', color: 'hover:text-gray-800' },
-                  { name: 'Twitter', icon: 'twitter', color: 'hover:text-blue-400' },
-                  { name: 'Instagram', icon: 'instagram', color: 'hover:text-pink-500' }
-                ].map((social) => (
-                  <a
-                    key={social.name}
-                    href="#"
-                    className={`w-10 h-10 bg-foreground/10 hover:bg-foreground/20 border border-foreground/10 hover:border-foreground/20 rounded-lg flex items-center justify-center transition-all duration-300 ${social.color}`}
-                  >
-                    <span className="text-sm font-semibold">{social.icon.charAt(0).toUpperCase()}</span>
-                  </a>
-                ))}
+              <div className="flex gap-4">
+                <a
+                  href="https://www.linkedin.com/in/qamr0sh/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
+                >
+                  <div className="relative w-6 h-6">
+                    <Image
+                      src="/social_media_icon/linkedIn_icon.svg"
+                      alt="LinkedIn"
+                      fill
+                      className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="https://www.instagram.com/qamr0sh/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
+                >
+                  <div className="relative w-6 h-6">
+                    <Image
+                      src="/social_media_icon/instagram_icon.svg"
+                      alt="Instagram"
+                      fill
+                      className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100012883470553"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
+                >
+                  <div className="relative w-6 h-6">
+                    <Image
+                      src="/social_media_icon/facebook_icon.svg"
+                      alt="Facebook"
+                      fill
+                      className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="https://www.pinterest.com/QamroshNazar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
+                >
+                  <div className="relative w-6 h-6">
+                    <Image
+                      src="/social_media_icon/Pinterest_icon.svg"
+                      alt="Pinterest"
+                      fill
+                      className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="https://discord.com/users/1098012603005009951"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
+                >
+                  <div className="relative w-6 h-6">
+                    <Image
+                      src="/social_media_icon/discord_icon.svg"
+                      alt="Discord"
+                      fill
+                      className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="https://http://t.me/qamr0sh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
+                >
+                  <div className="relative w-6 h-6">
+                    <Image
+                      src="/social_media_icon/telegram_icon.svg"
+                      alt="Telegram"
+                      fill
+                      className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="https://wa.me/923168661932?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
+                >
+                  <div className="relative w-6 h-6">
+                    <Image
+                      src="/social_media_icon/whatsapp_icon.svg"
+                      alt="WhatsApp"
+                      fill
+                      className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -134,10 +294,12 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border border-foreground/20 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40"
+                    className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 ${
+                      errors.name ? 'border-red-500' : 'border-foreground/20'
+                    }`}
                     placeholder="John Doe"
                   />
+                  {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                 </div>
 
                 <div>
@@ -150,10 +312,12 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border border-foreground/20 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40"
+                    className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 ${
+                      errors.email ? 'border-red-500' : 'border-foreground/20'
+                    }`}
                     placeholder="john@example.com"
                   />
+                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                 </div>
               </div>
 
@@ -167,10 +331,12 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-background border border-foreground/20 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40"
+                  className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 ${
+                    errors.subject ? 'border-red-500' : 'border-foreground/20'
+                  }`}
                   placeholder="Project Discussion"
                 />
+                {errors.subject && <p className="mt-1 text-sm text-red-500">{errors.subject}</p>}
               </div>
 
               <div>
@@ -182,18 +348,35 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   rows={6}
-                  className="w-full px-4 py-3 bg-background border border-foreground/20 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 resize-none"
+                  className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 resize-none ${
+                    errors.message ? 'border-red-500' : 'border-foreground/20'
+                  }`}
                   placeholder="Tell me about your project..."
                 />
+                {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
               </div>
+
+              {submitMessage && (
+                <div className={`p-4 rounded-lg ${
+                  submitMessage.includes('successfully')
+                    ? 'bg-green-500/10 border border-green-500/20 text-green-600'
+                    : 'bg-red-500/10 border border-red-500/20 text-red-500'
+                }`}>
+                  <p className="text-sm">{submitMessage}</p>
+                </div>
+              )}
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-space-grotesk font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105"
+                disabled={isSubmitting}
+                className={`w-full px-8 py-4 font-space-grotesk font-semibold rounded-lg transition-all duration-300 ${
+                  isSubmitting
+                    ? 'bg-foreground/20 text-foreground/60 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white hover:shadow-lg hover:scale-105'
+                }`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
