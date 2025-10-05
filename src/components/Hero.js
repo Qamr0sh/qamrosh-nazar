@@ -27,7 +27,7 @@ export default function Hero() {
 
           {/* Name */}
           <h1 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight">
-            <span className="text-foreground">I'm </span>
+            <span className="text-foreground">I&apos;m </span>
             <span className="font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
               Qamrosh
             </span>

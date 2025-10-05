@@ -103,12 +103,12 @@ export default function Contact() {
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-space-grotesk font-bold text-foreground mb-6">
             <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-              Let's Work Together
+              Let&apos;s Work Together
             </span>
           </h2>
           <p className="text-foreground/60 font-inter text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind or want to discuss opportunities? I'd love to hear from you.
-            Let's create something amazing together.
+            Have a project in mind or want to discuss opportunities? I&apos;d love to hear from you.
+            Let&apos;s create something amazing together.
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export default function Contact() {
               </h3>
               <p className="text-foreground/70 font-inter leading-relaxed mb-8">
                 Whether you need a mobile app, IoT solution, enterprise software, or creative design work,
-                I'm here to help bring your ideas to life with cutting-edge technology and innovative solutions.
+                I&apos;m here to help bring your ideas to life with cutting-edge technology and innovative solutions.
               </p>
             </div>
 

@@ -1,18 +1,18 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState('home');
 
-  const navLinks = [
+  const navLinks = useMemo(() => [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
-  ];
+  ], []);
 
   useEffect(() => {
     // Dynamic scroll-based detection using actual section positions
@@ -52,7 +52,7 @@ export default function Navbar() {
       window.removeEventListener('scroll', throttledScroll);
       if (scrollTimeout) clearTimeout(scrollTimeout);
     };
-  }, []);
+  }, [navLinks]);
 
   const handleLinkClick = (linkName) => {
     setActiveLink(linkName.toLowerCase());

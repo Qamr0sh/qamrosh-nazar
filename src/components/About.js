@@ -31,7 +31,7 @@ export default function About() {
             {/* Description */}
             <div className="space-y-4 text-foreground/80 font-inter text-xs sm:text-sm leading-relaxed">
             <p>
-                I'm a <span className="font-semibold text-foreground">passionate Flutter developer</span> and{' '}
+                I&apos;m a <span className="font-semibold text-foreground">passionate Flutter developer</span> and{' '}
                 <span className="font-semibold text-foreground">software engineer</span> with hands-on experience in building{' '}
                 <span className="text-blue-500">cross-platform mobile apps</span>,{' '}
                 <span className="text-purple-500">IoT-based systems</span>, and{' '}
@@ -41,19 +41,18 @@ export default function About() {
                 I follow <span className="font-semibold text-foreground">SOLID principles</span> and{' '}
                 <span className="font-semibold text-foreground">clean architecture</span> to craft{' '}
                 <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-semibold">
-                scalable, maintainable, and efficient systems
                 </span>{' '}
                 that connect hardware, cloud, and mobile platforms — from health monitoring apps to smart automation projects.
             </p>
             <div className="pt-2">
                 <p className="text-foreground/60 text-xs italic">
-                "I believe great software isn’t just built — it’s engineered with purpose, precision, and passion."
+                &ldquo;I believe great software isn&rsquo;t just built &mdash; it&rsquo;s engineered with purpose, precision, and passion.&rdquo;
                 </p>
             </div>
             </div>
 
 
-            {/* Stats */}
+           
             <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 pt-4">
               {highlights.map((item, index) => (
                 <div

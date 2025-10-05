@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -454,9 +455,11 @@ export default function Projects() {
             <div className="space-y-6">
               {/* Logo Image */}
               <div className="aspect-video bg-gradient-to-br from-foreground/5 to-foreground/10 rounded-xl border border-foreground/10 flex items-center justify-center overflow-hidden">
-                <img
+                <Image
                   src={selectedDesign.image}
                   alt={`${selectedDesign.title} Logo`}
+                  width={400}
+                  height={300}
                   className="w-full h-full object-contain p-8"
                   onError={(e) => {
                     e.target.style.display = 'none';
