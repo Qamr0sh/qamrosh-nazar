@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import TypewriterText from './TypewriterText';
 
 export default function Hero() {
@@ -17,8 +18,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
-      <div className="ml-[5%] sm:ml-[10%] lg:ml-[20%] max-w-4xl">
-        <div className="space-y-6">
+      <div className="ml-[5%] sm:ml-[10%] lg:ml-[15%] max-w-4xl">
+        <div className="space-y-2">
           {/* Greeting with Typewriter */}
           <p className="font-inter text-lg sm:text-xl md:text-2xl text-foreground/80">
             – Hello
@@ -37,6 +38,11 @@ export default function Hero() {
           <div className="font-inter text-xl sm:text-2xl md:text-3xl text-foreground/70 min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem]">
             <TypewriterText texts={roles} typingSpeed={80} deletingSpeed={40} pauseDuration={2000} />
           </div>
+
+          {/* Subtitle */}
+          <p className="font-inter text-sm sm:text-base md:text-lg text-foreground/60 max-w-2xl">
+            Inspired to create and innovate every day.
+          </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
@@ -57,6 +63,19 @@ export default function Hero() {
           </div>
 
          
+        </div>
+      </div>
+
+      {/* Profile Image - Bottom Right */}
+      <div className="absolute bottom-0 right-0 pointer-events-none">
+        <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px]">
+          <Image
+            src="/images/profile_image.png"
+            alt="Qamrosh Ali Nazar"
+            fill
+            className="object-contain object-bottom"
+            priority
+          />
         </div>
       </div>
 
