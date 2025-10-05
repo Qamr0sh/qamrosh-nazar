@@ -26,7 +26,15 @@ export default function Navbar() {
                 alt="Qamrosh Nazar"
                 width={120}
                 height={40}
-                className="h-8 sm:h-10 w-auto"
+                className="h-8 sm:h-10 w-auto dark:hidden"
+                priority
+              />
+              <Image
+                src="/signature_dark.svg"
+                alt="Qamrosh Nazar"
+                width={120}
+                height={40}
+                className="h-8 sm:h-10 w-auto hidden dark:block"
                 priority
               />
             </a>
@@ -57,11 +65,20 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right - Language Selector */}
+          {/* Right - Get In Touch Button */}
           <div className="flex items-center space-x-4">
-            <button className="font-space-grotesk text-sm font-semibold px-4 py-2 rounded-full border border-foreground/20 hover:border-foreground/40 hover:bg-foreground/5 transition-all duration-300">
-              Get In Touch
-            </button>
+            <a
+              href="#contact"
+              className="group relative font-space-grotesk text-sm font-semibold px-6 py-2.5 rounded-full border border-foreground/20 transition-all duration-300 overflow-hidden"
+            >
+              <span className="relative z-10 text-foreground transition-colors duration-300">
+                Get In Touch
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+              <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                Get In Touch
+              </span>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
