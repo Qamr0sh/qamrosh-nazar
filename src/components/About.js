@@ -54,7 +54,7 @@ export default function About() {
 
 
             {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-4">
+            <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 pt-4">
               {highlights.map((item, index) => (
                 <div
                   key={index}
