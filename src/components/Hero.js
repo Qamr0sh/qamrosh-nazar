@@ -1,22 +1,42 @@
 'use client';
 
+import TypewriterText from './TypewriterText';
+
 export default function Hero() {
+  const roles = [
+    'A Software Engineer',
+    'A Graphic Designer',
+    'A Tech Lover',
+    'A Creative Problem Solver',
+    'A Flutter Developer',
+    'An IoT Enthusiast',
+    'An Electronics Hobbyist',
+    'A Gamer',
+    'A Full-Stack Explorer',
+  ];
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
-      <div className="max-w-5xl mx-auto text-center">
-        <div className="space-y-8">
-          {/* Main Heading */}
-          <h1 className="font-space-grotesk text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-            <span className="block text-foreground">Mobile App Developer</span>
-            <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              & Tech Lover
+    <section id="home" className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
+      <div className="ml-[5%] sm:ml-[10%] lg:ml-[20%] max-w-4xl">
+        <div className="space-y-6">
+          {/* Greeting with Typewriter */}
+          <p className="font-inter text-lg sm:text-xl md:text-2xl text-foreground/80">
+            – Hello
+          </p>
+
+          {/* Name */}
+          <h1 className="font-space-grotesk text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight">
+            <span className="text-foreground">I'm </span>
+            <span className="font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+              Qamrosh
             </span>
+            <span className="text-foreground"> Ali Nazar</span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="font-inter text-lg sm:text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto">
-            I build beautiful and user-friendly mobile applications that bring ideas to life.
-          </p>
+          {/* Typewriter Animation */}
+          <div className="font-inter text-xl sm:text-2xl md:text-3xl text-foreground/70 min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem]">
+            <TypewriterText texts={roles} typingSpeed={80} deletingSpeed={40} pauseDuration={2000} />
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
@@ -36,29 +56,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Tech Stack Icons or Additional Info */}
-          <div className="pt-12">
-            <p className="text-sm text-foreground/50 uppercase tracking-wider mb-4">
-              Tech Stack
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-foreground/60">
-              <span className="px-4 py-2 bg-foreground/5 rounded-full text-sm font-medium hover:bg-foreground/10 transition-colors">
-                React Native
-              </span>
-              <span className="px-4 py-2 bg-foreground/5 rounded-full text-sm font-medium hover:bg-foreground/10 transition-colors">
-                Flutter
-              </span>
-              <span className="px-4 py-2 bg-foreground/5 rounded-full text-sm font-medium hover:bg-foreground/10 transition-colors">
-                Swift
-              </span>
-              <span className="px-4 py-2 bg-foreground/5 rounded-full text-sm font-medium hover:bg-foreground/10 transition-colors">
-                Kotlin
-              </span>
-              <span className="px-4 py-2 bg-foreground/5 rounded-full text-sm font-medium hover:bg-foreground/10 transition-colors">
-                Firebase
-              </span>
-            </div>
-          </div>
+         
         </div>
       </div>
 
