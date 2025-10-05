@@ -2,8 +2,6 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '',
-  assetPrefix: './',
   images: {
     unoptimized: true,
   },
@@ -13,10 +11,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    esmExternals: 'loose',
-  },
 };
 
-export default nextConfig;
-  
+module.exports = nextConfig;

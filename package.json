@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "export": "next build && next export",
+    "lint": "eslint",
+    "build:static": "npm run build && npm run export"
   },
   "dependencies": {
     "react": "19.1.0",

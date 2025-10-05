@@ -15,6 +15,11 @@ const inter = Inter({
 export const metadata = {
   title: "Qamrosh Nazar - Mobile App Developer",
   description: "Mobile app developer and tech enthusiast building beautiful and user-friendly applications",
+  icons: {
+    icon: '/signature.svg',
+    shortcut: '/signature.svg',
+    apple: '/signature.svg',
+  },
 };
 
 export default function RootLayout({ children }) {
