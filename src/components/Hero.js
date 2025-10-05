@@ -5,15 +5,15 @@ import TypewriterText from './TypewriterText';
 
 export default function Hero() {
   const roles = [
-    'A Software Engineer',
-    'A Graphic Designer',
-    'A Tech Lover',
-    'A Creative Problem Solver',
-    'A Flutter Developer',
-    'An IoT Enthusiast',
-    'An Electronics Hobbyist',
-    'A Gamer',
-    'A Full-Stack Explorer',
+    'A Software Engineer!',
+    'A Graphic Designer!',
+    'A Tech Lover!',
+    'A Creative Problem Solver!',
+    'A Flutter Developer!',
+    'An IoT Enthusiast!',
+    'An Electronics Hobbyist!',
+    'A Gamer!',
+    'A Full-Stack Explorer!',
   ];
 
   return (
@@ -43,26 +43,117 @@ export default function Hero() {
           <p className="font-inter text-sm sm:text-base md:text-lg text-foreground/60 max-w-2xl">
             Inspired to create and innovate every day.
           </p>
+        </div>
+      </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+      {/* Social Media Icons - Bottom Left */}
+      <div className="absolute bottom-[5%] left-[5%] z-10">
+        <div className="flex gap-2 items-center">
             <a
-              href="#projects"
-              className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1"
             >
-              <span className="relative z-10">View My Work</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative w-4 h-4 sm:w-5 sm:h-5">
+                <Image
+                  src="/social_media_icon/linkedIn_icon.svg"
+                  alt="LinkedIn"
+                  fill
+                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
             </a>
-            
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-foreground border-2 border-foreground/20 rounded-full hover:border-foreground/40 hover:bg-foreground/5 transition-all duration-300"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1"
             >
-              Get In Touch
+              <div className="relative w-4 h-4 sm:w-5 sm:h-5">
+                <Image
+                  src="/social_media_icon/instagram_icon.svg"
+                  alt="Instagram"
+                  fill
+                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
             </a>
-          </div>
-
-         
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1"
+            >
+              <div className="relative w-4 h-4 sm:w-5 sm:h-5">
+                <Image
+                  src="/social_media_icon/facebook_icon.svg"
+                  alt="Facebook"
+                  fill
+                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </a>
+            <a
+              href="https://pinterest.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1"
+            >
+              <div className="relative w-4 h-4 sm:w-5 sm:h-5">
+                <Image
+                  src="/social_media_icon/Pinterest_icon.svg"
+                  alt="Pinterest"
+                  fill
+                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </a>
+            <a
+              href="https://discord.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1"
+            >
+              <div className="relative w-4 h-4 sm:w-5 sm:h-5">
+                <Image
+                  src="/social_media_icon/discord_icon.svg"
+                  alt="Discord"
+                  fill
+                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </a>
+            <a
+              href="https://t.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1"
+            >
+              <div className="relative w-4 h-4 sm:w-5 sm:h-5">
+                <Image
+                  src="/social_media_icon/telegram_icon.svg"
+                  alt="Telegram"
+                  fill
+                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </a>
+            <a
+              href="https://wa.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1"
+            >
+              <div className="relative w-4 h-4 sm:w-5 sm:h-5">
+                <Image
+                  src="/social_media_icon/whatsapp_icon.svg"
+                  alt="WhatsApp"
+                  fill
+                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </a>
         </div>
       </div>
 
