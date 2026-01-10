@@ -3,14 +3,14 @@
 import Image from 'next/image';
 
 export default function About() {
-    const highlights = [
-        { number: '2+', label: 'Years Experience' },
-        { number: '15+', label: 'Projects Completed' },
-        { number: '8+', label: 'Technologies Mastered' },
-        { number: '100%', label: 'Client Satisfaction' },
-        { number: '100%', label: 'Passion' },
-      ];
-      
+  const highlights = [
+    { number: '2+', label: 'Years Experience' },
+    { number: '15+', label: 'Projects Completed' },
+    { number: '8+', label: 'Technologies Mastered' },
+    { number: '100%', label: 'Client Satisfaction' },
+    { number: '100%', label: 'Passion' },
+  ];
+
 
   return (
     <section id="about" className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-background">
@@ -30,29 +30,31 @@ export default function About() {
 
             {/* Description */}
             <div className="space-y-4 text-foreground/80 font-inter text-xs sm:text-sm leading-relaxed">
-            <p>
-                I&apos;m a <span className="font-semibold text-foreground">passionate Flutter developer</span> and{' '}
+              <p>
+                <span className="font-semibold text-foreground">Qamrosh Ali Nazar</span> is a{' '}
+                <span className="font-semibold text-foreground">passionate Flutter developer</span> and{' '}
                 <span className="font-semibold text-foreground">software engineer</span> with hands-on experience in building{' '}
                 <span className="text-blue-500">cross-platform mobile apps</span>,{' '}
                 <span className="text-purple-500">IoT-based systems</span>, and{' '}
-                <span className="text-pink-500">modern web solutions</span>. My projects blend creativity and technology to solve real-world problems.
-            </p>
-            <p>
-                I follow <span className="font-semibold text-foreground">SOLID principles</span> and{' '}
+                <span className="text-pink-500">modern web solutions</span>. Qamrosh&apos;s projects blend creativity and technology to solve real-world problems.
+              </p>
+              <p>
+                Qamrosh follows <span className="font-semibold text-foreground">SOLID principles</span> and{' '}
                 <span className="font-semibold text-foreground">clean architecture</span> to craft{' '}
                 <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-semibold">
+                  scalable and maintainable solutions
                 </span>{' '}
                 that connect hardware, cloud, and mobile platforms — from health monitoring apps to smart automation projects.
-            </p>
-            <div className="pt-2">
+              </p>
+              <div className="pt-2">
                 <p className="text-foreground/60 text-xs italic">
-                &ldquo;I believe great software isn&rsquo;t just built &mdash; it&rsquo;s engineered with purpose, precision, and passion.&rdquo;
+                  &ldquo;I believe great software isn&rsquo;t just built &mdash; it&rsquo;s engineered with purpose, precision, and passion.&rdquo; - Qamrosh
                 </p>
-            </div>
+              </div>
             </div>
 
 
-           
+
             <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 pt-4">
               {highlights.map((item, index) => (
                 <div
@@ -71,7 +73,7 @@ export default function About() {
           {/* Right Side - Visual Element */}
           <div className="relative order-2 lg:order-2 h-full flex flex-col justify-center items-center">
             <div className="relative w-full h-full">
-              
+
               {/* Main Card */}
               <div className="relative bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-3xl p-4 sm:p-6 h-full flex items-center justify-center hover:bg-foreground/10 transition-all duration-300">
                 <div className="space-y-6 text-center w-full max-w-xs">
