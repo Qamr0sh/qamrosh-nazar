@@ -49,105 +49,105 @@ export default function Hero() {
       {/* Social Media Icons - Bottom Left */}
       <div className="absolute bottom-[3%] left-[3%] sm:bottom-[5%] sm:left-[5%] z-10">
         <div className="flex gap-1.5 sm:gap-2 items-center">
-            <a
-              href="https://www.linkedin.com/in/qamr0sh/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
-              <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                <Image
-                  src="/social_media_icon/linkedIn_icon.svg"
-                  alt="LinkedIn"
-                  fill
-                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </a>
-            <a
-              href="https://www.instagram.com/qamr0sh/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
-              <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                <Image
-                  src="/social_media_icon/instagram_icon.svg"
-                  alt="Instagram"
-                  fill
-                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=100012883470553"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
-              <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                <Image
-                  src="/social_media_icon/facebook_icon.svg"
-                  alt="Facebook"
-                  fill
-                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </a>
-            <a
-              href="https://www.pinterest.com/QamroshNazar/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
-              <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                <Image
-                  src="/social_media_icon/Pinterest_icon.svg"
-                  alt="Pinterest"
-                  fill
-                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </a>
-            <a
-              href="https://discord.com/users/1098012603005009951"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
-              <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                <Image
-                  src="/social_media_icon/discord_icon.svg"
-                  alt="Discord"
-                  fill
-                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </a>
-            <a
-              href="https://http://t.me/qamr0sh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
-              <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                <Image
-                  src="/social_media_icon/telegram_icon.svg"
-                  alt="Telegram"
-                  fill
-                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </a>
-            <a
-              href="https://wa.me/923168661932?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!
+          <a
+            href="https://www.linkedin.com/in/qamr0sh/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
+            <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+              <Image
+                src="/social_media_icon/linkedIn_icon.svg"
+                alt="LinkedIn"
+                fill
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </a>
+          <a
+            href="https://www.instagram.com/qamr0sh/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
+            <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+              <Image
+                src="/social_media_icon/instagram_icon.svg"
+                alt="Instagram"
+                fill
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100012883470553"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
+            <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+              <Image
+                src="/social_media_icon/facebook_icon.svg"
+                alt="Facebook"
+                fill
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </a>
+          <a
+            href="https://www.pinterest.com/QamroshNazar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
+            <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+              <Image
+                src="/social_media_icon/Pinterest_icon.svg"
+                alt="Pinterest"
+                fill
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </a>
+          <a
+            href="https://discord.com/users/1098012603005009951"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
+            <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+              <Image
+                src="/social_media_icon/discord_icon.svg"
+                alt="Discord"
+                fill
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </a>
+          <a
+            href="https://http://t.me/qamr0sh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
+            <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+              <Image
+                src="/social_media_icon/telegram_icon.svg"
+                alt="Telegram"
+                fill
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </a>
+          <a
+            href="https://wa.me/923168661932?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!
 "
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
-              <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                <Image
-                  src="/social_media_icon/whatsapp_icon.svg"
-                  alt="WhatsApp"
-                  fill
-                  className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </a>
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
+            <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+              <Image
+                src="/social_media_icon/whatsapp_icon.svg"
+                alt="WhatsApp"
+                fill
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </a>
         </div>
       </div>
 
@@ -156,7 +156,7 @@ export default function Hero() {
         <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] xl:w-[600px] xl:h-[600px]">
           <Image
             src="/images/profile_image.png"
-            alt="Qamrosh Ali Nazar"
+            alt="Qamrosh Ali Nazar - Mobile App Developer and Software Engineer Portfolio"
             fill
             className="object-contain object-bottom"
             priority
