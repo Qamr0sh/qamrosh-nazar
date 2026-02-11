@@ -9,14 +9,14 @@ export default function Projects() {
   const [displayCount, setDisplayCount] = useState(3);
 
   const designShowcase = {
-    5: { // Green Metro Coaches UK
+    7: { // Green Metro Coaches UK
       title: 'Green Metro Coaches UK',
       description: 'Professional logo design for UK transportation company',
       image: '/images/green_metro_coaches_logo.jpg',
       website: 'https://greenmetrocoaches.co.uk',
       details: 'Modern, eco-friendly design reflecting sustainable transportation values with clean typography and green color palette.'
     },
-    6: { // Spectrave Solar Inspection
+    8: { // Spectrave Solar Inspection
       title: 'Spectrave Solar Inspection',
       description: 'Logo for AI-powered solar inspection company',
       image: '/images/spectrave_logo.jpg',
@@ -36,6 +36,26 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: 'Atomic Clock',
+      category: 'mobile',
+      type: 'Personal Project',
+      description: 'Transform Your Life, One Atomic Habit at a Time. A privacy-first offline habit tracker.',
+      longDescription: 'Atomic Clock is your personal habit companion designed around the proven principles of atomic habits. Build better routines, track meaningful progress, and become the person you want to be—all while keeping your data completely private and offline.',
+      tech: ['Flutter', 'Offline First', 'Local Storage', 'Analytics', 'Dark Mode'],
+      techColors: {
+        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
+        'Offline First': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
+        'Local Storage': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
+        'Analytics': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
+        'Dark Mode': 'bg-slate-500/10 text-slate-600 border-slate-500/20'
+      },
+      features: ['Smart Habit Organization', 'Powerful Streak Tracking', 'Deep Insights & Analytics', 'Privacy-First Design'],
+      status: 'Closed Testing',
+      year: '2026',
+      link: '/atomic-clock'
+    },
+    {
+      id: 2,
       title: 'Smart Parking Management System',
       category: 'iot',
       type: 'Academic Project',
@@ -56,7 +76,7 @@ export default function Projects() {
       year: '2023'
     },
     {
-      id: 7,
+      id: 3,
       title: 'MZ Food Complete Solution',
       category: 'mobile',
       type: 'Client Project',
@@ -74,10 +94,11 @@ export default function Projects() {
       },
       features: ['Dual app architecture', 'Real-time order tracking', 'Local payment methods', 'Multi-vendor management', 'Customer & vendor dashboards', 'Afghan market adaptation'],
       status: 'Live',
-      year: '2025'
+      year: '2025',
+      link: 'https://mzfoodonline.com/'
     },
     {
-      id: 2,
+      id: 4,
       title: 'Sunnis4Marriage',
       category: 'mobile',
       type: 'Client Project',
@@ -94,10 +115,11 @@ export default function Projects() {
       },
       features: ['User verification system', 'Advanced search filters', 'Real-time messaging', 'Privacy controls', 'Payment integration', 'Cross-platform compatibility'],
       status: 'Live',
-      year: '2024'
+      year: '2024',
+      link: 'https://sunnis4marriage.com/'
     },
     {
-      id: 3,
+      id: 5,
       title: 'Document Organizer',
       category: 'mobile',
       type: 'Company Project',
@@ -113,11 +135,12 @@ export default function Projects() {
         'Payment Integration': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20'
       },
       features: ['End-to-end encryption', 'Cloud synchronization', 'Offline access', 'Version control', 'Collaborative editing', 'Payment integration'],
-      status: 'Deployed',
-      year: '2025'
+      status: 'Live',
+      year: '2025',
+      link: 'https://play.google.com/store/apps/details?id=com.wondelo.document_organizer&hl=en'
     },
     {
-      id: 4,
+      id: 6,
       title: 'Password Manager',
       category: 'mobile',
       type: 'Company Project',
@@ -137,7 +160,7 @@ export default function Projects() {
       year: '2025'
     },
     {
-      id: 5,
+      id: 7,
       title: 'Green Metro Coaches UK',
       category: 'design',
       type: 'Brand Identity',
@@ -155,7 +178,7 @@ export default function Projects() {
       year: '2023'
     },
     {
-      id: 6,
+      id: 8,
       title: 'Spectrave Solar Inspection',
       category: 'design',
       type: 'Brand Identity',
@@ -173,7 +196,7 @@ export default function Projects() {
       year: '2025'
     },
     {
-      id: 8,
+      id: 9,
       title: 'WS8108 Matrix Controller',
       category: 'iot',
       type: 'Hardware Project',
@@ -193,7 +216,7 @@ export default function Projects() {
       year: '2024'
     },
     {
-      id: 9,
+      id: 10,
       title: 'Water Level Monitoring System',
       category: 'iot',
       type: 'Hardware Project',
@@ -214,7 +237,7 @@ export default function Projects() {
       year: '2024'
     },
     {
-      id: 10,
+      id: 11,
       title: 'Contextual Lighting System',
       category: 'iot',
       type: 'Hardware Project',
@@ -234,26 +257,7 @@ export default function Projects() {
       status: 'Completed',
       year: '2024'
     },
-    {
-      id: 11,
-      title: 'Atomic Clock',
-      category: 'mobile',
-      type: 'Personal Project',
-      description: 'Transform Your Life, One Atomic Habit at a Time. A privacy-first offline habit tracker.',
-      longDescription: 'Atomic Clock is your personal habit companion designed around the proven principles of atomic habits. Build better routines, track meaningful progress, and become the person you want to be—all while keeping your data completely private and offline.',
-      tech: ['Flutter', 'Offline First', 'Local Storage', 'Analytics', 'Dark Mode'],
-      techColors: {
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'Offline First': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Local Storage': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
-        'Analytics': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'Dark Mode': 'bg-slate-500/10 text-slate-600 border-slate-500/20'
-      },
-      features: ['Smart Habit Organization', 'Powerful Streak Tracking', 'Deep Insights & Analytics', 'Privacy-First Design'],
-      status: 'Closed Testing',
-      year: '2026',
-      link: '/atomic-clock'
-    }
+
   ];
 
   const categories = [
