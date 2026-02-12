@@ -120,7 +120,7 @@ export default function Hero() {
             </div>
           </a>
           <a
-            href="https://http://t.me/qamr0sh"
+            href="http://t.me/qamr0sh"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">
@@ -134,8 +134,7 @@ export default function Hero() {
             </div>
           </a>
           <a
-            href="https://wa.me/923168661932?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!
-"
+            href="https://wa.me/966569829451?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300 hover:bg-foreground/10 hover:-translate-y-1">

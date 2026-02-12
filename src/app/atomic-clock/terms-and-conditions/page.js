@@ -65,7 +65,7 @@ export default function TermsAndConditions() {
                     <section className="space-y-4">
                         <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">6. Governing Law</h2>
                         <p className="text-base text-gray-700 dark:text-gray-300">
-                            These Terms are governed by the applicable policies of the Apple App Store and Google Play Store, and the laws of Pakistan, without regard to its conflict of law provisions.
+                            These Terms are governed by the applicable policies of the Apple App Store and Google Play Store, and the laws of Saudi Arabia, without regard to its conflict of law provisions.
                         </p>
                     </section>
 

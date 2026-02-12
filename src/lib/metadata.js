@@ -13,8 +13,8 @@ export const siteConfig = {
     alternateName: "Qamrosh Nazar",
     jobTitle: "Mobile App Developer & Software Engineer",
     email: "qamroshnazar@gmail.com", // Update with your actual email
-    phone: "+923168661932",
-    location: "Pakistan", // Update if needed
+    phone: "+966569829451",
+    location: "Saudi Arabia", // Update if needed
   },
   social: {
     linkedin: "https://www.linkedin.com/in/qamr0sh/",
@@ -23,7 +23,7 @@ export const siteConfig = {
     pinterest: "https://www.pinterest.com/QamroshNazar/",
     discord: "https://discord.com/users/1098012603005009951",
     telegram: "http://t.me/qamr0sh",
-    whatsapp: "https://wa.me/923168661932",
+    whatsapp: "https://wa.me/966569829451",
   },
   keywords: [
     "Qamrosh",
@@ -35,7 +35,7 @@ export const siteConfig = {
     "Cross-platform Development",
     "IoT Developer",
     "Full Stack Developer",
-    "Pakistan Software Engineer",
+    "Saudi Arabia Software Engineer",
     "Mobile Application Developer",
     "Clean Architecture",
     "SOLID Principles",

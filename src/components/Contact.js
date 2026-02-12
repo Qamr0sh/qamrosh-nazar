@@ -147,7 +147,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-space-grotesk font-semibold text-foreground">Phone</p>
-                  <p className="text-sm text-foreground/60">+92 (316) 866-1932</p>
+                  <p className="text-sm text-foreground/60">+966 56 982 9451</p>
                 </div>
               </div>
 
@@ -160,7 +160,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-space-grotesk font-semibold text-foreground">Location</p>
-                  <p className="text-sm text-foreground/60">Kotli AJ&K, Pakistan</p>
+                  <p className="text-sm text-foreground/60">Riyadh, Saudi Arabia</p>
                 </div>
               </div>
             </div>
@@ -245,7 +245,7 @@ export default function Contact() {
                   </div>
                 </a>
                 <a
-                  href="https://http://t.me/qamr0sh"
+                  href="http://t.me/qamr0sh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
@@ -260,7 +260,7 @@ export default function Contact() {
                   </div>
                 </a>
                 <a
-                  href="https://wa.me/923168661932?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!"
+                  href="https://wa.me/966569829451?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
@@ -294,9 +294,8 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 ${
-                      errors.name ? 'border-red-500' : 'border-foreground/20'
-                    }`}
+                    className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 ${errors.name ? 'border-red-500' : 'border-foreground/20'
+                      }`}
                     placeholder="John Doe"
                   />
                   {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
@@ -312,9 +311,8 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 ${
-                      errors.email ? 'border-red-500' : 'border-foreground/20'
-                    }`}
+                    className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 ${errors.email ? 'border-red-500' : 'border-foreground/20'
+                      }`}
                     placeholder="john@example.com"
                   />
                   {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
@@ -331,9 +329,8 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 ${
-                    errors.subject ? 'border-red-500' : 'border-foreground/20'
-                  }`}
+                  className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 ${errors.subject ? 'border-red-500' : 'border-foreground/20'
+                    }`}
                   placeholder="Project Discussion"
                 />
                 {errors.subject && <p className="mt-1 text-sm text-red-500">{errors.subject}</p>}
@@ -349,20 +346,18 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 resize-none ${
-                    errors.message ? 'border-red-500' : 'border-foreground/20'
-                  }`}
+                  className={`w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder-foreground/40 resize-none ${errors.message ? 'border-red-500' : 'border-foreground/20'
+                    }`}
                   placeholder="Tell me about your project..."
                 />
                 {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
               </div>
 
               {submitMessage && (
-                <div className={`p-4 rounded-lg ${
-                  submitMessage.includes('successfully')
-                    ? 'bg-green-500/10 border border-green-500/20 text-green-600'
-                    : 'bg-red-500/10 border border-red-500/20 text-red-500'
-                }`}>
+                <div className={`p-4 rounded-lg ${submitMessage.includes('successfully')
+                  ? 'bg-green-500/10 border border-green-500/20 text-green-600'
+                  : 'bg-red-500/10 border border-red-500/20 text-red-500'
+                  }`}>
                   <p className="text-sm">{submitMessage}</p>
                 </div>
               )}
@@ -370,11 +365,10 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full px-8 py-4 font-space-grotesk font-semibold rounded-lg transition-all duration-300 ${
-                  isSubmitting
-                    ? 'bg-foreground/20 text-foreground/60 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white hover:shadow-lg hover:scale-105'
-                }`}
+                className={`w-full px-8 py-4 font-space-grotesk font-semibold rounded-lg transition-all duration-300 ${isSubmitting
+                  ? 'bg-foreground/20 text-foreground/60 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white hover:shadow-lg hover:scale-105'
+                  }`}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>

@@ -42,6 +42,7 @@ export default function Footer() {
                 { name: 'About', href: '#about' },
                 { name: 'Skills', href: '#skills' },
                 { name: 'Projects', href: '#projects' },
+                { name: 'Certificates', href: '#certificates' },
                 { name: 'Contact', href: '#contact' }
               ].map((link) => (
                 <a
@@ -75,7 +76,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <span className="text-foreground/60 font-inter text-sm">+92 (316) 866-1932</span>
+                <span className="text-foreground/60 font-inter text-sm">+966 56 982 9451</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
@@ -84,7 +85,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span className="text-foreground/60 font-inter text-sm">Kotli AJ&K, Pakistan</span>
+                <span className="text-foreground/60 font-inter text-sm">Riyadh, Saudi Arabia</span>
               </div>
             </div>
           </div>

@@ -11,6 +11,7 @@ export default function Navbar() {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Certificates', href: '#certificates' },
     { name: 'Contact', href: '#contact' },
   ], []);
 
@@ -91,19 +92,17 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => handleLinkClick(link.name)}
-                className={`font-space-grotesk text-sm font-medium transition-colors duration-300 relative group ${
-                  activeLink === link.name.toLowerCase()
+                className={`font-space-grotesk text-sm font-medium transition-colors duration-300 relative group ${activeLink === link.name.toLowerCase()
                     ? 'text-foreground'
                     : 'text-foreground/60 hover:text-foreground'
-                }`}
+                  }`}
               >
                 {link.name}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 ${
-                    activeLink === link.name.toLowerCase()
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 ${activeLink === link.name.toLowerCase()
                       ? 'w-full'
                       : 'w-0 group-hover:w-full'
-                  }`}
+                    }`}
                 ></span>
               </a>
             ))}
@@ -161,11 +160,10 @@ export default function Navbar() {
                 handleLinkClick(link.name);
                 document.getElementById('mobile-menu')?.classList.add('hidden');
               }}
-              className={`block font-space-grotesk text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
-                activeLink === link.name.toLowerCase()
+              className={`block font-space-grotesk text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${activeLink === link.name.toLowerCase()
                   ? 'text-foreground bg-foreground/5'
                   : 'text-foreground/60 hover:text-foreground hover:bg-foreground/5'
-              }`}
+                }`}
             >
               {link.name}
             </a>
