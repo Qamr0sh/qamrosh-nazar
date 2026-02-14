@@ -38,7 +38,21 @@ export default function TermsAndConditions() {
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">3. Liability & Disclaimers</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">3. Premium Subscriptions & Purchases</h2>
+                        <div className="space-y-4 text-base text-gray-700 dark:text-gray-300">
+                            <p>Certain features of the App are restricted to paying users. We offer the following purchase options:</p>
+                            <ul className="list-disc pl-5 space-y-2">
+                                <li><strong>Monthly Subscription:</strong> $0.99 per month (auto-renews).</li>
+                                <li><strong>Yearly Subscription:</strong> $9.99 per year (auto-renews).</li>
+                                <li><strong>Lifetime Access:</strong> $29.99 one-time payment.</li>
+                            </ul>
+                            <p><strong>Payment & Renewal:</strong> Payment will be charged to your iTunes or Google Play account at confirmation of purchase. Subscriptions automatically renew unless auto-renew is turned off at least 24-hours before the end of the current period.</p>
+                            <p><strong>Cancellation:</strong> You can manage or cancel your subscription in your Account Settings after purchase.</p>
+                        </div>
+                    </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">4. Liability & Disclaimers</h2>
                         <div className="space-y-4 text-base text-gray-700 dark:text-gray-300">
                             <p><strong>"As-Is" Basis:</strong> The App is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, express or implied.</p>
                             <p><strong>Data Loss:</strong> The App operates offline and relies entirely on local device storage. The Developer is <strong>NOT</strong> responsible for any data loss resulting from device failure, factory resets, uninstallation of the App, or lost backup files. You are solely responsible for managing your own data backups.</p>
@@ -47,7 +61,7 @@ export default function TermsAndConditions() {
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">4. Usage Restrictions</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">5. Usage Restrictions</h2>
                         <ul className="list-disc pl-5 space-y-2 text-base text-gray-700 dark:text-gray-300">
                             <li>You may not reverse engineer, decompile, disassemble, copy, or distribute the App's source code or resources.</li>
                             <li>The App is intended for personal, non-commercial use only.</li>
@@ -56,21 +70,21 @@ export default function TermsAndConditions() {
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">5. Modifications</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">6. Modifications</h2>
                         <p className="text-base text-gray-700 dark:text-gray-300">
                             We reserve the right to modify or update the App and these Terms and Conditions at any time. Continued use of the App following any changes signifies your acceptance of the new terms.
                         </p>
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">6. Governing Law</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">7. Governing Law</h2>
                         <p className="text-base text-gray-700 dark:text-gray-300">
                             These Terms are governed by the applicable policies of the Apple App Store and Google Play Store, and the laws of Saudi Arabia, without regard to its conflict of law provisions.
                         </p>
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">7. Contact</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">8. Contact</h2>
                         <p className="text-base text-gray-700 dark:text-gray-300">
                             If you have any questions about these Terms, please contact us at: <a href="mailto:qamrosh.dev@gmail.com" className="text-blue-600 hover:text-blue-500 underline decoration-2 underline-offset-2">qamrosh.dev@gmail.com</a>
                         </p>

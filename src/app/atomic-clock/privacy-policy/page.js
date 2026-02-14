@@ -42,7 +42,14 @@ export default function PrivacyPolicy() {
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">3. Specific Features & Permissions</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">3. Payments</h2>
+                        <p className="text-base text-gray-700 dark:text-gray-300">
+                            All financial transactions for purchases (Subscriptions and Lifetime Access) are handled directly by the Apple App Store or Google Play Store. We do not process, store, or have access to your credit card or payment information.
+                        </p>
+                    </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">4. Specific Features & Permissions</h2>
                         <ul className="list-disc pl-5 space-y-2 text-base text-gray-700 dark:text-gray-300">
                             <li><strong>Notifications:</strong> Requested solely to schedule local reminders for habits.</li>
                             <li><strong>Storage Access:</strong> Requested only when the user chooses to "Export" or "Import" a local backup file.</li>
@@ -51,7 +58,7 @@ export default function PrivacyPolicy() {
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">4. User Rights</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">5. User Rights</h2>
                         <div className="space-y-2 text-base text-gray-700 dark:text-gray-300">
                             <p>Users have full ownership of their data.</p>
                             <p>Users can permanently delete all data using the in-app "Clear All Data" button.</p>
@@ -59,7 +66,7 @@ export default function PrivacyPolicy() {
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">5. Contact</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">6. Contact</h2>
                         <p className="text-base text-gray-700 dark:text-gray-300">
                             For privacy concerns, users can contact: <a href="mailto:qamrosh.dev@gmail.com" className="text-blue-600 hover:text-blue-500 underline decoration-2 underline-offset-2">qamrosh.dev@gmail.com</a>
                         </p>
