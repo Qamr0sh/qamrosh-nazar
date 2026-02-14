@@ -66,7 +66,7 @@ export default function AtomicClockPage() {
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <button className="w-full sm:w-auto px-8 py-4 bg-[#704ede] hover:bg-[#5f41b2] text-white rounded-2xl font-semibold transition-all shadow-xl shadow-[#704ede]/25 hover:shadow-[#704ede]/40 hover:-translate-y-1">
-                                Join Closed Testing (Android)
+                                Join Open Testing (Android)
                             </button>
                         </div>
                     </div>
@@ -250,7 +250,7 @@ export default function AtomicClockPage() {
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                                 <button className="bg-white text-[#704ede] px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg">
-                                    Join Closed Testing
+                                    Join Open Testing
                                 </button>
                             </div>
                             <p className="text-white/60 text-sm">Basic habit tracking is completely free forever.</p>

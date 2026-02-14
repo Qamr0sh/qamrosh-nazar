@@ -50,7 +50,7 @@ export default function Projects() {
         'Dark Mode': 'bg-slate-500/10 text-slate-600 border-slate-500/20'
       },
       features: ['Smart Habit Organization', 'Powerful Streak Tracking', 'Deep Insights & Analytics', 'Privacy-First Design'],
-      status: 'Closed Testing',
+      status: 'Open Testing',
       year: '2026',
       link: '/atomic-clock'
     },
