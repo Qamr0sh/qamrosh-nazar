@@ -25,14 +25,21 @@ export default function PreRegisterTerms() {
                     <section className="space-y-4">
                         <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">1. The Offer</h2>
                         <p className="text-base text-gray-700 dark:text-gray-300">
-                            Users who successfully "Pre-Register" for Atomic Clock on the Google Play Store or Apple App Store prior to the official public launch date are eligible to receive the following exclusive benefits ("Founder's Pack"):
+                            Users who successfully "Pre-Register" for Atomic Clock on the Google Play Store or Apple App Store prior to the official public launch date are eligible to receive the following exclusive benefits:
                         </p>
-                        <ul className="list-disc pl-5 space-y-2 text-base text-gray-700 dark:text-gray-300">
-                            <li><strong>Lifetime Premium Access:</strong> Permanent unlock of all current and future Premium features without any subscription fees.</li>
-                            <li><strong>Custom Founder Icon:</strong> An exclusive app icon variant available only to pre-registered users.</li>
-                            <li><strong>Custom Theme:</strong> An exclusive "Founder's Edition" color theme for the app interface.</li>
-                            <li><strong>Custom Badge:</strong> A special "Founder" profile badge displayed within the app.</li>
-                        </ul>
+                        <div className="bg-gray-100/50 dark:bg-gray-900/50 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
+                            <h3 className="text-xl font-bold font-space-grotesk flex items-center gap-2 mb-4 text-gray-900 dark:text-gray-100">
+                                <span className="text-2xl">🎁</span> Rewards
+                            </h3>
+                            <ul className="list-disc pl-5 space-y-2 text-base text-gray-700 dark:text-gray-300">
+                                <li>Unlock an exclusive Early Adopter Badge</li>
+                                <li>Get a limited-edition App Icon</li>
+                                <li>Access premium Event Horizon and The AlChemist themes</li>
+                            </ul>
+                            <p className="mt-6 text-base font-semibold text-gray-900 dark:text-gray-100">
+                                Pre-register today and begin your transformation.
+                            </p>
+                        </div>
                     </section>
 
                     <section className="space-y-4">
@@ -50,7 +57,7 @@ export default function PreRegisterTerms() {
                     <section className="space-y-4">
                         <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">3. Redemption & Limitations</h2>
                         <div className="space-y-4 text-base text-gray-700 dark:text-gray-300">
-                            <p><strong>Automatic Activation:</strong> In most cases, the "Founder's Pack" will be automatically applied to your account upon first login. If not, a "Restore Purchases" or "Claim Offer" button will be available in the settings.</p>
+                            <p><strong>Automatic Activation:</strong> In most cases, the rewards will be automatically applied to your account upon first login. If not, a "Restore Purchases" or "Claim Offer" button will be available in the settings.</p>
                             <p><strong>Non-Transferable:</strong> The offer is linked to your specific app store account and cannot be transferred to another user or exchanged for cash.</p>
                             <p><strong>One Per User:</strong> Limit one redemption per pre-registered account.</p>
                         </div>
