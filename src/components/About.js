@@ -258,8 +258,8 @@ export default function About() {
               <div>
                 <p className="font-space-grotesk font-bold text-xs text-foreground mb-0.5">Currently Building</p>
                 <p className="font-inter text-xs text-foreground/50 leading-relaxed">
-                  <span style={{ color: '#22d3ee', fontWeight: 600 }}>Atomic Clock</span> — a precision
-                  time-tracking app with smart scheduling &amp; IoT integrations.
+                  <span style={{ color: '#22d3ee', fontWeight: 600 }}>Atomic Clock</span> — a smart
+                  habit tracking app to help you build better daily routines &amp; achieve your goals.
                 </p>
               </div>
             </div>
