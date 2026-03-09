@@ -65,9 +65,9 @@ export default function AtomicClockPage() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <button className="w-full sm:w-auto px-8 py-4 bg-[#704ede] hover:bg-[#5f41b2] text-white rounded-2xl font-semibold transition-all shadow-xl shadow-[#704ede]/25 hover:shadow-[#704ede]/40 hover:-translate-y-1">
-                                Join Open Testing (Android)
-                            </button>
+                            <a href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock&hl=en" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 bg-[#704ede] hover:bg-[#5f41b2] text-white rounded-2xl font-semibold transition-all shadow-xl shadow-[#704ede]/25 hover:shadow-[#704ede]/40 hover:-translate-y-1 text-center">
+                                Get it on Google Play
+                            </a>
                         </div>
                     </div>
 
@@ -249,9 +249,9 @@ export default function AtomicClockPage() {
                                 Download Atomic Clock today and experience the power of atomic habits. Your future self will thank you.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                                <button className="bg-white text-[#704ede] px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg">
-                                    Join Open Testing
-                                </button>
+                                <a href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock&hl=en" target="_blank" rel="noopener noreferrer" className="bg-white text-[#704ede] px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg">
+                                    Get it on Google Play
+                                </a>
                             </div>
                             <p className="text-white/60 text-sm">Basic habit tracking is completely free forever.</p>
                         </div>
