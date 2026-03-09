@@ -1,6 +1,7 @@
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { generateMetadata, generatePersonSchema } from "@/lib/metadata";
+import CustomCursor from "@/components/CustomCursor";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -34,6 +35,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
       >
+        {/* Scroll progress bar */}
+        <div className="scroll-progress-bar" id="scroll-progress-bar" />
+
+        {/* Custom cursor */}
+        <CustomCursor />
+
         {children}
       </body>
     </html>

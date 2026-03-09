@@ -1,8 +1,45 @@
 @import "tailwindcss";
 
+/* =====================================================
+   DESIGN TOKEN SYSTEM
+   ===================================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f7ff;
+  --foreground: #0f0e1a;
+
+  /* Accent Colors */
+  --accent-blue: #5b6ef5;
+  --accent-purple: #9b5cff;
+  --accent-pink: #f059a8;
+  --accent-cyan: #22d3ee;
+
+  /* Glow Colors */
+  --glow-blue: rgba(91, 110, 245, 0.4);
+  --glow-purple: rgba(155, 92, 255, 0.4);
+  --glow-pink: rgba(240, 89, 168, 0.4);
+  --glow-cyan: rgba(34, 211, 238, 0.3);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(155, 92, 255, 0.15);
+  --glass-blur: 20px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+
+  /* Scroll Progress */
+  --scroll-progress: 0%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #06050f;
+    --foreground: #f0eeff;
+    --glass-bg: rgba(15, 12, 35, 0.7);
+    --glass-border: rgba(155, 92, 255, 0.2);
+  }
 }
 
 @theme inline {
@@ -12,17 +49,31 @@
   --font-inter: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =====================================================
+   BASE STYLES
+   ===================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
 }
 
 .font-space-grotesk {
@@ -33,35 +84,611 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
+/* =====================================================
+   KEYFRAME ANIMATIONS
+   ===================================================== */
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
   }
+
   50% {
-    opacity: 0.5;
+    opacity: 0.55;
   }
-}
-
-.animate-pulse {
-  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.delay-1000 {
-  animation-delay: 1s;
 }
 
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatY {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes floatYSlow {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-22px);
+  }
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 30px var(--glow-blue), 0 0 60px var(--glow-purple);
+  }
+
+  50% {
+    box-shadow: 0 0 50px var(--glow-purple), 0 0 90px var(--glow-pink);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes bounceDown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(9px);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes orbFloat1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-20px, 15px) scale(0.97);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes orbFloat2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(-25px, 20px) scale(1.04);
+  }
+
+  66% {
+    transform: translate(20px, -10px) scale(0.98);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes orbFloat3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(15px, 25px) scale(1.06);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+@keyframes ringRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes ringRotateReverse {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes heroImageFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.01);
+  }
+}
+
+/* =====================================================
+   ANIMATION UTILITY CLASSES
+   ===================================================== */
+.animate-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .animate-gradient {
   animation: gradient 3s ease infinite;
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease both;
+}
+
+.animate-slideLeft {
+  animation: slideInLeft 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-slideRight {
+  animation: slideInRight 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-floatY {
+  animation: floatY 3.5s ease-in-out infinite;
+}
+
+.animate-floatYSlow {
+  animation: floatYSlow 5s ease-in-out infinite;
+}
+
+.animate-glowPulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s linear infinite;
+}
+
+.animate-bounceDown {
+  animation: bounceDown 1.5s ease-in-out infinite;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Delay utilities */
+.delay-75 {
+  animation-delay: 0.075s;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-150 {
+  animation-delay: 0.15s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+.delay-700 {
+  animation-delay: 0.7s;
+}
+
+.delay-800 {
+  animation-delay: 0.8s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+.delay-1200 {
+  animation-delay: 1.2s;
+}
+
+.delay-1400 {
+  animation-delay: 1.4s;
+}
+
+/* =====================================================
+   SCROLL REVEAL SYSTEM
+   ===================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =====================================================
+   GLASSMORPHISM
+   ===================================================== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+/* =====================================================
+   SCROLL PROGRESS BAR
+   ===================================================== */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: var(--scroll-progress);
+  background: linear-gradient(90deg, #5b6ef5, #9b5cff, #f059a8);
+  z-index: 9999;
+  transition: width 0.05s linear;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 10px rgba(155, 92, 255, 0.6);
+}
+
+/* =====================================================
+   CUSTOM CURSOR
+   ===================================================== */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #5b6ef5, #9b5cff);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  will-change: left, top;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(155, 92, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: left 0.12s ease, top 0.12s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+  will-change: left, top;
+}
+
+.cursor-dot.cursor-hover {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #f059a8, #9b5cff);
+}
+
+.cursor-ring.cursor-hover {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(240, 89, 168, 0.6);
+}
+
+@media (pointer: coarse) {
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+/* =====================================================
+   HERO GRID BACKGROUND
+   ===================================================== */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(155, 92, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(155, 92, 255, 0.07) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 8s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(155, 92, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(155, 92, 255, 0.1) 1px, transparent 1px);
+  }
+}
+
+/* =====================================================
+   SHIMMER TEXT
+   ===================================================== */
+.shimmer-text {
+  background: linear-gradient(90deg,
+      #5b6ef5 0%,
+      #9b5cff 25%,
+      #f059a8 50%,
+      #9b5cff 75%,
+      #5b6ef5 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* =====================================================
+   GRADIENT TEXT UTILITIES
+   ===================================================== */
+.gradient-text-cool {
+  background: linear-gradient(135deg, #5b6ef5, #9b5cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #9b5cff, #f059a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =====================================================
+   GRADIENT BORDER
+   ===================================================== */
+.gradient-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #5b6ef5, #9b5cff, #f059a8, #9b5cff, #5b6ef5, transparent);
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+
+/* =====================================================
+   GLOW UTILITIES
+   ===================================================== */
+.glow-blue {
+  box-shadow: 0 0 30px var(--glow-blue);
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px var(--glow-purple);
+}
+
+.glow-pink {
+  box-shadow: 0 0 30px var(--glow-pink);
+}
+
+/* =====================================================
+   HERO IMAGE RING DECORATIONS
+   ===================================================== */
+.hero-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(155, 92, 255, 0.2);
+  pointer-events: none;
+}
+
+.hero-ring-1 {
+  width: 110%;
+  height: 110%;
+  border-color: rgba(91, 110, 245, 0.25);
+  animation: ringRotate 18s linear infinite;
+}
+
+.hero-ring-2 {
+  width: 125%;
+  height: 125%;
+  border-color: rgba(155, 92, 255, 0.15);
+  border-style: dashed;
+  animation: ringRotateReverse 24s linear infinite;
+}
+
+/* =====================================================
+   BADGE PILL
+   ===================================================== */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(155, 92, 255, 0.3);
+  background: rgba(155, 92, 255, 0.08);
+  color: #9b5cff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge-pill {
+    background: rgba(155, 92, 255, 0.12);
+    border-color: rgba(155, 92, 255, 0.4);
+  }
 }
