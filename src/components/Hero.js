@@ -132,10 +132,9 @@ export default function Hero() {
         {/* Name — big hero headline */}
         <h1
           className="font-space-grotesk font-black tracking-tight leading-[1.05] mb-4 animate-fadeUp"
-          style={{ fontSize: 'clamp(2.4rem, 7vw, 5.5rem)', animationDelay: '0.25s' }}
+          style={{ fontSize: 'clamp(1.5rem, 5vw, 3.5rem)', animationDelay: '0.25s' }}
         >
           <span className="shimmer-text">Qamrosh</span>
-          <br />
           <span className="text-foreground">Ali Nazar</span>
         </h1>
 
