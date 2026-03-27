@@ -35,6 +35,26 @@ export default function Projects() {
 
   const projects = [
     {
+      id: 12,
+      title: 'Pure PDF Reader',
+      category: 'mobile',
+      type: 'Personal Project',
+      description: 'Elegant. Fast. Ad-Free. A premium reading experience that prioritizes your privacy and speed.',
+      longDescription: 'Pure PDF Reader is a premium minimalist application designed for users who value speed and privacy. Built with Flutter, it offers an instant, ad-free reading experience with Material You support and offline-first architecture.',
+      tech: ['Flutter', 'Android', 'Offline First', 'Material You', 'High Performance'],
+      techColors: {
+        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
+        'Android': 'bg-green-500/10 text-green-600 border-green-500/20',
+        'Offline First': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
+        'Material You': 'bg-pink-500/10 text-pink-600 border-pink-500/20',
+        'High Performance': 'bg-orange-500/10 text-orange-600 border-orange-500/20'
+      },
+      features: ['Premium Minimalist Design', 'Instant PDF Opening', 'Smart Library Organization', 'Adaptive Theme Support'],
+      status: 'Live',
+      year: '2026',
+      link: '/pure-pdf-reader'
+    },
+    {
       id: 1,
       title: 'Atomic Clock',
       category: 'mobile',
