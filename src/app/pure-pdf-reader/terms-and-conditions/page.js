@@ -57,14 +57,22 @@ export default function TermsAndConditions() {
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">5. Monetization & Updates</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">5. App Features & Permissions</h2>
+                        <div className="space-y-4 text-base text-slate-700 dark:text-slate-300">
+                            <p><strong>Reminders:</strong> The App includes a reminder feature to help you schedule and manage your reading sessions. To provide precise and timely notifications, the App utilizes the <code>USE_EXACT_ALARM</code> permission.</p>
+                            <p><strong>Storage:</strong> The App requires storage access to function as a PDF reader. You are responsible for ensuring you have the legal right to view and store any documents you open with the App.</p>
+                        </div>
+                    </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">6. Monetization & Updates</h2>
                         <p className="text-base text-slate-700 dark:text-slate-300">
                             The App is currently provided ad-free. If there are future premium features or subscription models introduced, they will be clearly disclosed to you within the App.
                         </p>
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">6. Contact</h2>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">7. Contact</h2>
                         <p className="text-base text-slate-700 dark:text-slate-300">
                             If you have any questions about these Terms, please contact us at: <a href="mailto:qamrosh.dev@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline decoration-2 underline-offset-2">qamrosh.dev@gmail.com</a>
                         </p>

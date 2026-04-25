@@ -45,6 +45,7 @@ export default function PrivacyPolicy() {
                         <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">3. Permissions Explained</h2>
                         <ul className="list-disc pl-5 space-y-2 text-base text-slate-700 dark:text-slate-300">
                             <li><strong>Storage Access (MANAGE_EXTERNAL_STORAGE):</strong> Required solely to scan your device for PDF files and display them in the app library.</li>
+                            <li><strong>Exact Alarm (USE_EXACT_ALARM):</strong> Used specifically to provide precise, timely reminders for your scheduled reading sessions. This ensures you never miss a document you intended to read.</li>
                             <li><strong>File Handling:</strong> The app reads files locally to render them on your screen. No data is cached on external servers.</li>
                         </ul>
                     </section>
