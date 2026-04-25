@@ -2,306 +2,275 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle2, Shield, Zap, BarChart2, Calendar, Target, Clock, Trophy } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Shield, Zap, BarChart2, Calendar, Target, Clock, Trophy, Sparkles, Fingerprint } from 'lucide-react';
 
 export const metadata = {
-    title: 'Atomic Clock - Transform Your Life, One Habit at a Time',
-    description: 'Your personal habit companion designed around the proven principles of atomic habits. Build better routines, track progress, and stay private.',
+    title: 'AtomiClock - Build the Identity of Who You Want to Become',
+    description: 'A premium habit-tracking experience built on the philosophy of Atomic Habits and Identity-Based Tracking. Privacy-first, locally stored, and designed for discipline.',
 };
 
-export default function AtomicClockPage() {
-    const primaryColor = '#704ede';
+export default function AtomiClockPage() {
+    const goldColor = '#D4AF37';
+    const neonPurple = '#BC13FE';
 
     return (
-        <div className="min-h-screen bg-white dark:bg-black text-slate-900 dark:text-slate-100 font-inter overflow-x-hidden selection:bg-[#704ede] selection:text-white">
-            {/* Navigation */}
-            <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-100 dark:border-white/10">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <Link href="/" className="inline-flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
-                            <ArrowLeft className="w-5 h-5" />
+        <div className="min-h-screen bg-[#0B0D17] text-slate-100 font-inter overflow-x-hidden selection:bg-[#D4AF37] selection:text-black">
+            {/* Premium Navigation */}
+            <nav className="fixed top-0 w-full z-50 bg-[#0B0D17]/80 backdrop-blur-xl border-b border-white/5">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                        <Link href="/" className="inline-flex items-center justify-center p-2 rounded-full hover:bg-white/5 transition-colors group">
+                            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                         </Link>
-                        <div className="relative w-8 h-8">
-                            <Image
-                                src="/atomic_clock/logos/logos%20with%20varient/light_mode_logo.png"
-                                alt="Atomic Clock Logo"
-                                fill
-                                className="object-contain dark:hidden"
-                            />
-                            <Image
-                                src="/atomic_clock/logos/logos%20with%20varient/dark_mode_logo.png"
-                                alt="Atomic Clock Logo"
-                                fill
-                                className="object-contain hidden dark:block"
-                            />
+                        <div className="flex items-center gap-3">
+                            <div className="relative w-10 h-10 ring-2 ring-[#D4AF37]/20 rounded-xl p-1 bg-gradient-to-br from-[#1a1c2e] to-[#0B0D17]">
+                                <Image
+                                    src="/atomic_clock/logos/logos%20with%20varient/dark_mode_logo.png"
+                                    alt="AtomiClock Logo"
+                                    fill
+                                    className="object-contain p-1"
+                                />
+                            </div>
+                            <span className="font-space-grotesk font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] to-white">AtomiClock</span>
                         </div>
-                        <span className="font-space-grotesk font-bold text-xl tracking-tight">Atomic Clock</span>
                     </div>
-                    <div className="flex items-center gap-4">
-                        <Link href="#features" className="text-sm font-medium hover:text-[#704ede] transition-colors hidden sm:block">Features</Link>
-                        <Link href="#download" className="bg-[#704ede] hover:bg-[#5f41b2] text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-[#704ede]/20">
-                            Get App
+                    <div className="flex items-center gap-6">
+                        <Link href="#features" className="text-sm font-medium text-slate-400 hover:text-[#D4AF37] transition-colors hidden sm:block">Experience</Link>
+                        <Link href="#download" className="relative group">
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#D4AF37] to-[#BC13FE] rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                            <button className="relative bg-[#0B0D17] text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all border border-white/10">
+                                Get App
+                            </button>
                         </Link>
                     </div>
                 </div>
             </nav>
 
-            {/* Hero Section */}
-            <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-                {/* Background Gradients */}
-                <div className="absolute top-0 inset-x-0 h-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(112,78,222,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(112,78,222,0.3),rgba(0,0,0,0))] pointer-events-none" />
+            {/* Hero Section: The Identity Shift */}
+            <section className="relative pt-40 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
+                {/* Cosmic Background Elements */}
+                <div className="absolute top-0 inset-x-0 h-full overflow-hidden pointer-events-none">
+                    <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#BC13FE]/10 rounded-full blur-[120px] animate-pulse" />
+                    <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-[#D4AF37]/5 rounded-full blur-[100px] animate-pulse delay-1000" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(188,19,254,0.05)_0%,transparent_70%)]" />
+                </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center max-w-4xl mx-auto mb-16">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#704ede]/10 text-[#704ede] text-sm font-medium mb-6 animate-fade-in-up">
-                            <Zap className="w-4 h-4 fill-current" />
-                            <span>Proven Principles of Atomic Habits</span>
+                    <div className="text-center max-w-4xl mx-auto mb-24">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-8 animate-fade-in-up backdrop-blur-md">
+                            <Sparkles className="w-3.5 h-3.5" />
+                            <span>Premium Habit Mastery</span>
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-bold font-space-grotesk tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-slate-400 pb-2">
-                            Transform Your Life,<br /> One <span className="text-[#704ede]">Atomic Habit</span> at a Time
+                        <h1 className="text-6xl md:text-8xl font-extrabold font-space-grotesk tracking-tighter mb-10 leading-[0.9] bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-500">
+                            Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#BC13FE]">Identity</span> <br /> of who you want to become.
                         </h1>
-                        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
-                            Build better routines, track meaningful progress, and become the person you want to be—all while keeping your data completely private and offline.
+                        <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12 font-light">
+                            Experience the Alchemist’s approach to routine. A high-end, privacy-first habit companion designed for the disciplined few who seek transformation, not just tracking.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <a href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock&hl=en" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 bg-[#704ede] hover:bg-[#5f41b2] text-white rounded-2xl font-semibold transition-all shadow-xl shadow-[#704ede]/25 hover:shadow-[#704ede]/40 hover:-translate-y-1 text-center">
-                                Get it on Google Play
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <a href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock&hl=en" target="_blank" rel="noopener noreferrer" className="group relative w-full sm:w-auto">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#BC13FE] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                                <div className="relative flex items-center justify-center gap-3 px-10 py-5 bg-[#0B0D17] border border-white/10 hover:border-[#D4AF37]/50 text-white rounded-2xl font-bold transition-all hover:-translate-y-1 text-lg">
+                                    <Image src="/atomic_clock/logos/google-play.svg" alt="Google Play" width={24} height={24} className="brightness-0 invert" />
+                                    <span>Get it on Google Play</span>
+                                </div>
                             </a>
                         </div>
                     </div>
 
-                    {/* Hero Image / Mockup */}
-                    <div className="relative mx-auto mt-16 max-w-5xl">
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-[#704ede]/10 border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-neutral-900 p-2 sm:p-4">
-                            {/* We use Listing1.png here as the main hero shot */}
-                            <div className="relative rounded-2xl overflow-hidden aspect-[16/9] bg-slate-200 dark:bg-neutral-800">
+                    {/* Premium Glassmorphism Mockup */}
+                    <div className="relative mx-auto mt-24 max-w-6xl group">
+                        <div className="absolute -inset-4 bg-gradient-to-r from-[#D4AF37]/20 to-[#BC13FE]/20 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-1000"></div>
+                        <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl p-4 lg:p-8">
+                            <div className="relative rounded-3xl overflow-hidden aspect-[16/9] shadow-2xl">
                                 <Image
                                     src="/atomic_clock/Listing2.png"
-                                    alt="Atomic Clock App Interface"
+                                    alt="AtomiClock Premium Interface"
                                     fill
-                                    className="object-cover object-top"
+                                    className="object-cover object-top hover:scale-[1.02] transition-transform duration-700"
                                     priority
                                 />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D17] via-transparent to-transparent opacity-40" />
                             </div>
                         </div>
 
-                        {/* Floating Elements (Decorative) */}
-                        <div className="absolute -top-12 -right-12 w-24 h-24 bg-[#704ede] rounded-full blur-[60px] opacity-40 animate-pulse" />
-                        <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-blue-500 rounded-full blur-[60px] opacity-30 animate-pulse delay-700" />
+                        {/* Floating Micro-UI Elements */}
+                        <div className="absolute -top-10 -right-10 hidden lg:block animate-bounce-slow">
+                            <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-3xl shadow-2xl">
+                                <Trophy className="w-8 h-8 text-[#D4AF37] mb-2" />
+                                <div className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider">Identity Streak</div>
+                                <div className="text-2xl font-bold">42 Days</div>
+                            </div>
+                        </div>
+                        <div className="absolute -bottom-10 -left-10 hidden lg:block animate-bounce-slow delay-500">
+                            <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-3xl shadow-2xl">
+                                <Fingerprint className="w-8 h-8 text-[#BC13FE] mb-2" />
+                                <div className="text-xs font-bold text-[#BC13FE] uppercase tracking-wider">Identity Verified</div>
+                                <div className="text-lg font-medium">The Strategist</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Philosophy Section */}
-            <section className="py-24 bg-slate-50 dark:bg-[#0a0a0a]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="space-y-8">
-                            <h2 className="text-3xl md:text-5xl font-bold font-space-grotesk">Unlike other habit trackers...</h2>
-                            <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Atomic Clock focuses on what truly matters: making tiny, consistent improvements that compound into remarkable results. Whether you're building morning rituals, evening routines, or anytime habits, we help you stay on track with intelligent reminders and motivating insights.
+            {/* The Philosophy: Discipline Meets Design */}
+            <section className="py-32 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-24 items-center">
+                        <div className="space-y-10">
+                            <div className="inline-block px-4 py-1 rounded-full bg-[#BC13FE]/10 border border-[#BC13FE]/20 text-[#BC13FE] text-xs font-bold uppercase tracking-widest">
+                                The Philosophy
+                            </div>
+                            <h2 className="text-4xl md:text-6xl font-bold font-space-grotesk leading-tight">Beyond mere tracking. <br />This is <span className="text-[#D4AF37]">Alchemy</span>.</h2>
+                            <p className="text-xl text-slate-400 leading-relaxed font-light">
+                                AtomiClock isn't just an app; it's a digital sanctum for your personal evolution. Built on the core tenets of <i>Atomic Habits</i>, we focus on the identity shift. Every check-off is a vote for the person you wish to become.
                             </p>
-                            <div className="space-y-4">
+                            <div className="space-y-6">
                                 {[
-                                    "Make habits obvious with smart reminders",
-                                    "Make them attractive with streak tracking",
-                                    "Make them easy with simple check-offs",
-                                    "Make them satisfying with visual progress"
+                                    { text: "Identity Progress Heatmaps", icon: <BarChart2 className="w-5 h-5" /> },
+                                    { text: "Atomic Habit Stacking Logic", icon: <Target className="w-5 h-5" /> },
+                                    { text: "Tactile Haptic Reward Systems", icon: <Zap className="w-5 h-5" /> },
+                                    { text: "System-Level Reliable Reminders", icon: <Clock className="w-5 h-5" /> }
                                 ].map((item, i) => (
-                                    <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5">
-                                        <div className="p-2 rounded-lg bg-[#704ede]/10 text-[#704ede]">
-                                            <CheckCircle2 className="w-5 h-5" />
+                                    <div key={i} className="flex items-center gap-5 group">
+                                        <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all">
+                                            {item.icon}
                                         </div>
-                                        <span className="font-medium pt-1.5">{item}</span>
+                                        <span className="text-lg font-medium text-slate-200">{item.text}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        {/* Feature Image */}
-                        <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
-                            <Image
-                                src="/atomic_clock/listing3.png"
-                                alt="Identity Driven Habits"
-                                fill
-                                className="object-contain"
-                            />
+                        <div className="relative group">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#BC13FE] rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#0B0D17] p-2">
+                                <Image
+                                    src="/atomic_clock/listing3.png"
+                                    alt="AtomiClock Features"
+                                    width={600}
+                                    height={800}
+                                    className="rounded-2xl"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Key Features Grid */}
-            <section id="features" className="py-24">
+            {/* Premium Features Grid */}
+            <section id="features" className="py-32 bg-[#0B0D17] relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-20">
-                        <h2 className="text-3xl md:text-5xl font-bold font-space-grotesk mb-6">Key Features</h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400">Everything you need to build lasting habits and break bad ones.</p>
+                    <div className="text-center max-w-3xl mx-auto mb-24">
+                        <h2 className="text-4xl md:text-6xl font-bold font-space-grotesk mb-8 tracking-tight">The Premium Standard</h2>
+                        <p className="text-xl text-slate-400 font-light">Meticulously crafted features for those who value discipline and aesthetics.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Card 1 */}
                         <FeatureCard
-                            icon={<Clock />}
-                            title="Smart Habit Organization"
-                            description="Time-based sections (Morning, Afternoon, Evening) with custom schedules and color-coded categories."
+                            icon={<Fingerprint />}
+                            title="Identity Tracking"
+                            description="Link every habit to a specific character trait. Track 'votes' for your future self."
+                            accent="#D4AF37"
                         />
-                        {/* Card 2 */}
                         <FeatureCard
-                            icon={<Trophy />}
-                            title="Powerful Streak Tracking"
-                            description="Monitor current & best streaks, get streak rescue alerts, and celebrate consistency milestones."
+                            icon={<Sparkles />}
+                            title="Haptic Rewards"
+                            description="Premium tactile feedback system that makes every completion feel physically satisfying."
+                            accent="#BC13FE"
                         />
-                        {/* Card 3 */}
                         <FeatureCard
                             icon={<BarChart2 />}
-                            title="Deep Insights & Analytics"
-                            description="Visualize your journey with consistency scores, trend graphs, and recovery speed insights."
+                            title="Cosmic Heatmaps"
+                            description="Visualize your consistency across time with high-end heatmap visualizations."
+                            accent="#D4AF37"
                         />
-                        {/* Card 4 */}
                         <FeatureCard
                             icon={<Target />}
-                            title="Identity-Driven Growth"
-                            description="Link habits to your desired identity and track 'votes' for the person you are becoming."
+                            title="Habit Stacking"
+                            description="Built-in logic for stacking routines, making it easier to build complex morning and evening rituals."
+                            accent="#BC13FE"
                         />
-                        {/* Card 5 */}
                         <FeatureCard
                             icon={<Shield />}
-                            title="Privacy-First"
-                            description="100% offline architecture. Your data stays on your device. No cloud sync, no tracking."
+                            title="Absolute Privacy"
+                            description="Local SQLite storage. No accounts. Your journey is yours alone, stored only on your device."
+                            accent="#D4AF37"
                         />
-                        {/* Card 6 */}
                         <FeatureCard
                             icon={<Zap />}
-                            title="Beautiful Interface"
-                            description="Clean, modern design with dark mode, smooth animations, and intuitive interactions."
+                            title="Reliable Reminders"
+                            description="Custom AlarmManager implementation ensures notifications fire exactly when needed."
+                            accent="#BC13FE"
                         />
                     </div>
                 </div>
             </section>
 
-            {/* Gallery / Carousel Section */}
-            <section className="py-24 bg-[#704ede]/5 border-y border-[#704ede]/10">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl md:text-5xl font-bold font-space-grotesk mb-16 text-center">Visual Excellence</h2>
-
-                    {/* Simple Grid Gallery for now */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                        {['Listing1-2.png', 'Listing1-4.png', 'Listing1-5.png', 'Listing1-6.png'].map((img, idx) => (
-                            <div key={idx} className={`relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-white/10 aspect-[9/19] hover:-translate-y-2 transition-transform duration-300 ${idx % 2 === 0 ? 'mt-0' : 'mt-8'}`}>
-                                <Image
-                                    src={`/atomic_clock/${img}`}
-                                    alt={`Screenshot ${idx + 1}`}
-                                    fill
-                                    className="object-cover"
-                                />
+            {/* Call to Action: Become the Identity */}
+            <section id="download" className="py-40 relative">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <div className="relative rounded-[3rem] overflow-hidden p-1">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] via-[#BC13FE] to-[#D4AF37] animate-gradient-x"></div>
+                        <div className="relative bg-[#0B0D17] rounded-[2.9rem] px-8 py-24 text-center overflow-hidden">
+                            {/* Decorative Glow */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                            
+                            <div className="relative z-10 space-y-10">
+                                <h2 className="text-5xl md:text-7xl font-bold font-space-grotesk text-white tracking-tighter">Ready to shift <br />your identity?</h2>
+                                <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                                    Join the elite circle of individuals who track with purpose. AtomiClock is available now on Android.
+                                </p>
+                                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+                                    <a href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock&hl=en" target="_blank" rel="noopener noreferrer" className="px-12 py-5 bg-white text-black rounded-2xl font-black text-xl hover:bg-[#D4AF37] transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:-translate-y-1">
+                                        Download AtomiClock
+                                    </a>
+                                </div>
+                                <p className="text-slate-500 text-sm font-medium tracking-widest uppercase">Privacy First. Offline Always. Premium by Design.</p>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Premium Section */}
-            <section className="py-24">
-                <div className="max-w-4xl mx-auto px-4 text-center">
-                    <div className="inline-block p-3 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 mb-6">
-                        <Trophy className="w-8 h-8" />
-                    </div>
-                    <h2 className="text-3xl md:text-5xl font-bold font-space-grotesk mb-6">Go Premium</h2>
-                    <p className="text-lg text-slate-600 dark:text-slate-400 mb-12">
-                        Unlock advanced insights, detailed trend graphs, momentum indicators, and more with a one-time purchase or simple subscription.
-                    </p>
-                    <div className="p-8 rounded-3xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-2xl">
-                        <div className="grid sm:grid-cols-2 gap-8 text-left">
-                            <ul className="space-y-3">
-                                {['Detailed trend graphs', 'Category distribution', 'Time-of-day performance', 'Momentum indicators'].map(f => (
-                                    <li key={f} className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-[#704ede]" />
-                                        <span>{f}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                            <ul className="space-y-3">
-                                {['Recovery insights', 'Complete history calendar', 'Weekly consistency breakdown', 'Identity votes tracking'].map(f => (
-                                    <li key={f} className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-[#704ede]" />
-                                        <span>{f}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section id="download" className="py-24">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="relative rounded-[2.5rem] bg-[#704ede] overflow-hidden px-8 py-20 text-center">
-                        {/* Background decoration */}
-                        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                            <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[200%] bg-white/30 rotate-12 blur-3xl"></div>
-                        </div>
-
-                        <div className="relative z-10 space-y-8">
-                            <h2 className="text-3xl md:text-5xl font-bold font-space-grotesk text-white">Start Building the Life You Want</h2>
-                            <p className="text-white/80 text-xl max-w-2xl mx-auto">
-                                Download Atomic Clock today and experience the power of atomic habits. Your future self will thank you.
-                            </p>
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                                <a href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock&hl=en" target="_blank" rel="noopener noreferrer" className="bg-white text-[#704ede] px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg">
-                                    Get it on Google Play
-                                </a>
-                            </div>
-                            <p className="text-white/60 text-sm">Basic habit tracking is completely free forever.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Footer */}
-            <footer className="bg-slate-50 dark:bg-[#050505] border-t border-slate-200 dark:border-white/5 py-16">
+            <footer className="bg-[#050505] border-t border-white/5 py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-4 gap-12 mb-16">
-                        <div className="col-span-2">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="relative w-10 h-10">
-                                    <Image
-                                        src="/atomic_clock/logos/logos%20with%20varient/light_mode_logo.png"
-                                        alt="Atomic Clock Logo"
-                                        fill
-                                        className="object-contain dark:hidden"
-                                    />
+                    <div className="grid md:grid-cols-4 gap-16 mb-20">
+                        <div className="col-span-2 space-y-8">
+                            <div className="flex items-center gap-4">
+                                <div className="relative w-12 h-12 ring-2 ring-[#D4AF37]/20 rounded-xl p-1 bg-gradient-to-br from-[#1a1c2e] to-[#0B0D17]">
                                     <Image
                                         src="/atomic_clock/logos/logos%20with%20varient/dark_mode_logo.png"
-                                        alt="Atomic Clock Logo"
+                                        alt="AtomiClock Logo"
                                         fill
-                                        className="object-contain hidden dark:block"
+                                        className="object-contain p-1"
                                     />
                                 </div>
-                                <span className="font-space-grotesk font-bold text-2xl">Atomic Clock</span>
+                                <span className="font-space-grotesk font-bold text-3xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] to-white">AtomiClock</span>
                             </div>
-                            <p className="text-slate-500 dark:text-slate-400 max-w-sm">
-                                Transform your life, one atomic habit at a time. Designed for privacy, built for progress.
+                            <p className="text-slate-400 text-lg font-light max-w-sm leading-relaxed">
+                                The high-end habit companion for the modern alchemist. Transform your life, one atomic shift at a time.
                             </p>
                         </div>
                         <div>
-                            <h3 className="font-bold mb-6 font-space-grotesk">Legal</h3>
-                            <ul className="space-y-4 text-slate-500 dark:text-slate-400">
-                                <li><Link href="/atomic-clock/privacy-policy" className="hover:text-[#704ede]">Privacy Policy</Link></li>
-                                <li><Link href="/atomic-clock/terms-and-conditions" className="hover:text-[#704ede]">Terms & Conditions</Link></li>
+                            <h3 className="font-bold text-white mb-8 font-space-grotesk tracking-widest uppercase text-xs">Legal</h3>
+                            <ul className="space-y-4 text-slate-500 font-medium">
+                                <li><Link href="/atomic-clock/privacy-policy" className="hover:text-[#D4AF37] transition-colors">Privacy Policy</Link></li>
+                                <li><Link href="/atomic-clock/terms-and-conditions" className="hover:text-[#BC13FE] transition-colors">Terms of Service</Link></li>
                             </ul>
                         </div>
                         <div>
-                            <h3 className="font-bold mb-6 font-space-grotesk">Connect</h3>
-                            <ul className="space-y-4 text-slate-500 dark:text-slate-400">
-                                <li><a href="mailto:qamrosh.dev@gmail.com" className="hover:text-[#704ede]">Contact Support</a></li>
+                            <h3 className="font-bold text-white mb-8 font-space-grotesk tracking-widest uppercase text-xs">Connect</h3>
+                            <ul className="space-y-4 text-slate-500 font-medium">
+                                <li><a href="mailto:qamrosh.dev@gmail.com" className="hover:text-[#D4AF37] transition-colors">Concierge Support</a></li>
+                                <li><a href="https://qamrosh.dev" className="hover:text-[#BC13FE] transition-colors">Developer Portal</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div className="pt-8 border-t border-slate-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-slate-400 text-sm">© {new Date().getFullYear()} Atomic Clock. All rights reserved.</p>
-                        <p className="text-slate-400 text-sm">Made with ❤️ by Qamrosh Nazar</p>
+                    <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+                        <p className="text-slate-600 text-sm">© {new Date().getFullYear()} AtomiClock. All rights reserved.</p>
+                        <p className="text-slate-600 text-sm font-medium tracking-wide">Handcrafted with discipline by <span className="text-white">Qamrosh Nazar</span></p>
                     </div>
                 </div>
             </footer>
@@ -309,16 +278,29 @@ export default function AtomicClockPage() {
     );
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description, accent }) {
     return (
-        <div className="group p-8 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 hover:border-[#704ede]/30 transition-all hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-[#704ede]/10 text-[#704ede] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                {icon}
+        <div className="group relative p-1 rounded-[2rem] transition-all duration-500 hover:-translate-y-2">
+            <div className="absolute inset-0 bg-white/5 rounded-[2rem] transition-opacity group-hover:opacity-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            
+            <div className="relative h-full p-8 rounded-[1.9rem] bg-[#0B0D17] border border-white/5 transition-all group-hover:border-white/20">
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500`} 
+                     style={{ backgroundColor: `${accent}10`, color: accent }}>
+                    <div className="group-hover:scale-110 transition-transform duration-500">
+                        {icon}
+                    </div>
+                </div>
+                <h3 className="text-2xl font-bold font-space-grotesk mb-4 text-white group-hover:text-white transition-colors">{title}</h3>
+                <p className="text-slate-400 leading-relaxed font-light">
+                    {description}
+                </p>
+                
+                {/* Micro-glow on hover */}
+                <div className="absolute bottom-4 right-4 w-12 h-12 blur-2xl opacity-0 group-hover:opacity-40 transition-opacity"
+                     style={{ backgroundColor: accent }}></div>
             </div>
-            <h3 className="text-xl font-bold font-space-grotesk mb-3 group-hover:text-[#704ede] transition-colors">{title}</h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                {description}
-            </p>
         </div>
     );
 }
+

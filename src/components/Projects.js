@@ -56,11 +56,11 @@ export default function Projects() {
     },
     {
       id: 1,
-      title: 'Atomic Clock',
+      title: 'AtomiClock',
       category: 'mobile',
       type: 'Personal Project',
       description: 'Transform Your Life, One Atomic Habit at a Time. A privacy-first offline habit tracker.',
-      longDescription: 'Atomic Clock is your personal habit companion designed around the proven principles of atomic habits. Build better routines, track meaningful progress, and become the person you want to be—all while keeping your data completely private and offline.',
+      longDescription: 'AtomiClock is your personal habit companion designed around the proven principles of atomic habits. Build better routines, track meaningful progress, and become the person you want to be—all while keeping your data completely private and offline.',
       tech: ['Flutter', 'Offline First', 'Local Storage', 'Analytics', 'Dark Mode'],
       techColors: {
         'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
@@ -73,27 +73,6 @@ export default function Projects() {
       status: 'Live',
       year: '2026',
       link: '/atomic-clock'
-    },
-    {
-      id: 2,
-      title: 'Smart Parking Management System',
-      category: 'iot',
-      type: 'Academic Project',
-      description: 'Computer Vision and IoT-based solution for automated parking management with real-time monitoring and mobile app control.',
-      longDescription: 'Developed a comprehensive smart parking system using computer vision for vehicle detection, OCR for license plate recognition, and IoT sensors for real-time monitoring. The system provides automated parking space allocation and mobile app integration for users.',
-      tech: ['Python', 'OpenCV', 'OCR', 'C++', 'Kotlin', 'IoT', 'Computer Vision'],
-      techColors: {
-        'Python': 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20',
-        'OpenCV': 'bg-green-500/10 text-green-600 border-green-500/20',
-        'OCR': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'C++': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Kotlin': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'IoT': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20',
-        'Computer Vision': 'bg-indigo-500/10 text-indigo-600 border-indigo-500/20'
-      },
-      features: ['Real-time vehicle detection', 'License plate recognition', 'IoT sensor integration', 'Mobile app control', 'Automated parking allocation'],
-      status: 'Completed',
-      year: '2023'
     },
     {
       id: 3,
@@ -176,8 +155,30 @@ export default function Projects() {
         'Payment Integration': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20'
       },
       features: ['Military-grade encryption', 'Biometric authentication', 'Multi-device sync', 'Secure sharing', 'Audit trails', 'Payment integration'],
-      status: 'Under Development',
-      year: '2025'
+      status: 'Live',
+      year: '2025',
+      link: 'https://play.google.com/store/apps/details?id=com.wondelo.passwordmanager&hl=en'
+    },
+    {
+      id: 10,
+      title: 'Water Level Monitoring System',
+      category: 'iot',
+      type: 'Hardware Project',
+      description: 'Automated water level monitoring and control system with web dashboard and mobile notifications.',
+      longDescription: 'Built a complete water level monitoring solution using NodeMCU microcontroller with ultrasonic sensors, automatic pump control, and web-based dashboard. Includes mobile app integration for real-time monitoring and alert notifications.',
+      tech: ['NodeMCU', 'C++', 'Flutter', 'HTML', 'CSS', 'JavaScript', 'IoT Sensors'],
+      techColors: {
+        'NodeMCU': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
+        'C++': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
+        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
+        'HTML': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
+        'CSS': 'bg-pink-500/10 text-pink-600 border-pink-500/20',
+        'JavaScript': 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20',
+        'IoT Sensors': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20'
+      },
+      features: ['Water level monitoring', 'Automatic pump control', 'Web dashboard', 'Mobile notifications', 'Sensor integration', 'Real-time alerts'],
+      status: 'Deployed',
+      year: '2024'
     },
     {
       id: 7,
@@ -236,27 +237,6 @@ export default function Projects() {
       year: '2024'
     },
     {
-      id: 10,
-      title: 'Water Level Monitoring System',
-      category: 'iot',
-      type: 'Hardware Project',
-      description: 'Automated water level monitoring and control system with web dashboard and mobile notifications.',
-      longDescription: 'Built a complete water level monitoring solution using NodeMCU microcontroller with ultrasonic sensors, automatic pump control, and web-based dashboard. Includes mobile app integration for real-time monitoring and alert notifications.',
-      tech: ['NodeMCU', 'C++', 'Flutter', 'HTML', 'CSS', 'JavaScript', 'IoT Sensors'],
-      techColors: {
-        'NodeMCU': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
-        'C++': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'HTML': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'CSS': 'bg-pink-500/10 text-pink-600 border-pink-500/20',
-        'JavaScript': 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20',
-        'IoT Sensors': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20'
-      },
-      features: ['Water level monitoring', 'Automatic pump control', 'Web dashboard', 'Mobile notifications', 'Sensor integration', 'Real-time alerts'],
-      status: 'Deployed',
-      year: '2024'
-    },
-    {
       id: 11,
       title: 'Contextual Lighting System',
       category: 'iot',
@@ -277,7 +257,27 @@ export default function Projects() {
       status: 'Completed',
       year: '2024'
     },
-
+    {
+      id: 2,
+      title: 'Smart Parking Management System',
+      category: 'iot',
+      type: 'Academic Project',
+      description: 'Computer Vision and IoT-based solution for automated parking management with real-time monitoring and mobile app control.',
+      longDescription: 'Developed a comprehensive smart parking system using computer vision for vehicle detection, OCR for license plate recognition, and IoT sensors for real-time monitoring. The system provides automated parking space allocation and mobile app integration for users.',
+      tech: ['Python', 'OpenCV', 'OCR', 'C++', 'Kotlin', 'IoT', 'Computer Vision'],
+      techColors: {
+        'Python': 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20',
+        'OpenCV': 'bg-green-500/10 text-green-600 border-green-500/20',
+        'OCR': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
+        'C++': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
+        'Kotlin': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
+        'IoT': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20',
+        'Computer Vision': 'bg-indigo-500/10 text-indigo-600 border-indigo-500/20'
+      },
+      features: ['Real-time vehicle detection', 'License plate recognition', 'IoT sensor integration', 'Mobile app control', 'Automated parking allocation'],
+      status: 'Completed',
+      year: '2023'
+    },
   ];
 
   const categories = [

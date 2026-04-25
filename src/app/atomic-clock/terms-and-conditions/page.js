@@ -1,100 +1,86 @@
 import React from 'react';
 
 export const metadata = {
-    title: 'Terms and Conditions - Atomic Clock',
-    description: 'Terms and Conditions for the Atomic Clock offline habit tracker application.',
+    title: 'Terms of Service - AtomiClock',
+    description: 'Professional terms of service for AtomiClock habit tracker.',
 };
 
 export default function TermsAndConditions() {
     return (
-        <main className="min-h-screen bg-background text-foreground py-12 px-4 sm:px-6 lg:px-8 font-inter">
+        <main className="min-h-screen bg-slate-50 dark:bg-[#0B0D17] text-slate-900 dark:text-slate-100 py-12 px-4 sm:px-6 lg:px-8 font-inter">
             <div className="max-w-3xl mx-auto space-y-10">
                 <div className="text-center space-y-4">
-                    <h1 className="text-4xl font-bold font-space-grotesk sm:text-5xl">
-                        Terms and Conditions
+                    <h1 className="text-4xl font-bold font-space-grotesk sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] to-[#BC13FE]">
+                        Terms of Service
                     </h1>
-                    <p className="text-lg text-gray-600 dark:text-gray-400">
-                        For <strong>Atomic Clock</strong>
+                    <p className="text-lg text-slate-600 dark:text-slate-400">
+                        For <strong>AtomiClock</strong>
                     </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-500">
-                        Last Updated: January 20, 2026
+                    <p className="text-sm text-slate-500 dark:text-slate-500">
+                        Last Updated: April 25, 2026
                     </p>
                 </div>
 
                 <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">1. Acceptance of Terms</h2>
-                        <p className="text-base text-gray-700 dark:text-gray-300">
-                            By downloading, installing, or using "Atomic Clock" (the "App"), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use the App.
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-slate-200 dark:border-white/10 pb-2">1. Acceptance of Terms</h2>
+                        <p className="text-slate-600 dark:text-slate-400">
+                            By downloading or using AtomiClock, you agree to be bound by these Terms of Service. If you do not agree, please do not use the app.
                         </p>
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">2. Intellectual Property</h2>
-                        <div className="space-y-4 text-base text-gray-700 dark:text-gray-300">
-                            <p>The App, including its name, logo, design, and original content, is the exclusive intellectual property of the Developer (Qamrosh Nazar).</p>
-                            <p>Specifically, the <strong>"Lifeline"</strong> concept and the <strong>"Atomic Identity"</strong> methodology implementation are unique features of this software and are protected by applicable intellectual property laws.</p>
-                        </div>
-                    </section>
-
-                    <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">3. Premium Subscriptions & Purchases</h2>
-                        <div className="space-y-4 text-base text-gray-700 dark:text-gray-300">
-                            <p>Certain features of the App are restricted to paying users. We offer the following purchase options:</p>
-                            <ul className="list-disc pl-5 space-y-2">
-                                <li><strong>Monthly Subscription:</strong> $0.99 per month (auto-renews).</li>
-                                <li><strong>Yearly Subscription:</strong> $9.99 per year (auto-renews).</li>
-                                <li><strong>Lifetime Access:</strong> $29.99 one-time payment.</li>
-                            </ul>
-                            <p><strong>Payment & Renewal:</strong> Payment will be charged to your iTunes or Google Play account at confirmation of purchase. Subscriptions automatically renew unless auto-renew is turned off at least 24-hours before the end of the current period.</p>
-                            <p><strong>Cancellation:</strong> You can manage or cancel your subscription in your Account Settings after purchase.</p>
-                        </div>
-                    </section>
-
-                    <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">4. Liability & Disclaimers</h2>
-                        <div className="space-y-4 text-base text-gray-700 dark:text-gray-300">
-                            <p><strong>"As-Is" Basis:</strong> The App is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, express or implied.</p>
-                            <p><strong>Data Loss:</strong> The App operates offline and relies entirely on local device storage. The Developer is <strong>NOT</strong> responsible for any data loss resulting from device failure, factory resets, uninstallation of the App, or lost backup files. You are solely responsible for managing your own data backups.</p>
-                            <p><strong>Not Medical Advice:</strong> The "Lifeline" feature and habit tracking tools are intended for productivity and self-improvement purposes only. They do <strong>not</strong> constitute medical, psychological, or professional advice. Consult a professional for any health-related concerns.</p>
-                        </div>
-                    </section>
-
-                    <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">5. Usage Restrictions</h2>
-                        <ul className="list-disc pl-5 space-y-2 text-base text-gray-700 dark:text-gray-300">
-                            <li>You may not reverse engineer, decompile, disassemble, copy, or distribute the App's source code or resources.</li>
-                            <li>The App is intended for personal, non-commercial use only.</li>
-                            <li>You may not use the App for any illegal or unauthorized purpose.</li>
-                        </ul>
-                    </section>
-
-                    <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">6. Modifications</h2>
-                        <p className="text-base text-gray-700 dark:text-gray-300">
-                            We reserve the right to modify or update the App and these Terms and Conditions at any time. Continued use of the App following any changes signifies your acceptance of the new terms.
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-slate-200 dark:border-white/10 pb-2">2. Description of Service</h2>
+                        <p className="text-slate-600 dark:text-slate-400">
+                            AtomiClock is a productivity tool designed for habit tracking based on identity-based progress. It includes features like Identity Progress Heatmaps, habit-stacking logic, and local notification scheduling.
                         </p>
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">7. Governing Law</h2>
-                        <p className="text-base text-gray-700 dark:text-gray-300">
-                            These Terms are governed by the applicable policies of the Apple App Store and Google Play Store, and the laws of Saudi Arabia, without regard to its conflict of law provisions.
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-slate-200 dark:border-white/10 pb-2">3. Subscriptions and Payments</h2>
+                        <div className="space-y-4 text-slate-600 dark:text-slate-400">
+                            <p><strong>Premium Model:</strong> Some features require a paid subscription managed through RevenueCat and processed via the Apple App Store or Google Play Store.</p>
+                            <p><strong>No Direct Refunds:</strong> AtomiClock does not handle refunds directly. All billing, cancellations, and refund requests must be managed through your respective App Store account.</p>
+                        </div>
+                    </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-slate-200 dark:border-white/10 pb-2">4. Disclaimer: Not Medical Advice</h2>
+                        <div className="bg-amber-50 dark:bg-amber-900/20 p-6 rounded-2xl border border-amber-200 dark:border-amber-900/50">
+                            <p className="text-amber-800 dark:text-amber-200 font-medium mb-2">IMPORTANT:</p>
+                            <p className="text-amber-700 dark:text-amber-300 text-sm">
+                                AtomiClock is a productivity and habit-tracking tool. We are <strong>not</strong> a medical, health, or mental health provider. The app and its content are for informational purposes only and should not be considered professional medical advice, diagnosis, or treatment.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-slate-200 dark:border-white/10 pb-2">5. Data Responsibility</h2>
+                        <p className="text-slate-600 dark:text-slate-400">
+                            Since AtomiClock stores data locally on your device (SQLite), you are solely responsible for the security and backup of your data. We are not responsible for data loss if you lose your device or delete the app.
                         </p>
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-gray-200 dark:border-gray-800 pb-2">8. Contact</h2>
-                        <p className="text-base text-gray-700 dark:text-gray-300">
-                            If you have any questions about these Terms, please contact us at: <a href="mailto:qamrosh.dev@gmail.com" className="text-blue-600 hover:text-blue-500 underline decoration-2 underline-offset-2">qamrosh.dev@gmail.com</a>
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-slate-200 dark:border-white/10 pb-2">6. Limitation of Liability</h2>
+                        <p className="text-slate-600 dark:text-slate-400">
+                            AtomiClock is provided "as is" without any warranties. To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages resulting from your use of the app.
+                        </p>
+                    </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-semibold font-space-grotesk border-b border-slate-200 dark:border-white/10 pb-2">7. Contact</h2>
+                        <p className="text-slate-600 dark:text-slate-400">
+                            For any legal inquiries, please reach out via: <a href="mailto:qamrosh.dev@gmail.com" className="text-[#BC13FE] hover:underline">qamrosh.dev@gmail.com</a>
                         </p>
                     </section>
                 </div>
 
-                <div className="pt-12 mt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} Atomic Clock. All rights reserved.</p>
+                <div className="pt-12 mt-8 border-t border-slate-200 dark:border-white/10 text-center text-sm text-slate-500">
+                    <p>&copy; {new Date().getFullYear()} AtomiClock. All rights reserved.</p>
                 </div>
             </div>
         </main>
     );
 }
+
