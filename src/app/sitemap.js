@@ -31,6 +31,24 @@ export default function sitemap() {
             priority: 0.9,
         },
         {
+            url: `${baseUrl}/as-salah`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/as-salah/privacy-policy`,
+            lastModified: currentDate,
+            changeFrequency: "yearly",
+            priority: 0.3,
+        },
+        {
+            url: `${baseUrl}/as-salah/terms-and-conditions`,
+            lastModified: currentDate,
+            changeFrequency: "yearly",
+            priority: 0.3,
+        },
+        {
             url: `${baseUrl}#contact`,
             lastModified: currentDate,
             changeFrequency: "monthly",

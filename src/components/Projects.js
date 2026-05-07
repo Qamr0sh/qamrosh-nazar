@@ -35,6 +35,26 @@ export default function Projects() {
 
   const projects = [
     {
+      id: 13,
+      title: 'As-Salah',
+      category: 'mobile',
+      type: 'Personal Project',
+      description: 'Elevate Your Daily Worship. A premium Islamic lifestyle app with high-precision prayer times and spiritual tools.',
+      longDescription: 'As-Salah is a state-of-the-art Islamic lifestyle app. Features include highly accurate prayer times with vocal Adhan, a precision Qibla compass, an automated Tasbeeh routine builder with haptic feedback, and a beautiful, customizable UI with dynamic themes.',
+      tech: ['Flutter', 'RevenueCat', 'Geolocator', 'Haptics', 'Custom UI'],
+      techColors: {
+        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
+        'RevenueCat': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
+        'Geolocator': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
+        'Haptics': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
+        'Custom UI': 'bg-pink-500/10 text-pink-600 border-pink-500/20'
+      },
+      features: ['Precision Prayer Times', 'Smart Tasbeeh Builder', 'High-Accuracy Qibla', 'Premium Personalization'],
+      status: 'Closed Testing',
+      year: '2026',
+      link: '/as-salah'
+    },
+    {
       id: 12,
       title: 'Pure PDF Reader',
       category: 'mobile',
@@ -402,6 +422,7 @@ export default function Projects() {
               {/* Project Status */}
               <div className="flex items-center justify-between pt-4 border-t border-foreground/10">
                 <span className={`px-3 py-1 rounded-full text-xs font-medium ${project.status === 'Live' ? 'bg-green-500/10 text-green-600 border border-green-500/20' :
+                  project.status === 'Closed Testing' ? 'bg-amber-500/10 text-amber-600 border border-amber-500/20' :
                   project.status === 'Deployed' ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20' :
                     project.status === 'Completed' ? 'bg-purple-500/10 text-purple-600 border border-purple-500/20' :
                       project.status === 'In Development' ? 'bg-orange-500/10 text-orange-600 border border-orange-500/20' :
