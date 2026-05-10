@@ -303,21 +303,21 @@ body {
 
 @keyframes ringRotate {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, 0) rotate(0deg);
   }
 
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, 0) rotate(360deg);
   }
 }
 
 @keyframes ringRotateReverse {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, 0) rotate(0deg);
   }
 
   100% {
-    transform: translate(-50%, -50%) rotate(-360deg);
+    transform: translate(-50%, 0) rotate(-360deg);
   }
 }
 
@@ -382,6 +382,14 @@ body {
 
 .animate-scaleIn {
   animation: scaleIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-spin-slow {
+  animation: ringRotate 25s linear infinite;
+}
+
+.animate-reverse-spin-slow {
+  animation: ringRotateReverse 30s linear infinite;
 }
 
 /* Delay utilities */
@@ -691,4 +699,9 @@ body {
     background: rgba(155, 92, 255, 0.12);
     border-color: rgba(155, 92, 255, 0.4);
   }
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }

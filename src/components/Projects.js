@@ -423,10 +423,10 @@ export default function Projects() {
               <div className="flex items-center justify-between pt-4 border-t border-foreground/10">
                 <span className={`px-3 py-1 rounded-full text-xs font-medium ${project.status === 'Live' ? 'bg-green-500/10 text-green-600 border border-green-500/20' :
                   project.status === 'Closed Testing' ? 'bg-amber-500/10 text-amber-600 border border-amber-500/20' :
-                  project.status === 'Deployed' ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20' :
-                    project.status === 'Completed' ? 'bg-purple-500/10 text-purple-600 border border-purple-500/20' :
-                      project.status === 'In Development' ? 'bg-orange-500/10 text-orange-600 border border-orange-500/20' :
-                        'bg-gray-500/10 text-gray-600 border border-gray-500/20'
+                    project.status === 'Deployed' ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20' :
+                      project.status === 'Completed' ? 'bg-purple-500/10 text-purple-600 border border-purple-500/20' :
+                        project.status === 'In Development' ? 'bg-orange-500/10 text-orange-600 border border-orange-500/20' :
+                          'bg-gray-500/10 text-gray-600 border border-gray-500/20'
                   }`}>
                   {project.status}
                 </span>

@@ -62,208 +62,186 @@ export default function Hero() {
     { href: 'https://www.pinterest.com/QamroshNazar/', icon: '/social_media_icon/Pinterest_icon.svg', alt: 'Pinterest' },
     { href: 'https://discord.com/users/1098012603005009951', icon: '/social_media_icon/discord_icon.svg', alt: 'Discord' },
     { href: 'http://t.me/qamr0sh', icon: '/social_media_icon/telegram_icon.svg', alt: 'Telegram' },
-    { href: 'https://wa.me/966569829451?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!', icon: '/social_media_icon/whatsapp_icon.svg', alt: 'WhatsApp' },
+    { href: 'https://wa.me/923168661932?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!', icon: '/social_media_icon/whatsapp_icon.svg', alt: 'WhatsApp' },
   ];
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-24 sm:pb-0 overflow-hidden"
+      className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-24 sm:pb-0 overflow-hidden bg-background"
     >
-      {/* ─── Animated Grid Background ─── */}
-      <div className="absolute inset-0 -z-20 hero-grid opacity-60" />
+      {/* ─── Elegant Background Layers ─── */}
+      <div className="absolute inset-0 -z-20 hero-grid opacity-[0.35]" />
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_-20%,rgba(91,110,245,0.08),transparent_50%)]" />
 
       {/* ─── Particle canvas ─── */}
       <div className="absolute inset-0" style={{ zIndex: 1, pointerEvents: 'none' }}>
         <ParticleCanvas />
       </div>
 
-      {/* ─── Background Gradient Orbs ─── */}
+      {/* ─── Ambient Orbs ─── */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        {/* Big primary orb — top left */}
         <div
-          className="absolute -top-24 -left-24 w-[500px] h-[500px] rounded-full"
+          className="absolute -top-[10%] -left-[5%] w-[60%] h-[60%] rounded-full opacity-20 blur-[120px]"
           style={{
-            background: 'radial-gradient(circle, rgba(91,110,245,0.18) 0%, transparent 70%)',
-            animation: 'orbFloat1 12s ease-in-out infinite',
+            background: 'radial-gradient(circle, #5b6ef5 0%, transparent 70%)',
+            animation: 'orbFloat1 20s ease-in-out infinite',
           }}
         />
-        {/* Purple orb — center right */}
         <div
-          className="absolute top-1/3 right-0 translate-x-1/4 w-[480px] h-[480px] rounded-full"
+          className="absolute top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full opacity-15 blur-[120px]"
           style={{
-            background: 'radial-gradient(circle, rgba(155,92,255,0.18) 0%, transparent 70%)',
-            animation: 'orbFloat2 15s ease-in-out infinite',
-          }}
-        />
-        {/* Pink orb — bottom center */}
-        <div
-          className="absolute bottom-0 left-1/3 translate-y-1/4 w-[400px] h-[400px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(240,89,168,0.14) 0%, transparent 70%)',
-            animation: 'orbFloat3 11s ease-in-out infinite',
+            background: 'radial-gradient(circle, #9b5cff 0%, transparent 70%)',
+            animation: 'orbFloat2 25s ease-in-out infinite',
           }}
         />
       </div>
 
       {/* ─── Main Content ─── */}
-      <div className="relative ml-0 sm:ml-[8%] lg:ml-[12%] max-w-3xl w-full" style={{ zIndex: 10 }}>
+      <div className="relative z-10 ml-0 sm:ml-[8%] lg:ml-[10%] max-w-4xl w-full">
 
-        {/* "Available for work" badge */}
+        {/* Modern Badge */}
         <div
-          className="badge-pill mb-6 animate-fadeUp w-fit"
-          style={{ animationDelay: '0.05s' }}
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/[0.03] backdrop-blur-md mb-8 animate-fadeUp"
+          style={{ animationDelay: '0.1s' }}
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400/60" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
-          Available for Work
+          <span className="text-xs font-space-grotesk font-medium tracking-wider text-foreground/80 uppercase">
+            Available for new opportunities
+          </span>
         </div>
 
-        {/* Greeting */}
-        <p
-          className="font-inter text-base sm:text-lg text-foreground/60 mb-2 animate-fadeUp"
-          style={{ animationDelay: '0.15s' }}
-        >
-          Hello, I&apos;m
-        </p>
+        {/* Text Content */}
+        <div className="space-y-6">
+          <p
+            className="text-blue-500/80 font-space-grotesk font-bold tracking-[0.2em] uppercase text-sm animate-fadeUp"
+            style={{ animationDelay: '0.2s' }}
+          >
+            Software Engineer & Designer
+          </p>
 
-        {/* Name — big hero headline */}
-        <h1
-          className="font-space-grotesk font-black tracking-tight leading-[1.05] mb-4 animate-fadeUp"
-          style={{ fontSize: 'clamp(1.5rem, 5vw, 3.5rem)', animationDelay: '0.25s' }}
-        >
-          <span className="shimmer-text">Qamrosh</span>
-          <span className="text-foreground">Ali Nazar</span>
-        </h1>
+          <h1
+            className="font-space-grotesk font-bold tracking-tight leading-[1.1] animate-fadeUp"
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', animationDelay: '0.3s' }}
+          >
+            <span className="block text-foreground">Transforming ideas into</span>
+            <span className="relative inline-block">
+              <span className="shimmer-text">digital excellence.</span>
+              <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+            </span>
+          </h1>
 
-        {/* Typewriter */}
-        <div
-          className="font-inter text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground/60 min-h-[2.5rem] sm:min-h-[3rem] mb-6 animate-fadeUp"
-          style={{ animationDelay: '0.4s' }}
-        >
-          <TypewriterText texts={roles} typingSpeed={75} deletingSpeed={40} pauseDuration={2000} />
+          <div
+            className="font-inter text-lg sm:text-xl md:text-2xl text-foreground/60 max-w-2xl animate-fadeUp"
+            style={{ animationDelay: '0.4s' }}
+          >
+            I am <TypewriterText texts={roles} typingSpeed={75} deletingSpeed={40} pauseDuration={2000} />
+          </div>
+
+          <p
+            className="font-inter text-base sm:text-lg text-foreground/50 max-w-xl leading-relaxed animate-fadeUp"
+            style={{ animationDelay: '0.5s' }}
+          >
+            Specializing in high-performance <span className="text-foreground/80 font-medium">mobile applications</span>,
+            intelligent <span className="text-foreground/80 font-medium">IoT systems</span>, and
+            immersive <span className="text-foreground/80 font-medium">web experiences</span>.
+          </p>
         </div>
 
-        {/* Subtitle */}
-        <p
-          className="font-inter text-sm sm:text-base text-foreground/50 max-w-lg leading-relaxed mb-10 animate-fadeUp"
-          style={{ animationDelay: '0.52s' }}
-        >
-          Building cross-platform apps, IoT systems & modern web experiences with{' '}
-          <span className="gradient-text-warm font-semibold">passion</span> and{' '}
-          <span className="gradient-text-cool font-semibold">precision</span>.
-        </p>
-
-        {/* CTA Buttons */}
+        {/* CTA Section */}
         <div
-          className="flex flex-wrap gap-3 mb-12 animate-fadeUp"
-          style={{ animationDelay: '0.62s' }}
+          className="flex flex-wrap items-center gap-6 mt-12 animate-fadeUp"
+          style={{ animationDelay: '0.6s' }}
         >
           <a
             href="#projects"
-            className="group relative inline-flex items-center gap-2 px-7 py-3 rounded-full font-space-grotesk font-bold text-sm overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-0.5"
-            style={{ background: 'linear-gradient(135deg, #5b6ef5, #9b5cff, #f059a8)', backgroundSize: '200%', backgroundPosition: '0% 50%', transition: 'background-position 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease' }}
-            onMouseEnter={e => e.currentTarget.style.backgroundPosition = '100% 50%'}
-            onMouseLeave={e => e.currentTarget.style.backgroundPosition = '0% 50%'}
+            className="group relative px-8 py-4 rounded-2xl font-space-grotesk font-bold text-sm overflow-hidden transition-all duration-500 hover:scale-[1.02] active:scale-[0.98]"
           >
-            <span className="text-white">View My Work</span>
-            <svg className="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 group-hover:opacity-90 transition-opacity" />
+            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="relative text-white flex items-center gap-2">
+              Explore My Work
+              <svg className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7-7 7M3 12h18" />
+              </svg>
+            </span>
           </a>
+
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 px-7 py-3 rounded-full font-space-grotesk font-bold text-sm border-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 text-foreground"
-            style={{ borderColor: 'rgba(155,92,255,0.5)', background: 'rgba(155,92,255,0.06)' }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(155,92,255,0.12)'; e.currentTarget.style.borderColor = 'rgba(155,92,255,0.8)'; }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(155,92,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(155,92,255,0.5)'; }}
+            className="group px-8 py-4 rounded-2xl font-space-grotesk font-bold text-sm border border-foreground/10 bg-foreground/[0.02] backdrop-blur-sm hover:bg-foreground/[0.05] hover:border-foreground/20 transition-all duration-300"
           >
-            Get In Touch
+            <span className="text-foreground/80 group-hover:text-foreground transition-colors">
+              Get In Touch
+            </span>
           </a>
-        </div>
 
-        {/* Social Icons */}
-        <div
-          className="flex gap-2 items-center animate-fadeUp"
-          style={{ animationDelay: '0.72s' }}
-        >
-          {socialLinks.map((social, i) => (
-            <a
-              key={social.alt}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              ref={(el) => (socialRefs.current[i] = el)}
-              className="group relative flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-200"
-              style={{ background: 'rgba(155,92,255,0.07)', border: '1px solid rgba(155,92,255,0.15)', transitionProperty: 'transform, background, border-color, box-shadow', transitionDuration: '0.2s' }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(155,92,255,0.18)'; e.currentTarget.style.borderColor = 'rgba(155,92,255,0.5)'; e.currentTarget.style.boxShadow = '0 4px 18px rgba(155,92,255,0.3)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(155,92,255,0.07)'; e.currentTarget.style.borderColor = 'rgba(155,92,255,0.15)'; e.currentTarget.style.boxShadow = 'none'; }}
-              aria-label={social.alt}
-            >
-              <div className="relative w-4 h-4">
-                <Image
-                  src={social.icon}
-                  alt={social.alt}
-                  fill
-                  className="object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-200"
-                />
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      {/* ─── Profile Image — bottom right, with rings ─── */}
-      <div
-        className="absolute bottom-0 right-0 pointer-events-none select-none"
-        style={{
-          transform: `perspective(1200px) rotateY(${tilt.x}deg) rotateX(${tilt.y}deg)`,
-          transition: 'transform 0.1s ease-out',
-        }}
-      >
-        {/* Decorative rings around image */}
-        <div className="relative flex items-end justify-center">
-          <div className="relative w-52 h-52 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] xl:w-[640px] xl:h-[640px]">
-            {/* Spinning rings */}
-            <div className="hero-ring hero-ring-1" />
-            <div className="hero-ring hero-ring-2" />
-
-            {/* Subtle glow platform at bottom */}
-            <div
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-12 rounded-full"
-              style={{ background: 'radial-gradient(ellipse, rgba(155,92,255,0.3) 0%, transparent 70%)', filter: 'blur(12px)' }}
-            />
-
-            {/* Profile image */}
-            <div
-              className="relative w-full h-full opacity-20 sm:opacity-100"
-              style={{ animation: 'heroImageFloat 6s ease-in-out infinite' }}
-            >
-              <Image
-                src="/images/profile_image.png"
-                alt="Qamrosh Ali Nazar - Mobile App Developer and Software Engineer Portfolio"
-                fill
-                className="object-contain object-bottom drop-shadow-2xl"
-                priority
-              />
-            </div>
+          {/* Magnetic Socials Inline */}
+          <div className="flex items-center gap-3 ml-2">
+            {socialLinks.slice(0, 3).map((social, i) => (
+              <a
+                key={social.alt}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                ref={(el) => (socialRefs.current[i] = el)}
+                className="w-10 h-10 rounded-xl flex items-center justify-center bg-foreground/[0.03] border border-foreground/10 hover:bg-foreground/[0.08] hover:border-foreground/20 transition-all duration-300 group"
+                aria-label={social.alt}
+              >
+                <div className="relative w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <Image src={social.icon} alt={social.alt} fill className="object-contain" />
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* ─── Scroll Down Indicator ─── */}
+      {/* ─── Premium Profile Presentation ─── */}
       <div
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 animate-fadeIn"
-        style={{ animationDelay: '1.4s' }}
+        className="absolute bottom-0 right-0 w-[45%] h-[90%] hidden lg:flex items-end justify-center pointer-events-none"
+        style={{
+          transform: `perspective(1000px) rotateY(${tilt.x}deg) rotateX(${tilt.y}deg)`,
+          transition: 'transform 0.2s cubic-bezier(0.2, 0, 0.2, 1)',
+        }}
       >
-        <span className="text-[10px] text-foreground/30 font-inter tracking-[0.2em] uppercase">Scroll</span>
-        <div className="animate-bounceDown" style={{ color: '#9b5cff', opacity: 0.7 }}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 5v14M5 12l7 7 7-7" />
-          </svg>
+        <div className="relative w-full h-full max-w-[700px]">
+          {/* Layered Glows */}
+          <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[80%] h-[60%] bg-blue-500/10 rounded-full blur-[100px] animate-pulse" />
+          <div className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-[60%] h-[40%] bg-purple-500/10 rounded-full blur-[80px] animate-pulse" style={{ animationDelay: '1s' }} />
+
+          {/* Modern Rings */}
+          <div className="absolute bottom-[20%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] border border-foreground/5 rounded-full animate-spin-slow" />
+          <div className="absolute bottom-[25%] left-1/2 -translate-x-1/2 w-[400px] h-[400px] border border-foreground/[0.03] rounded-full animate-reverse-spin-slow" />
+
+          {/* Profile Image with subtle floating */}
+          <div
+            className="relative w-full h-full flex items-end justify-center"
+            style={{ animation: 'heroImageFloat 8s ease-in-out infinite' }}
+          >
+            <Image
+              src="/images/profile_image.png"
+              alt="Qamrosh Ali Nazar"
+              fill
+              className="object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_20px_50px_rgba(255,255,255,0.05)]"
+              priority
+            />
+          </div>
         </div>
+      </div>
+
+      {/* ─── Subtle Scroll Indicator ─── */}
+      <div
+        className="absolute bottom-10 left-10 hidden md:flex flex-col items-center gap-4 animate-fadeIn"
+        style={{ animationDelay: '1.5s' }}
+      >
+        <div className="w-px h-12 bg-gradient-to-b from-blue-500 to-transparent" />
+        <span className="text-[10px] text-foreground/40 font-space-grotesk tracking-[0.3em] uppercase vertical-text">
+          Scroll
+        </span>
       </div>
     </section>
   );

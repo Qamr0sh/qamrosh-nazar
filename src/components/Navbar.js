@@ -106,8 +106,8 @@ export default function Navbar() {
                 {/* Animated underline */}
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 rounded-full ${activeLink === link.name.toLowerCase()
-                      ? 'w-full'
-                      : 'w-0 group-hover:w-full'
+                    ? 'w-full'
+                    : 'w-0 group-hover:w-full'
                     }`}
                   style={{ background: 'linear-gradient(90deg, #5b6ef5, #9b5cff)' }}
                 />

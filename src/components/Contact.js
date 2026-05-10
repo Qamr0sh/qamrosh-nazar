@@ -147,7 +147,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-space-grotesk font-semibold text-foreground">Phone</p>
-                  <p className="text-sm text-foreground/60">+966 56 982 9451</p>
+                  <p className="text-sm text-foreground/60">+92 316 8661 932</p>
                 </div>
               </div>
 
@@ -160,7 +160,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-space-grotesk font-semibold text-foreground">Location</p>
-                  <p className="text-sm text-foreground/60">Riyadh, Saudi Arabia</p>
+                  <p className="text-sm text-foreground/60">Kotli AJK, Pakistan</p>
                 </div>
               </div>
             </div>
@@ -260,7 +260,7 @@ export default function Contact() {
                   </div>
                 </a>
                 <a
-                  href="https://wa.me/966569829451?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!"
+                  href="https://wa.me/923168661932?text=Hi%20Qamrosh%2C%20I%20saw%20your%20portfolio!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative p-2 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 border border-white/10 hover:-translate-y-1"
