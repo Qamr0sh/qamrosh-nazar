@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const metadata = {
-    title: 'Pre-Registration Offer Terms - AtomiClock',
-    description: 'Exclusive Rewards for AtomiClock Early Adopters.',
+    title: 'Pre-Registration Offer Terms - Atomic Clock',
+    description: 'Exclusive Rewards for Atomic Clock Early Adopters.',
 };
 
 export default function PreRegisterTerms() {
@@ -14,7 +14,7 @@ export default function PreRegisterTerms() {
                         Pre-Registration Offer
                     </h1>
                     <p className="text-lg text-slate-600 dark:text-slate-400">
-                        Exclusive Rewards for <strong>AtomiClock</strong> Early Adopters
+                        Exclusive Rewards for <strong>Atomic Clock</strong> Early Adopters
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-500">
                         Effective Date: April 25, 2026
@@ -25,7 +25,7 @@ export default function PreRegisterTerms() {
                     <section className="space-y-4">
                         <h2 className="text-2xl font-semibold font-space-grotesk border-b border-slate-200 dark:border-white/10 pb-2">1. The Offer</h2>
                         <p className="text-slate-600 dark:text-slate-400">
-                            Users who successfully "Pre-Register" for AtomiClock on the Google Play Store prior to the official launch are eligible for the Alchemist's Circle rewards.
+                            Users who successfully "Pre-Register" for Atomic Clock on the Google Play Store prior to the official launch are eligible for the Alchemist's Circle rewards.
                         </p>
                         <div className="bg-[#D4AF37]/5 rounded-2xl p-8 border border-[#D4AF37]/20 backdrop-blur-xl">
                             <h3 className="text-xl font-bold font-space-grotesk flex items-center gap-3 mb-6 text-[#D4AF37]">
@@ -76,7 +76,7 @@ export default function PreRegisterTerms() {
                 </div>
 
                 <div className="pt-12 mt-8 border-t border-slate-200 dark:border-white/10 text-center text-sm text-slate-500">
-                    <p>&copy; {new Date().getFullYear()} AtomiClock. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Atomic Clock. All rights reserved.</p>
                 </div>
             </div>
         </main>

@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const metadata = {
-    title: 'Privacy Policy - AtomiClock',
-    description: 'Modern, privacy-first policy for AtomiClock habit tracker.',
+    title: 'Privacy Policy - Atomic Clock',
+    description: 'Modern, privacy-first policy for Atomic Clock habit tracker.',
 };
 
 export default function PrivacyPolicy() {
@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
                         Privacy Policy
                     </h1>
                     <p className="text-lg text-slate-600 dark:text-slate-400">
-                        For <strong>AtomiClock</strong>
+                        For <strong>Atomic Clock</strong>
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-500">
                         Last Updated: April 25, 2026
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
 
                 <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">
                     <p className="text-slate-600 dark:text-slate-400">
-                        At AtomiClock, we believe that your habits are your own business. Our philosophy is built on "Atomic Habits" and "Identity-Based Tracking," and privacy is a fundamental part of who you are becoming.
+                        At Atomic Clock, we believe that your habits are your own business. Our philosophy is built on "Atomic Habits" and "Identity-Based Tracking," and privacy is a fundamental part of who you are becoming.
                     </p>
 
                     <section className="space-y-4">
@@ -77,7 +77,7 @@ export default function PrivacyPolicy() {
                 </div>
 
                 <div className="pt-12 mt-8 border-t border-slate-200 dark:border-white/10 text-center text-sm text-slate-500">
-                    <p>&copy; {new Date().getFullYear()} AtomiClock. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Atomic Clock. All rights reserved.</p>
                 </div>
             </div>
         </main>

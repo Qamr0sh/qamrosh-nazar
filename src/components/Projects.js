@@ -76,11 +76,11 @@ export default function Projects() {
     },
     {
       id: 1,
-      title: 'AtomiClock',
+      title: 'Atomic Clock',
       category: 'mobile',
       type: 'Personal Project',
       description: 'Transform Your Life, One Atomic Habit at a Time. A privacy-first offline habit tracker.',
-      longDescription: 'AtomiClock is your personal habit companion designed around the proven principles of atomic habits. Build better routines, track meaningful progress, and become the person you want to be—all while keeping your data completely private and offline.',
+      longDescription: 'Atomic Clock is your personal habit companion designed around the proven principles of atomic habits. Build better routines, track meaningful progress, and become the person you want to be—all while keeping your data completely private and offline.',
       tech: ['Flutter', 'Offline First', 'Local Storage', 'Analytics', 'Dark Mode'],
       techColors: {
         'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',

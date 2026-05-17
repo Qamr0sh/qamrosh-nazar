@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { ArrowLeft, CheckCircle2, Shield, Zap, BarChart2, Calendar, Target, Clock, Trophy, Sparkles, Fingerprint } from 'lucide-react';
 
 export const metadata = {
-    title: 'AtomiClock - Build the Identity of Who You Want to Become',
+    title: 'Atomic Clock - Build the Identity of Who You Want to Become',
     description: 'A premium habit-tracking experience built on the philosophy of Atomic Habits and Identity-Based Tracking. Privacy-first, locally stored, and designed for discipline.',
 };
 
-export default function AtomiClockPage() {
+export default function AtomicClockPage() {
     const goldColor = '#D4AF37';
     const neonPurple = '#BC13FE';
 
@@ -26,12 +26,12 @@ export default function AtomiClockPage() {
                             <div className="relative w-10 h-10 ring-2 ring-[#D4AF37]/20 rounded-xl p-1 bg-gradient-to-br from-[#1a1c2e] to-[#0B0D17]">
                                 <Image
                                     src="/atomic_clock/logos/logos%20with%20varient/dark_mode_logo.png"
-                                    alt="AtomiClock Logo"
+                                    alt="Atomic Clock Logo"
                                     fill
                                     className="object-contain p-1"
                                 />
                             </div>
-                            <span className="font-space-grotesk font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] to-white">AtomiClock</span>
+                            <span className="font-space-grotesk font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] to-white">Atomic Clock</span>
                         </div>
                     </div>
                     <div className="flex items-center gap-6">
@@ -86,7 +86,7 @@ export default function AtomiClockPage() {
                             <div className="relative rounded-3xl overflow-hidden aspect-[16/9] shadow-2xl">
                                 <Image
                                     src="/atomic_clock/Listing2.png"
-                                    alt="AtomiClock Premium Interface"
+                                    alt="Atomic Clock Premium Interface"
                                     fill
                                     className="object-cover object-top hover:scale-[1.02] transition-transform duration-700"
                                     priority
@@ -124,7 +124,7 @@ export default function AtomiClockPage() {
                             </div>
                             <h2 className="text-4xl md:text-6xl font-bold font-space-grotesk leading-tight">Beyond mere tracking. <br />This is <span className="text-[#D4AF37]">Alchemy</span>.</h2>
                             <p className="text-xl text-slate-400 leading-relaxed font-light">
-                                AtomiClock isn't just an app; it's a digital sanctum for your personal evolution. Built on the core tenets of <i>Atomic Habits</i>, we focus on the identity shift. Every check-off is a vote for the person you wish to become.
+                                Atomic Clock isn't just an app; it's a digital sanctum for your personal evolution. Built on the core tenets of <i>Atomic Habits</i>, we focus on the identity shift. Every check-off is a vote for the person you wish to become.
                             </p>
                             <div className="space-y-6">
                                 {[
@@ -147,7 +147,7 @@ export default function AtomiClockPage() {
                             <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#0B0D17] p-2">
                                 <Image
                                     src="/atomic_clock/listing3.png"
-                                    alt="AtomiClock Features"
+                                    alt="Atomic Clock Features"
                                     width={600}
                                     height={800}
                                     className="rounded-2xl"
@@ -219,11 +219,11 @@ export default function AtomiClockPage() {
                             <div className="relative z-10 space-y-10">
                                 <h2 className="text-5xl md:text-7xl font-bold font-space-grotesk text-white tracking-tighter">Ready to shift <br />your identity?</h2>
                                 <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light leading-relaxed">
-                                    Join the elite circle of individuals who track with purpose. AtomiClock is available now on Android.
+                                    Join the elite circle of individuals who track with purpose. Atomic Clock is available now on Android.
                                 </p>
                                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
                                     <a href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock&hl=en" target="_blank" rel="noopener noreferrer" className="px-12 py-5 bg-white text-black rounded-2xl font-black text-xl hover:bg-[#D4AF37] transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:-translate-y-1">
-                                        Download AtomiClock
+                                        Download Atomic Clock
                                     </a>
                                 </div>
                                 <p className="text-slate-500 text-sm font-medium tracking-widest uppercase">Privacy First. Offline Always. Premium by Design.</p>
@@ -242,12 +242,12 @@ export default function AtomiClockPage() {
                                 <div className="relative w-12 h-12 ring-2 ring-[#D4AF37]/20 rounded-xl p-1 bg-gradient-to-br from-[#1a1c2e] to-[#0B0D17]">
                                     <Image
                                         src="/atomic_clock/logos/logos%20with%20varient/dark_mode_logo.png"
-                                        alt="AtomiClock Logo"
+                                        alt="Atomic Clock Logo"
                                         fill
                                         className="object-contain p-1"
                                     />
                                 </div>
-                                <span className="font-space-grotesk font-bold text-3xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] to-white">AtomiClock</span>
+                                <span className="font-space-grotesk font-bold text-3xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] to-white">Atomic Clock</span>
                             </div>
                             <p className="text-slate-400 text-lg font-light max-w-sm leading-relaxed">
                                 The high-end habit companion for the modern alchemist. Transform your life, one atomic shift at a time.
@@ -269,7 +269,7 @@ export default function AtomiClockPage() {
                         </div>
                     </div>
                     <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                        <p className="text-slate-600 text-sm">© {new Date().getFullYear()} AtomiClock. All rights reserved.</p>
+                        <p className="text-slate-600 text-sm">© {new Date().getFullYear()} Atomic Clock. All rights reserved.</p>
                         <p className="text-slate-600 text-sm font-medium tracking-wide">Handcrafted with discipline by <span className="text-white">Qamrosh Nazar</span></p>
                     </div>
                 </div>
