@@ -25,16 +25,16 @@ export default function PreRegisterTerms() {
                     <section className="space-y-4">
                         <h2 className="text-2xl font-semibold font-space-grotesk border-b border-[#D4AF37]/20 pb-2 text-[#D4AF37]">1. The Offer</h2>
                         <p className="text-slate-300">
-                            Users who successfully "Pre-Register" for Atomic Clock on the Google Play Store prior to the official launch are eligible for the Alchemist's Circle rewards.
+                            Users who successfully "Pre-Register" for Atomic Clock on the Google Play Store prior to the official launch are eligible for the Early Adopters rewards.
                         </p>
                         <div className="bg-[#D4AF37]/5 rounded-2xl p-8 border border-[#D4AF37]/20 backdrop-blur-xl">
                             <h3 className="text-xl font-bold font-space-grotesk flex items-center gap-3 mb-6 text-[#D4AF37]">
-                                <span className="text-2xl">✨</span> Alchemist's Circle Rewards
+                                <span className="text-2xl">✨</span> Early Adopters Rewards
                             </h3>
                             <ul className="space-y-4 text-slate-300">
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>
-                                    <span>Unlock the exclusive <b>"Founding Alchemist"</b> Badge</span>
+                                    <span>Unlock the exclusive <b>"Founding Member"</b> Badge</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>

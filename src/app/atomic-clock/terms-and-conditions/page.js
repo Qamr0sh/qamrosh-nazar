@@ -77,7 +77,7 @@ export default function TermsAndConditions() {
                     </section>
                 </div>
 
-                {/* The Alchemist's Circle Plan Matrix */}
+                {/* The Premium Plan Matrix */}
                 <div className="pt-20 border-t border-white/10 space-y-12">
                     <div className="text-center space-y-4">
                         <div className="inline-block px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold uppercase tracking-widest">
@@ -122,7 +122,7 @@ export default function TermsAndConditions() {
                                 <div className="text-[#00F3FF] font-bold text-[10px] uppercase tracking-widest mb-1 flex items-center gap-1">
                                     <Sparkles className="w-3 h-3" /> Premium Tier
                                 </div>
-                                <h3 className="text-lg font-black font-space-grotesk text-white mb-2">Monthly Alchemist</h3>
+                                <h3 className="text-lg font-black font-space-grotesk text-white mb-2">Monthly Premium</h3>
                                 <div className="text-2xl font-black font-space-grotesk text-white my-4">
                                     $0.99 <span className="text-[10px] font-normal text-slate-400">/ month</span>
                                 </div>
@@ -152,22 +152,22 @@ export default function TermsAndConditions() {
                                 <div className="text-[#BC13FE] font-bold text-[10px] uppercase tracking-widest mb-1 flex items-center gap-1">
                                     <Sparkles className="w-3 h-3" /> Premium Tier
                                 </div>
-                                <h3 className="text-lg font-black font-space-grotesk text-white mb-2">Annual Alchemist</h3>
+                                <h3 className="text-lg font-black font-space-grotesk text-white mb-2">Annual Premium</h3>
                                 <div className="text-2xl font-black font-space-grotesk text-white my-4">
                                     $9.99 <span className="text-[10px] font-normal text-slate-400">/ year</span>
                                 </div>
                                 <ul className="space-y-3 pt-4 border-t border-white/5 text-xs text-slate-300 font-light">
                                     <li className="flex items-center gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-[#BC13FE] flex-shrink-0" />
-                                        <span>All Monthly benefits included</span>
+                                        <span><b>Deep Insights</b> trend graphs (1-year access)</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-[#BC13FE] flex-shrink-0" />
-                                        <span>Bypasses system terminations</span>
+                                        <span><b>Custom Themes</b> & skins (1-year access)</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-[#BC13FE] flex-shrink-0" />
-                                        <span>Verified RevenueCat secure billing</span>
+                                        <span><b>Unlimited History</b> routine logs (1-year access)</span>
                                     </li>
                                 </ul>
                             </div>
@@ -182,22 +182,22 @@ export default function TermsAndConditions() {
                                 <div className="text-[#D4AF37] font-bold text-[10px] uppercase tracking-widest mb-1 flex items-center gap-1">
                                     <Sparkles className="w-3 h-3" /> Premium Tier
                                 </div>
-                                <h3 className="text-lg font-black font-space-grotesk text-white mb-2">Lifetime Alchemist</h3>
+                                <h3 className="text-lg font-black font-space-grotesk text-white mb-2">Lifetime Premium</h3>
                                 <div className="text-2xl font-black font-space-grotesk text-white my-4">
                                     $29.99 <span className="text-[10px] font-normal text-slate-400">One-Time</span>
                                 </div>
                                 <ul className="space-y-3 pt-4 border-t border-white/5 text-xs text-slate-300 font-light">
                                     <li className="flex items-center gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
-                                        <span>Infinite access with zero renewals</span>
+                                        <span><b>Deep Insights</b> trend graphs (lifetime access)</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
-                                        <span><b>"Founding Alchemist"</b> Badge</span>
+                                        <span><b>Custom Themes</b> & skins (lifetime access)</span>
                                     </li>
                                     <li className="flex items-center gap-2">
                                         <CheckCircle2 className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
-                                        <span>Gold & Obsidian custom App Icon</span>
+                                        <span><b>Unlimited History</b> routine logs (lifetime access)</span>
                                     </li>
                                 </ul>
                             </div>

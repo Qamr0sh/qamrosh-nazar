@@ -757,7 +757,7 @@ export default function AtomicClockClient() {
                 </div>
             </section>
 
-            {/* Pricing Section (The Alchemist's Circle) */}
+            {/* Pricing Section (Premium Plans) */}
             <section className="py-20 md:py-32 relative border-t border-white/5 bg-[#03050B]">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     
@@ -765,7 +765,7 @@ export default function AtomicClockClient() {
                         <div className="inline-block px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-4">
                             Unlock Full Capability
                         </div>
-                        <h2 className="text-3xl md:text-6xl font-black font-space-grotesk text-white">The Alchemist's Circle</h2>
+                        <h2 className="text-3xl md:text-6xl font-black font-space-grotesk text-white">Premium Plans</h2>
                         <p className="text-slate-400 mt-4 text-base md:text-lg font-light max-w-2xl mx-auto">
                             Choose the level of discipline that matches your trajectory. Basic habit building remains 100% free, forever.
                         </p>
@@ -820,7 +820,7 @@ export default function AtomicClockClient() {
                                 <div className="text-4xl md:text-5xl font-black font-space-grotesk text-white my-6 md:my-8">
                                     $0 <span className="text-xs font-normal text-slate-500">Free Forever</span>
                                 </div>
-
+ 
                                 <ul className="space-y-4 pt-6 border-t border-white/5 text-xs md:text-sm text-slate-300 font-light">
                                     <li className="flex items-center gap-3">
                                         <CheckCircle2 className="w-4.5 h-4.5 text-slate-500 flex-shrink-0" />
@@ -844,15 +844,15 @@ export default function AtomicClockClient() {
                                     </li>
                                 </ul>
                             </div>
-
+ 
                             <a href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock" target="_blank" rel="noopener noreferrer" className="w-full py-4 mt-8 md:mt-10 bg-white/5 hover:bg-white/10 text-white font-bold rounded-2xl border border-white/10 transition-all font-space-grotesk text-center text-sm">
                                 Start Tracking Free
                             </a>
                         </div>
-
+ 
                         {/* Dynamic Premium Tier Card */}
                         {(() => {
-                            let premiumTitle = "Monthly Alchemist";
+                            let premiumTitle = "Monthly Premium";
                             let premiumPrice = "$0.99";
                             let premiumPeriod = "/ month";
                             let premiumSub = "Refine your routines with standard terms.";
@@ -861,9 +861,9 @@ export default function AtomicClockClient() {
                             let premiumBorder = "border-white/5 bg-white/[0.02]";
                             let premiumShadow = "hover:shadow-[0_15px_30px_rgba(255,255,255,0.02)] hover:border-white/10";
                             let iconColor = "text-[#00F3FF]";
-
+ 
                             if (billingPeriod === "annual") {
-                                premiumTitle = "Annual Alchemist";
+                                premiumTitle = "Annual Premium";
                                 premiumPrice = "$9.99";
                                 premiumPeriod = "/ year";
                                 premiumSub = "Cast long-term votes for your new identity.";
@@ -873,7 +873,7 @@ export default function AtomicClockClient() {
                                 premiumShadow = "shadow-[0_20px_50px_rgba(188,19,254,0.06)]";
                                 iconColor = "text-[#BC13FE]";
                             } else if (billingPeriod === "lifetime") {
-                                premiumTitle = "Lifetime Alchemist";
+                                premiumTitle = "Lifetime Premium";
                                 premiumPrice = "$29.99";
                                 premiumPeriod = "One-Time Payment";
                                 premiumSub = "Ultimate infinite access. No renewals, ever.";
@@ -883,14 +883,14 @@ export default function AtomicClockClient() {
                                 premiumShadow = "shadow-[0_20px_50px_rgba(212,175,55,0.1)]";
                                 iconColor = "text-[#D4AF37]";
                             }
-
+ 
                             return (
                                 <div className={`relative group rounded-3xl border ${premiumBorder} p-6 md:p-10 transition-all duration-500 flex flex-col justify-between ${premiumShadow}`}>
                                     {/* Glowing pill badge on active selection */}
                                     <div className="absolute top-0 right-8 -translate-y-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#BC13FE] to-[#D4AF37] text-black text-[9px] font-black uppercase tracking-widest shadow-md">
                                         {premiumBadge}
                                     </div>
-
+ 
                                     <div>
                                         <div className="text-[#D4AF37] font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-1.5">
                                             <Sparkles className="w-4 h-4 text-[#D4AF37]" /> Premium Plan
@@ -901,7 +901,7 @@ export default function AtomicClockClient() {
                                         <div className="text-4xl md:text-5xl font-black font-space-grotesk text-white my-6 md:my-8">
                                             {premiumPrice} <span className="text-xs font-normal text-slate-400">{premiumPeriod}</span>
                                         </div>
-
+ 
                                         <ul className="space-y-4 pt-6 border-t border-white/5 text-xs md:text-sm text-slate-300 font-light">
                                             <li className="flex items-center gap-3">
                                                 <CheckCircle2 className={`w-4.5 h-4.5 ${iconColor} flex-shrink-0`} />
@@ -919,7 +919,7 @@ export default function AtomicClockClient() {
                                             {billingPeriod === "lifetime" ? (
                                                 <li className="flex items-center gap-3">
                                                     <CheckCircle2 className={`w-4.5 h-4.5 ${iconColor} flex-shrink-0`} />
-                                                    <span>Exclusive <b>"Founding Alchemist"</b> Profile Badge</span>
+                                                    <span>Exclusive <b>"Founding Member"</b> Profile Badge</span>
                                                 </li>
                                             ) : (
                                                 <li className="flex items-center gap-3">
@@ -927,14 +927,14 @@ export default function AtomicClockClient() {
                                                     <span>Bypasses low-level system optimizer terminations</span>
                                                 </li>
                                             )}
-
+ 
                                             <li className="flex items-center gap-3">
                                                 <CheckCircle2 className={`w-4.5 h-4.5 ${iconColor} flex-shrink-0`} />
                                                 <span>Entitlement secured securely via RevenueCat</span>
                                             </li>
                                         </ul>
                                     </div>
-
+ 
                                     <a href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock" target="_blank" rel="noopener noreferrer" className="w-full py-4 mt-8 md:mt-10 bg-gradient-to-r from-[#BC13FE] to-[#D4AF37] text-black font-black rounded-2xl hover:brightness-110 transition-all text-center text-sm shadow-lg font-space-grotesk">
                                         {premiumBtn}
                                     </a>
