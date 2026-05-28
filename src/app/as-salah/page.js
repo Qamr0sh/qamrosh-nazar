@@ -36,12 +36,12 @@ export default function AsSalahPage() {
                     </div>
                     <div className="flex items-center gap-6">
                         <Link href="#features" className="text-sm font-medium text-slate-400 hover:text-[#C6A266] transition-colors hidden sm:block">Features</Link>
-                        <Link href="#download" className="relative group">
+                        <a href="https://play.google.com/store/apps/details?id=online.qamrosh.assalah" target="_blank" rel="noopener noreferrer" className="relative group">
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#C6A266] to-[#1B4332] rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
                             <button className="relative bg-[#050B08] text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all border border-[#C6A266]/20">
                                 Get App
                             </button>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -69,7 +69,7 @@ export default function AsSalahPage() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <a href="#" className="group relative w-full sm:w-auto">
+                            <a href="https://play.google.com/store/apps/details?id=online.qamrosh.assalah" target="_blank" rel="noopener noreferrer" className="group relative w-full sm:w-auto">
                                 <div className="absolute -inset-1 bg-gradient-to-r from-[#C6A266] to-[#1B4332] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                                 <div className="relative flex items-center justify-center gap-3 px-10 py-5 bg-[#050B08] border border-[#C6A266]/20 hover:border-[#C6A266]/50 text-white rounded-2xl font-bold transition-all hover:-translate-y-1 text-lg">
                                     <Download className="w-6 h-6 text-[#C6A266]" />
@@ -184,10 +184,10 @@ export default function AsSalahPage() {
                                 </div>
                                 <div className="text-center p-8 bg-[#1B4332]/10 rounded-3xl border border-[#1B4332]/20">
                                     <div className="text-[#C6A266] font-bold text-lg mb-2">Lifetime Access</div>
-                                    <div className="text-5xl font-bold text-white mb-6">$9.99</div>
-                                    <button className="w-full py-4 bg-[#C6A266] text-black font-bold rounded-2xl hover:bg-[#D6B276] transition-colors shadow-[0_0_20px_rgba(198,162,102,0.3)]">
+                                    <div className="text-5xl font-bold text-white mb-6">$1.99</div>
+                                    <a href="https://play.google.com/store/apps/details?id=online.qamrosh.assalah" target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-[#C6A266] text-black font-bold rounded-2xl hover:bg-[#D6B276] transition-colors shadow-[0_0_20px_rgba(198,162,102,0.3)] text-center">
                                         Go Pro Now
-                                    </button>
+                                    </a>
                                     <div className="text-slate-500 text-xs mt-4">One-time purchase. Secure via RevenueCat.</div>
                                 </div>
                             </div>
@@ -246,10 +246,10 @@ function FeatureCard({ icon, title, description, accent }) {
         <div className="group relative p-1 rounded-[2rem] transition-all duration-500 hover:-translate-y-2">
             <div className="absolute inset-0 bg-white/5 rounded-[2rem] transition-opacity group-hover:opacity-0"></div>
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            
+
             <div className="relative h-full p-8 rounded-[1.9rem] bg-[#050B08] border border-white/5 transition-all group-hover:border-[#C6A266]/20">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500`} 
-                     style={{ backgroundColor: `${accent}10`, color: accent }}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500`}
+                    style={{ backgroundColor: `${accent}10`, color: accent }}>
                     <div className="group-hover:scale-110 transition-transform duration-500">
                         {icon}
                     </div>
@@ -258,10 +258,10 @@ function FeatureCard({ icon, title, description, accent }) {
                 <p className="text-slate-400 leading-relaxed font-light text-sm">
                     {description}
                 </p>
-                
+
                 {/* Micro-glow on hover */}
                 <div className="absolute bottom-4 right-4 w-12 h-12 blur-2xl opacity-0 group-hover:opacity-40 transition-opacity"
-                     style={{ backgroundColor: accent }}></div>
+                    style={{ backgroundColor: accent }}></div>
             </div>
         </div>
     );

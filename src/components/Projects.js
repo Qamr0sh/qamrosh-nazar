@@ -50,7 +50,7 @@ export default function Projects() {
         'Custom UI': 'bg-pink-500/10 text-pink-600 border-pink-500/20'
       },
       features: ['Precision Prayer Times', 'Smart Tasbeeh Builder', 'High-Accuracy Qibla', 'Premium Personalization'],
-      status: 'Closed Testing',
+      status: 'Live',
       year: '2026',
       link: '/as-salah'
     },
