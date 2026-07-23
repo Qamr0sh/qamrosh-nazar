@@ -58,6 +58,9 @@ export default function Hero() {
 
           {/* Headline */}
           <div className="space-y-4">
+            <p className="font-space-grotesk font-semibold text-lg sm:text-xl text-slate-300">
+              Hi, I&apos;m <span className="text-white font-bold">Qamrosh Nazar</span> 👋
+            </p>
             <h1 className="font-space-grotesk font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.08]">
               Software Engineer <br />
               <span className="text-slate-400 font-semibold">&amp; Systems Developer</span>
@@ -150,6 +153,9 @@ export default function Hero() {
               
               <div className="space-y-1">
                 <p className="text-slate-500">// Primary Focus</p>
+                <p className="text-slate-200">
+                  <span className="text-emerald-400">"developer"</span>: <span className="text-slate-300">"Qamrosh Nazar"</span>,
+                </p>
                 <p className="text-slate-200">
                   <span className="text-emerald-400">"role"</span>: <span className="text-slate-300">"Software &amp; Mobile Engineer"</span>,
                 </p>
