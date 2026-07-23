@@ -7,7 +7,7 @@ export const siteConfig = {
   title: "Qamrosh Nazar - Mobile App Developer & Software Engineer",
   description: "Qamrosh Ali Nazar is a passionate Flutter developer and software engineer specializing in cross-platform mobile apps, IoT systems, and modern web solutions. Expert in clean architecture and SOLID principles.",
   url: "https://qamrosh-nazar.netlify.app", // Update with your actual domain
-  ogImage: "/images/profile_image.png",
+  ogImage: "/images/my profile.jpeg",
   author: {
     name: "Qamrosh Ali Nazar",
     alternateName: "Qamrosh Nazar",

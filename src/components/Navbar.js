@@ -72,19 +72,11 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <a href="#home" className="block group">
               <Image
-                src="/signature.svg"
-                alt="Qamrosh Nazar"
-                width={120}
-                height={40}
-                className="h-8 sm:h-10 w-auto dark:hidden transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
-                priority
-              />
-              <Image
                 src="/signature_dark.svg"
                 alt="Qamrosh Nazar"
                 width={120}
                 height={40}
-                className="h-8 sm:h-10 w-auto hidden dark:block transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
+                className="h-8 sm:h-10 w-auto transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
                 priority
               />
             </a>
@@ -109,11 +101,11 @@ export default function Navbar() {
                     ? 'w-full'
                     : 'w-0 group-hover:w-full'
                     }`}
-                  style={{ background: 'linear-gradient(90deg, #5b6ef5, #9b5cff)' }}
+                  style={{ background: '#ffffff' }}
                 />
                 {/* Active dot */}
                 {activeLink === link.name.toLowerCase() && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-purple-500 rounded-full" />
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full" />
                 )}
               </a>
             ))}
@@ -124,12 +116,11 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => handleLinkClick('contact')}
-              className="group relative font-space-grotesk text-sm font-semibold px-6 py-2.5 rounded-full border border-foreground/20 transition-all duration-300 overflow-hidden hover:border-transparent hover:shadow-lg hover:shadow-purple-500/25"
+              className="group relative font-space-grotesk text-sm font-semibold px-6 py-2.5 rounded-full border border-foreground/20 transition-all duration-300 overflow-hidden hover:border-foreground/80 hover:bg-white"
             >
-              <span className="relative z-10 text-foreground transition-colors duration-300 group-hover:text-white">
+              <span className="relative z-10 text-foreground transition-colors duration-300 group-hover:text-background">
                 Get In Touch
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
             </a>
 
             {/* Mobile Menu Button */}
@@ -170,7 +161,7 @@ export default function Navbar() {
               href={link.href}
               onClick={() => handleLinkClick(link.name)}
               className={`flex items-center font-space-grotesk text-sm font-medium py-2.5 px-4 rounded-xl transition-all duration-300 ${activeLink === link.name.toLowerCase()
-                ? 'text-foreground bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-foreground/10'
+                ? 'text-foreground bg-white/5 border border-white/10'
                 : 'text-foreground/60 hover:text-foreground hover:bg-foreground/5'
                 }`}
               style={{ transitionDelay: mobileMenuOpen ? `${i * 40}ms` : '0ms' }}

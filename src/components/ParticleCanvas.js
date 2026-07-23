@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-const COLORS = ['#5b6ef5', '#9b5cff', '#f059a8', '#22d3ee'];
+const COLORS = ['#ffffff', '#a1a1aa', '#52525b', '#e4e4e7'];
 
 export default function ParticleCanvas() {
     const canvasRef = useRef(null);
@@ -128,7 +128,7 @@ export default function ParticleCanvas() {
                         ctx.beginPath();
                         ctx.moveTo(mouse.x, mouse.y);
                         ctx.lineTo(p.x, p.y);
-                        ctx.strokeStyle = '#9b5cff';
+                        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
                         ctx.globalAlpha = opacity;
                         ctx.lineWidth = 1;
                         ctx.stroke();

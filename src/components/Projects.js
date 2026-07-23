@@ -6,17 +6,17 @@ import Image from 'next/image';
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedDesign, setSelectedDesign] = useState(null);
-  const [displayCount, setDisplayCount] = useState(3);
+  const [displayCount, setDisplayCount] = useState(6);
 
   const designShowcase = {
-    7: { // Green Metro Coaches UK
+    7: {
       title: 'Green Metro Coaches UK',
       description: 'Professional logo design for UK transportation company',
       image: '/images/green_metro_coaches_logo.jpg',
       website: 'https://greenmetrocoaches.co.uk',
       details: 'Modern, eco-friendly design reflecting sustainable transportation values with clean typography and green color palette.'
     },
-    8: { // Spectrave Solar Inspection
+    8: {
       title: 'Spectrave Solar Inspection',
       description: 'Logo for AI-powered solar inspection company',
       image: '/images/spectrave_logo.jpg',
@@ -42,19 +42,11 @@ export default function Projects() {
       description: 'Elevate Your Daily Worship. A premium Islamic lifestyle app with high-precision prayer times and spiritual tools.',
       longDescription: 'As-Salah is a state-of-the-art Islamic lifestyle app. Features include highly accurate prayer times with vocal Adhan, a precision Qibla compass, an automated Tasbeeh routine builder with haptic feedback, and a beautiful, customizable UI with dynamic themes.',
       tech: ['Flutter', 'RevenueCat', 'Geolocator', 'Haptics', 'Custom UI'],
-      techColors: {
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'RevenueCat': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Geolocator': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
-        'Haptics': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'Custom UI': 'bg-pink-500/10 text-pink-600 border-pink-500/20'
-      },
-      features: ['Precision Prayer Times', 'Smart Tasbeeh Builder', 'High-Accuracy Qibla', 'Premium Personalization'],
+      features: ['Precision Prayer Times', 'Smart Tasbeeh Builder', 'High-Accuracy Qibla Compass', 'Premium Personalization'],
       status: 'Live',
       year: '2026',
       link: '/as-salah'
     },
-
     {
       id: 1,
       title: 'Atomic Clock',
@@ -63,14 +55,7 @@ export default function Projects() {
       description: 'Transform Your Life, One Atomic Habit at a Time. A privacy-first offline habit tracker.',
       longDescription: 'Atomic Clock is your personal habit companion designed around the proven principles of atomic habits. Build better routines, track meaningful progress, and become the person you want to be—all while keeping your data completely private and offline.',
       tech: ['Flutter', 'Offline First', 'Local Storage', 'Analytics', 'Dark Mode'],
-      techColors: {
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'Offline First': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Local Storage': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
-        'Analytics': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'Dark Mode': 'bg-slate-500/10 text-slate-600 border-slate-500/20'
-      },
-      features: ['Smart Habit Organization', 'Powerful Streak Tracking', 'Deep Insights & Analytics', 'Privacy-First Design'],
+      features: ['Smart Habit Organization', 'Powerful Streak Tracking', 'Deep Insights & Analytics', 'Privacy-First Architecture'],
       status: 'Live',
       year: '2026',
       link: '/atomic-clock'
@@ -81,18 +66,9 @@ export default function Projects() {
       category: 'mobile',
       type: 'Client Project',
       description: 'Comprehensive food delivery solution for Afghanistan with separate apps for customers and vendors, featuring real-time tracking and local payment integration.',
-      longDescription: 'Developed a complete food delivery ecosystem for the Afghan market with dual applications - a customer app for ordering and a vendor app for restaurant management. Features real-time order tracking, local payment methods, and culturally adapted UX design.',
-      tech: ['Flutter', 'Firebase', 'Node.js', 'MongoDB', 'Payment Integration', 'Real-time Tracking', 'Multi-vendor Support'],
-      techColors: {
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'Firebase': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'Node.js': 'bg-green-500/10 text-green-600 border-green-500/20',
-        'MongoDB': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
-        'Payment Integration': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Real-time Tracking': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20',
-        'Multi-vendor Support': 'bg-pink-500/10 text-pink-600 border-pink-500/20'
-      },
-      features: ['Dual app architecture', 'Real-time order tracking', 'Local payment methods', 'Multi-vendor management', 'Customer & vendor dashboards', 'Afghan market adaptation'],
+      longDescription: 'Developed a complete food delivery ecosystem for the Afghan market with dual applications - a customer app for ordering and a vendor app for restaurant management.',
+      tech: ['Flutter', 'Firebase', 'Node.js', 'MongoDB', 'Payment Integration', 'Real-time Tracking'],
+      features: ['Dual App Architecture (Customer & Vendor)', 'Real-time GPS Order Tracking', 'Local Afghan Payment Methods Integration', 'Multi-Vendor Management Dashboard'],
       status: 'Live',
       year: '2025',
       link: 'https://mzfoodonline.com/'
@@ -103,17 +79,9 @@ export default function Projects() {
       category: 'mobile',
       type: 'Client Project',
       description: 'Modern matchmaking application connecting Sunni Muslim singles worldwide with advanced filtering and privacy features.',
-      longDescription: 'Built a comprehensive matchmaking platform with user verification, advanced search filters, privacy controls, and real-time messaging. The app serves the Sunni Muslim community with culturally appropriate features and modern UX design.',
+      longDescription: 'Built a comprehensive matchmaking platform with user verification, advanced search filters, privacy controls, and real-time messaging.',
       tech: ['Flutter', 'Firebase', 'Dart', 'REST APIs', 'Push Notifications', 'Payment Integration'],
-      techColors: {
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'Firebase': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'Dart': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20',
-        'REST APIs': 'bg-green-500/10 text-green-600 border-green-500/20',
-        'Push Notifications': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Payment Integration': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20'
-      },
-      features: ['User verification system', 'Advanced search filters', 'Real-time messaging', 'Privacy controls', 'Payment integration', 'Cross-platform compatibility'],
+      features: ['Secure User Verification System', 'Advanced Multi-Criteria Search Filters', 'Real-time Encrypted Messaging', 'Granular Privacy & Profile Controls'],
       status: 'Live',
       year: '2024',
       link: 'https://sunnis4marriage.com/'
@@ -124,17 +92,9 @@ export default function Projects() {
       category: 'mobile',
       type: 'Company Project',
       description: 'Corporate document management system with cloud synchronization, encryption, and collaborative features.',
-      longDescription: 'Developed a secure document management solution for enterprises with end-to-end encryption, cloud synchronization, version control, and collaborative editing capabilities. Features offline access and secure sharing.',
-      tech: ['Flutter', 'Encryption', 'Cloud Sync', 'SQLite', 'File Management', 'Payment Integration'],
-      techColors: {
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'Encryption': 'bg-red-500/10 text-red-600 border-red-500/20',
-        'Cloud Sync': 'bg-sky-500/10 text-sky-600 border-sky-500/20',
-        'SQLite': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
-        'File Management': 'bg-gray-500/10 text-gray-600 border-gray-500/20',
-        'Payment Integration': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20'
-      },
-      features: ['End-to-end encryption', 'Cloud synchronization', 'Offline access', 'Version control', 'Collaborative editing', 'Payment integration'],
+      longDescription: 'Developed a secure document management solution for enterprises with end-to-end encryption, cloud synchronization, version control, and collaborative editing capabilities.',
+      tech: ['Flutter', 'Encryption', 'Cloud Sync', 'SQLite', 'File Management'],
+      features: ['End-to-End Encrypted Storage', 'Automated Cloud Sync', 'Offline Access & SQLite Caching', 'Document Version Control'],
       status: 'Live',
       year: '2025',
       link: 'https://play.google.com/store/apps/details?id=com.wondelo.document_organizer&hl=en'
@@ -145,17 +105,9 @@ export default function Projects() {
       category: 'mobile',
       type: 'Company Project',
       description: 'Secure password management solution with multi-device sync, biometric authentication, and enterprise-grade security.',
-      longDescription: 'Built a comprehensive password management system for enterprises with military-grade encryption, biometric authentication, cross-device synchronization, and secure sharing capabilities. Includes audit trails and compliance features.',
-      tech: ['Flutter', 'Biometric Auth', 'Encryption', 'Secure Storage', 'Cross-platform Sync', 'Payment Integration'],
-      techColors: {
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'Biometric Auth': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Encryption': 'bg-red-500/10 text-red-600 border-red-500/20',
-        'Secure Storage': 'bg-amber-500/10 text-amber-600 border-amber-500/20',
-        'Cross-platform Sync': 'bg-teal-500/10 text-teal-600 border-teal-500/20',
-        'Payment Integration': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20'
-      },
-      features: ['Military-grade encryption', 'Biometric authentication', 'Multi-device sync', 'Secure sharing', 'Audit trails', 'Payment integration'],
+      longDescription: 'Built a comprehensive password management system for enterprises with military-grade encryption, biometric authentication, cross-device synchronization, and secure sharing capabilities.',
+      tech: ['Flutter', 'Biometric Auth', 'Encryption', 'Secure Storage', 'Cross-platform Sync'],
+      features: ['Military-Grade AES Encryption', 'Biometric Face & Touch Authentication', 'Cross-Device Synchronization', 'Secure Encrypted Vault Sharing'],
       status: 'Live',
       year: '2025',
       link: 'https://play.google.com/store/apps/details?id=com.wondelo.passwordmanager&hl=en'
@@ -166,18 +118,9 @@ export default function Projects() {
       category: 'iot',
       type: 'Hardware Project',
       description: 'Automated water level monitoring and control system with web dashboard and mobile notifications.',
-      longDescription: 'Built a complete water level monitoring solution using NodeMCU microcontroller with ultrasonic sensors, automatic pump control, and web-based dashboard. Includes mobile app integration for real-time monitoring and alert notifications.',
+      longDescription: 'Built a complete water level monitoring solution using NodeMCU microcontroller with ultrasonic sensors, automatic pump control, and web-based dashboard.',
       tech: ['NodeMCU', 'C++', 'Flutter', 'HTML', 'CSS', 'JavaScript', 'IoT Sensors'],
-      techColors: {
-        'NodeMCU': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
-        'C++': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'HTML': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'CSS': 'bg-pink-500/10 text-pink-600 border-pink-500/20',
-        'JavaScript': 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20',
-        'IoT Sensors': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20'
-      },
-      features: ['Water level monitoring', 'Automatic pump control', 'Web dashboard', 'Mobile notifications', 'Sensor integration', 'Real-time alerts'],
+      features: ['Real-Time Ultrasonic Water Level Monitoring', 'Automated Relay Pump Control', 'Web & Mobile Dashboard Integration', 'Instant High/Low Threshold Alerts'],
       status: 'Deployed',
       year: '2024'
     },
@@ -187,15 +130,9 @@ export default function Projects() {
       category: 'design',
       type: 'Brand Identity',
       description: 'Professional logo design for UK-based transportation company specializing in eco-friendly coach services.',
-      longDescription: 'Created a modern, professional logo that reflects the company\'s commitment to sustainable transportation. The design incorporates green elements while maintaining a professional appearance suitable for the transportation industry.',
+      longDescription: 'Created a modern, professional logo that reflects the company\'s commitment to sustainable transportation.',
       tech: ['Adobe Illustrator', 'Brand Strategy', 'Typography', 'Color Theory'],
-      techColors: {
-        'Adobe Illustrator': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'Brand Strategy': 'bg-indigo-500/10 text-indigo-600 border-indigo-500/20',
-        'Typography': 'bg-pink-500/10 text-pink-600 border-pink-500/20',
-        'Color Theory': 'bg-violet-500/10 text-violet-600 border-violet-500/20'
-      },
-      features: ['Vector graphics', 'Scalable design', 'Brand consistency', 'Print-ready files'],
+      features: ['Vector Scalable Brand Identity', 'Eco-Friendly Visual Concept', 'Full Print & Digital Assets'],
       status: 'Delivered',
       year: '2023'
     },
@@ -205,15 +142,9 @@ export default function Projects() {
       category: 'design',
       type: 'Brand Identity',
       description: 'Modern logo design for AI-powered solar inspection company using drone technology and machine learning.',
-      longDescription: 'Designed a futuristic logo that represents advanced technology and solar energy. The design incorporates elements suggesting aerial inspection, artificial intelligence, and renewable energy themes.',
-      tech: ['Adobe Illustrator', 'AI Concepts', 'Solar Energy Theme', 'Drone Imagery'],
-      techColors: {
-        'Adobe Illustrator': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'AI Concepts': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Solar Energy Theme': 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20',
-        'Drone Imagery': 'bg-slate-500/10 text-slate-600 border-slate-500/20'
-      },
-      features: ['Futuristic design', 'Technology integration', 'Energy symbolism', 'Professional aesthetics'],
+      longDescription: 'Designed a futuristic logo that represents advanced technology and solar energy.',
+      tech: ['Adobe Illustrator', 'AI Concepts', 'Solar Energy Theme'],
+      features: ['Futuristic Tech & Drone Symbolism', 'Vector Asset Suite', 'Clean Modern Typography'],
       status: 'Delivered',
       year: '2025'
     },
@@ -223,17 +154,9 @@ export default function Projects() {
       category: 'iot',
       type: 'Hardware Project',
       description: 'WiFi-enabled LED matrix controller with Android app for remote control and pattern programming.',
-      longDescription: 'Developed a comprehensive LED matrix control system using ESP32 microcontroller with WiFi connectivity. The system includes an Android app built with Flutter for remote control, pattern creation, and real-time synchronization across multiple devices.',
-      tech: ['Flutter', 'C++', 'ESP32', 'WiFi Networks', 'Bluetooth', 'Real-time Communication'],
-      techColors: {
-        'Flutter': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'C++': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'ESP32': 'bg-green-500/10 text-green-600 border-green-500/20',
-        'WiFi Networks': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20',
-        'Bluetooth': 'bg-indigo-500/10 text-indigo-600 border-indigo-500/20',
-        'Real-time Communication': 'bg-orange-500/10 text-orange-600 border-orange-500/20'
-      },
-      features: ['WiFi connectivity', 'Mobile app control', 'Pattern programming', 'Multi-device sync', 'Real-time updates', 'ESP32 integration'],
+      longDescription: 'Developed a comprehensive LED matrix control system using ESP32 microcontroller with WiFi connectivity.',
+      tech: ['Flutter', 'C++', 'ESP32', 'WiFi Networks', 'Bluetooth'],
+      features: ['ESP32 WiFi & Bluetooth Control', 'Custom Pattern Sequence Builder', 'Multi-Unit Sync Protocol'],
       status: 'Completed',
       year: '2024'
     },
@@ -243,18 +166,9 @@ export default function Projects() {
       category: 'iot',
       type: 'Hardware Project',
       description: 'Windows screen color capture system that analyzes display content and syncs ambient lighting to ESP32 LED matrix.',
-      longDescription: 'Developed an intelligent lighting system that captures colors from Windows screen content using computer vision techniques. The system analyzes visual data in real-time and sends color information to ESP32-controlled LED matrices for synchronized ambient lighting that matches on-screen content.',
-      tech: ['Python', 'Computer Vision', 'C++', 'ESP32', 'OpenCV', 'Real-time Processing', 'Windows API'],
-      techColors: {
-        'Python': 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20',
-        'Computer Vision': 'bg-green-500/10 text-green-600 border-green-500/20',
-        'C++': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'ESP32': 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
-        'OpenCV': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'Real-time Processing': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'Windows API': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20'
-      },
-      features: ['Screen color capture', 'Real-time analysis', 'ESP32 integration', 'Ambient lighting sync', 'Computer vision processing', 'Windows system integration'],
+      longDescription: 'Developed an intelligent lighting system that captures colors from Windows screen content using computer vision techniques.',
+      tech: ['Python', 'Computer Vision', 'C++', 'ESP32', 'OpenCV'],
+      features: ['Real-Time Windows Screen Capture', 'OpenCV Color Extraction Algorithm', 'Zero-Latency ESP32 LED Sync'],
       status: 'Completed',
       year: '2024'
     },
@@ -264,18 +178,9 @@ export default function Projects() {
       category: 'iot',
       type: 'Academic Project',
       description: 'Computer Vision and IoT-based solution for automated parking management with real-time monitoring and mobile app control.',
-      longDescription: 'Developed a comprehensive smart parking system using computer vision for vehicle detection, OCR for license plate recognition, and IoT sensors for real-time monitoring. The system provides automated parking space allocation and mobile app integration for users.',
-      tech: ['Python', 'OpenCV', 'OCR', 'C++', 'Kotlin', 'IoT', 'Computer Vision'],
-      techColors: {
-        'Python': 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20',
-        'OpenCV': 'bg-green-500/10 text-green-600 border-green-500/20',
-        'OCR': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-        'C++': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
-        'Kotlin': 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-        'IoT': 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20',
-        'Computer Vision': 'bg-indigo-500/10 text-indigo-600 border-indigo-500/20'
-      },
-      features: ['Real-time vehicle detection', 'License plate recognition', 'IoT sensor integration', 'Mobile app control', 'Automated parking allocation'],
+      longDescription: 'Developed a comprehensive smart parking system using computer vision for vehicle detection, OCR for license plate recognition, and IoT sensors.',
+      tech: ['Python', 'OpenCV', 'OCR', 'C++', 'Kotlin', 'IoT'],
+      features: ['Automatic License Plate Recognition (OCR)', 'Real-Time Parking Space Allocation', 'Mobile App Booking Interface'],
       status: 'Completed',
       year: '2023'
     },
@@ -286,7 +191,7 @@ export default function Projects() {
     { id: 'mobile', name: 'Mobile Apps' },
     { id: 'iot', name: 'IoT & Hardware' },
     { id: 'design', name: 'Design & Branding' },
-    { id: 'enterprise', name: 'Enterprise' }
+    { id: 'enterprise', name: 'Enterprise Solutions' }
   ];
 
   const filteredProjects = activeFilter === 'all'
@@ -296,7 +201,7 @@ export default function Projects() {
         case 'mobile': return project.category === 'mobile';
         case 'iot': return project.category === 'iot';
         case 'design': return project.category === 'design';
-        case 'enterprise': return project.type === 'Enterprise Solution';
+        case 'enterprise': return project.type.includes('Company') || project.type.includes('Client') || project.type.includes('Enterprise');
         default: return true;
       }
     });
@@ -304,133 +209,135 @@ export default function Projects() {
   const displayedProjects = filteredProjects.slice(0, displayCount);
 
   return (
-    <section id="projects" className="relative min-h-screen px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-b from-background to-background/95">
-      <div className="max-w-7xl mx-auto w-full">
+    <section id="projects" className="relative w-full py-24 bg-[var(--background)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="text-sm sm:text-base font-space-grotesk text-blue-500 font-semibold uppercase tracking-wider mb-4">
-            Featured Projects
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-space-grotesk font-bold text-foreground mb-6">
-            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-              Portfolio Showcase
+        <div className="max-w-3xl mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px w-8 bg-white" />
+            <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
+              Selected Portfolio
             </span>
-          </h2>
-          <p className="text-foreground/60 font-inter text-sm sm:text-base max-w-3xl mx-auto leading-relaxed mb-12">
-            A collection of innovative projects spanning mobile development, IoT solutions, enterprise applications,
-            and creative design work that demonstrate technical expertise and problem-solving capabilities.
-          </p>
-
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveFilter(category.id)}
-                className={`px-6 py-3 rounded-full font-inter text-sm font-medium transition-all duration-300 ${activeFilter === category.id
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg'
-                  : 'bg-foreground/5 text-foreground/60 hover:bg-foreground/10 hover:text-foreground border border-foreground/10'
-                  }`}
-              >
-                {category.name}
-              </button>
-            ))}
           </div>
+
+          <h2 className="text-3xl sm:text-5xl font-space-grotesk font-extrabold text-white leading-tight mb-4">
+            Engineering &amp; Hardware Showcase
+          </h2>
+
+          <p className="text-slate-400 font-inter text-base leading-relaxed">
+            Production-ready mobile applications, hardware automation architectures, and enterprise software solutions.
+          </p>
+        </div>
+
+        {/* Filter Bar */}
+        <div className="flex flex-wrap gap-2.5 mb-12 border-b border-white/10 pb-6">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => {
+                setActiveFilter(category.id);
+                setDisplayCount(6);
+              }}
+              className={`px-5 py-2.5 rounded-xl font-space-grotesk text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
+                activeFilter === category.id
+                  ? 'bg-white text-slate-950 shadow-sm'
+                  : 'bg-white/[0.04] text-slate-300 border border-white/10 hover:border-white/30 hover:text-white'
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {displayedProjects.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayedProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-2xl p-6 hover:bg-foreground/10 hover:border-foreground/20 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="exec-card p-6 flex flex-col justify-between"
             >
-              {/* Project Header */}
-              <div className="mb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${project.category === 'mobile' ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20' :
-                    project.category === 'iot' ? 'bg-purple-500/10 text-purple-600 border border-purple-500/20' :
-                      project.category === 'design' ? 'bg-pink-500/10 text-pink-600 border border-pink-500/20' :
-                        'bg-green-500/10 text-green-600 border border-green-500/20'
-                    }`}>
+              <div>
+                {/* Header info */}
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="px-2.5 py-1 rounded-md text-[11px] font-space-grotesk font-semibold bg-white/[0.06] border border-white/10 text-slate-300">
                     {project.type}
                   </span>
-                  <span className="text-xs text-foreground/40 font-inter">{project.year}</span>
+                  <span className="text-xs font-inter text-slate-500">{project.year}</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-space-grotesk font-bold text-foreground mb-3 group-hover:text-blue-500 transition-colors">
+
+                <h3 className="text-xl font-space-grotesk font-bold text-white mb-2">
                   {project.title}
                 </h3>
-              </div>
 
-              {/* Project Description */}
-              <p className="text-foreground/70 font-inter text-sm leading-relaxed mb-4">
-                {project.description}
-              </p>
+                <p className="text-slate-400 font-inter text-xs leading-relaxed mb-5">
+                  {project.description}
+                </p>
 
-              {/* Tech Stack */}
-              <div className="mb-6">
-                <p className="text-xs font-medium text-foreground/60 mb-2 uppercase tracking-wider">Technologies Used</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.slice(0, 4).map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className={`px-3 py-1 rounded-full text-xs font-medium border ${project.techColors[tech]}`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-foreground/10 text-foreground/60 border border-foreground/20">
-                      +{project.tech.length - 4} more
-                    </span>
-                  )}
+                {/* Tech Tags */}
+                <div className="mb-5">
+                  <p className="text-[10px] font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                    Technologies &amp; Tools
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tech.slice(0, 4).map((tech, i) => (
+                      <span
+                        key={i}
+                        className="exec-pill text-[11px] py-1 px-2.5"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.tech.length > 4 && (
+                      <span className="exec-pill text-[11px] py-1 px-2.5 text-slate-400">
+                        +{project.tech.length - 4}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Features List Items */}
+                <div className="mb-6">
+                  <p className="text-[10px] font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                    Key Deliverables
+                  </p>
+                  <div className="space-y-2">
+                    {project.features.slice(0, 4).map((feature, i) => (
+                      <div key={i} className="list-item-pro">
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Features */}
-              <div className="mb-6">
-                <p className="text-xs font-medium text-foreground/60 mb-2 uppercase tracking-wider">Key Features</p>
-                <ul className="text-sm text-foreground/70 space-y-1">
-                  {project.features.slice(0, 3).map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 flex-shrink-0"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Project Status */}
-              <div className="flex items-center justify-between pt-4 border-t border-foreground/10">
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${project.status === 'Live' ? 'bg-green-500/10 text-green-600 border border-green-500/20' :
-                  project.status === 'Closed Testing' ? 'bg-amber-500/10 text-amber-600 border border-amber-500/20' :
-                    project.status === 'Deployed' ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20' :
-                      project.status === 'Completed' ? 'bg-purple-500/10 text-purple-600 border border-purple-500/20' :
-                        project.status === 'In Development' ? 'bg-orange-500/10 text-orange-600 border border-orange-500/20' :
-                          'bg-gray-500/10 text-gray-600 border border-gray-500/20'
-                  }`}>
+              {/* Action Footer */}
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 text-xs font-inter text-slate-400">
+                  <span className={`w-2 h-2 rounded-full ${project.status === 'Live' || project.status === 'Deployed' ? 'bg-emerald-500' : 'bg-slate-500'}`} />
                   {project.status}
                 </span>
+
                 <div className="flex items-center gap-2">
                   {project.category === 'design' && (
                     <button
                       onClick={() => openDesignModal(project.id)}
-                      className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-medium rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+                      className="px-3.5 py-1.5 bg-white text-slate-950 text-xs font-space-grotesk font-bold rounded-lg hover:bg-slate-200 transition-colors cursor-pointer"
                     >
-                      View Design
+                      View Branding
                     </button>
                   )}
                   {project.link && (
                     <a
                       href={project.link}
-                      className="px-3 py-1 bg-gradient-to-r from-[#704ede] to-purple-600 text-white text-xs font-medium rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+                      className="px-3.5 py-1.5 bg-white text-slate-950 text-xs font-space-grotesk font-bold rounded-lg hover:bg-slate-200 transition-colors inline-flex items-center gap-1 cursor-pointer"
                     >
-                      View Project
+                      View Details
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7-7 7M3 12h18" />
+                      </svg>
                     </a>
                   )}
-                  <span className="text-xs text-foreground/40 font-inter">
-                    Project #{project.id}
-                  </span>
                 </div>
               </div>
             </div>
@@ -441,119 +348,62 @@ export default function Projects() {
         {filteredProjects.length > displayCount && (
           <div className="flex justify-center mt-12">
             <button
-              onClick={() => {
-                if (displayCount + 3 >= filteredProjects.length) {
-                  setDisplayCount(filteredProjects.length);
-                } else {
-                  setDisplayCount(displayCount + 3);
-                }
-              }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-space-grotesk font-semibold rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+              onClick={() => setDisplayCount(prev => prev + 3)}
+              className="px-7 py-3.5 bg-white text-slate-950 font-space-grotesk font-bold text-sm rounded-xl hover:bg-slate-200 transition-all duration-200 cursor-pointer"
             >
               Load More Projects ({filteredProjects.length - displayCount} remaining)
             </button>
           </div>
         )}
 
-        {/* Show Less Projects Button */}
-        {displayCount > 3 && (
-          <div className="flex justify-center mt-12">
-            <button
-              onClick={() => setDisplayCount(3)}
-              className="px-8 py-4 bg-foreground/10 text-foreground font-space-grotesk font-semibold rounded-full hover:bg-foreground/20 transition-all duration-300"
-            >
-              Show Less Projects
-            </button>
-          </div>
-        )}
-
-        {/* Additional Projects Note */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-foreground/5 to-foreground/10 border border-foreground/10 rounded-full">
-            <span className="text-sm text-foreground/60 font-inter">
-              + 15+ additional freelancing projects across various domains and technologies
-            </span>
-          </div>
-        </div>
       </div>
-
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-pink-500/5 rounded-full blur-3xl"></div>
-      </div>
-
 
       {/* Design Showcase Modal */}
       {selectedDesign && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-background border border-foreground/10 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-space-grotesk font-bold text-foreground">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+          <div className="exec-card p-6 max-w-xl w-full space-y-6 shadow-2xl">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-space-grotesk font-bold text-white">
                 {selectedDesign.title}
               </h3>
               <button
                 onClick={closeDesignModal}
-                className="w-8 h-8 bg-foreground/10 hover:bg-foreground/20 rounded-full flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
               >
-                <svg className="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                ✕
               </button>
             </div>
 
-            <div className="space-y-6">
-              {/* Logo Image */}
-              <div className="aspect-video bg-gradient-to-br from-foreground/5 to-foreground/10 rounded-xl border border-foreground/10 flex items-center justify-center overflow-hidden">
-                <Image
-                  src={selectedDesign.image}
-                  alt={`${selectedDesign.title} Logo`}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-contain p-8"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="text-center hidden">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-white">
-                      {selectedDesign.title.split(' ')[0].charAt(0)}
-                    </span>
-                  </div>
-                  <p className="text-foreground/60 font-inter">Logo Preview</p>
-                  <p className="text-sm text-foreground/40 mt-1">Design available for download</p>
-                </div>
-              </div>
+            <div className="aspect-video relative rounded-xl border border-white/10 bg-slate-900 overflow-hidden flex items-center justify-center">
+              <Image
+                src={selectedDesign.image}
+                alt={selectedDesign.title}
+                fill
+                className="object-contain p-6"
+              />
+            </div>
 
-              <div>
-                <h4 className="font-space-grotesk font-semibold text-foreground mb-2">Project Details</h4>
-                <p className="text-foreground/70 font-inter leading-relaxed">
-                  {selectedDesign.details}
-                </p>
-              </div>
+            <div>
+              <p className="text-sm font-inter text-slate-300 leading-relaxed">
+                {selectedDesign.details}
+              </p>
+            </div>
 
-              <div className="flex gap-3 pt-4">
-                <a
-                  href={selectedDesign.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-space-grotesk font-semibold rounded-lg hover:shadow-lg transition-all duration-300 text-center"
-                >
-                  Visit Website
-                </a>
-                <button className="flex-1 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-space-grotesk font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                  Download Files
-                </button>
-                <button
-                  onClick={closeDesignModal}
-                  className="px-4 py-3 bg-foreground/10 text-foreground font-space-grotesk font-semibold rounded-lg hover:bg-foreground/20 transition-colors"
-                >
-                  Close
-                </button>
-              </div>
+            <div className="flex gap-3 pt-2">
+              <a
+                href={selectedDesign.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-4 py-2.5 bg-white text-slate-950 font-space-grotesk font-bold text-xs rounded-lg hover:bg-slate-200 text-center transition-colors"
+              >
+                Visit Website
+              </a>
+              <button
+                onClick={closeDesignModal}
+                className="px-4 py-2.5 bg-white/10 text-white font-space-grotesk font-semibold text-xs rounded-lg hover:bg-white/20 transition-colors cursor-pointer"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>

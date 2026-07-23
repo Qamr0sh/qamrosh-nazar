@@ -37,7 +37,7 @@ export default function TypewriterText({ texts, typingSpeed = 100, deletingSpeed
   return (
     <span className="inline-flex items-center">
       {currentText}
-      <span className="ml-1 w-0.5 h-6 sm:h-8 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 animate-pulse"></span>
+      <span className="ml-1 w-0.5 h-6 sm:h-8 bg-white animate-pulse"></span>
     </span>
   );
 }

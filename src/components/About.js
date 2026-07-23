@@ -1,6 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useCountUp } from '@/hooks/useCountUp';
 
@@ -11,42 +10,25 @@ function StatCard({ number, label, icon, shouldAnimate, index }) {
 
   return (
     <div
-      className="group relative flex flex-col items-center justify-center p-4 rounded-2xl overflow-hidden cursor-default"
+      className="exec-card flex flex-col items-center justify-center p-5 cursor-default text-center"
       style={{
-        background: 'rgba(155,92,255,0.06)',
-        border: '1px solid rgba(155,92,255,0.15)',
         opacity: shouldAnimate ? 1 : 0,
-        transform: shouldAnimate ? 'translateY(0) scale(1)' : 'translateY(14px) scale(0.95)',
-        transition: `opacity 0.5s ease ${index * 80}ms, transform 0.5s ease ${index * 80}ms`,
+        transform: shouldAnimate ? 'translateY(0)' : 'translateY(12px)',
+        transition: `opacity 0.4s ease ${index * 80}ms, transform 0.4s ease ${index * 80}ms`,
       }}
     >
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-        style={{ background: 'radial-gradient(circle at 50% 50%, rgba(155,92,255,0.14), transparent 70%)' }}
-      />
-      <span className="text-2xl mb-1">{icon}</span>
-      <p
-        className="text-2xl font-black font-space-grotesk leading-none mb-1"
-        style={{
-          background: 'linear-gradient(135deg, #5b6ef5, #9b5cff, #f059a8)',
-          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-        }}
-      >
+      <span className="text-2xl mb-1.5">{icon}</span>
+      <p className="text-3xl font-extrabold font-space-grotesk leading-none mb-1 text-white">
         {shouldAnimate ? `${count}${suffix}` : '0'}
       </p>
-      <p className="text-xs text-foreground/50 font-inter text-center leading-tight">{label}</p>
+      <p className="text-xs text-slate-400 font-inter leading-tight">{label}</p>
     </div>
   );
 }
 
-function TechTag({ label, color }) {
+function TechTag({ label }) {
   return (
-    <span
-      className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold font-inter cursor-default select-none transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
-      style={{ background: `${color}12`, border: `1px solid ${color}28`, color }}
-      onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 3px 12px ${color}30`; }}
-      onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; }}
-    >
+    <span className="exec-pill">
       {label}
     </span>
   );
@@ -55,224 +37,182 @@ function TechTag({ label, color }) {
 export default function About() {
   const highlights = [
     { number: '2+', label: 'Years Experience', icon: '🗓️' },
-    { number: '15+', label: 'Projects Done', icon: '🚀' },
-    { number: '8+', label: 'Technologies', icon: '⚡' },
-    { number: '100%', label: 'Passion', icon: '🔥' },
+    { number: '15+', label: 'Projects Completed', icon: '🚀' },
+    { number: '8+', label: 'Tech Stacks', icon: '⚡' },
+    { number: '100%', label: 'Commitment', icon: '🔥' },
+  ];
+
+  const coreCapabilities = [
+    'Cross-Platform Mobile Apps (Flutter, Dart, Clean Architecture)',
+    'IoT & Embedded Hardware Integration (ESP32, Arduino C++, Sensor Logic)',
+    'Enterprise Full-Stack & REST API Engineering (Node.js, Python, Firebase)',
+    'User-Centric Interface Design & Scalable Design Systems (Figma)',
   ];
 
   const techTags = [
-    { label: 'Flutter', color: '#5b6ef5' }, { label: 'Dart', color: '#22d3ee' },
-    { label: 'Python', color: '#f59e0b' }, { label: 'IoT', color: '#9b5cff' },
-    { label: 'Arduino', color: '#22c55e' }, { label: 'ESP32', color: '#f059a8' },
-    { label: 'Firebase', color: '#f97316' }, { label: 'Figma', color: '#a78bfa' },
-    { label: 'UI/UX', color: '#38bdf8' }, { label: 'Node.js', color: '#4ade80' },
-    { label: 'Next.js', color: '#94a3b8' }, { label: 'Smart Home', color: '#fb7185' },
+    { label: 'Flutter' }, { label: 'Dart' },
+    { label: 'Python' }, { label: 'IoT' },
+    { label: 'Arduino' }, { label: 'ESP32' },
+    { label: 'Firebase' }, { label: 'Figma' },
+    { label: 'UI/UX' }, { label: 'Node.js' },
+    { label: 'Next.js' }, { label: 'Smart Home' },
   ];
 
   const { ref: leftRef, isVisible: leftVisible } = useScrollReveal(0.1);
   const { ref: rightRef, isVisible: rightVisible } = useScrollReveal(0.1);
   const { ref: statsRef, isVisible: statsVisible } = useScrollReveal(0.15);
 
-  const cardRef = useRef(null);
-  const onCardMove = (e) => {
-    const card = cardRef.current;
-    if (!card) return;
-    const { left, top, width, height } = card.getBoundingClientRect();
-    const x = ((e.clientX - left) / width - 0.5) * 16;
-    const y = -((e.clientY - top) / height - 0.5) * 16;
-    card.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg) scale(1.015)`;
-  };
-  const onCardLeave = () => {
-    if (cardRef.current)
-      cardRef.current.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)';
-  };
-
   return (
-    <section
-      id="about"
-      className="relative w-full overflow-hidden"
-      style={{ height: '100svh', display: 'flex', alignItems: 'center' }}
-    >
+    <section id="about" className="relative w-full py-24 bg-[var(--background)]">
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-
-        {/* ─── Section label ─── */}
+        
+        {/* Section Header */}
         <div
-          className="flex items-center gap-3 mb-6"
+          ref={leftRef}
+          className="flex items-center gap-3 mb-10"
           style={{
             opacity: leftVisible ? 1 : 0,
             transform: leftVisible ? 'none' : 'translateY(10px)',
             transition: 'opacity 0.5s ease, transform 0.5s ease',
           }}
-          ref={leftRef}
         >
-          <div className="h-px w-8" style={{ background: 'linear-gradient(90deg, transparent, #9b5cff)' }} />
-          <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em]" style={{ color: '#9b5cff' }}>
+          <div className="h-px w-8 bg-white" />
+          <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
             About Me
           </span>
-          <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, rgba(155,92,255,0.3), transparent)' }} />
+          <div className="h-px flex-1 bg-white/10" />
         </div>
 
-        {/* ─── Two-column grid ─── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-          {/* LEFT */}
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* LEFT COLUMN: Narrative & Core Pillars */}
           <div
-            className="flex flex-col gap-5"
+            className="lg:col-span-7 flex flex-col gap-6"
             style={{
               opacity: leftVisible ? 1 : 0,
-              transform: leftVisible ? 'translateX(0)' : 'translateX(-28px)',
-              transition: 'opacity 0.65s ease 0.05s, transform 0.65s ease 0.05s',
+              transform: leftVisible ? 'translateX(0)' : 'translateX(-20px)',
+              transition: 'opacity 0.5s ease, transform 0.5s ease',
             }}
           >
-            {/* Headline */}
             <div>
-              <h2
-                className="font-space-grotesk font-black leading-[1.06] mb-3"
-                style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)' }}
-              >
-                <span className="text-foreground">Crafting </span>
-                <span style={{
-                  background: 'linear-gradient(135deg, #5b6ef5, #9b5cff, #f059a8)',
-                  WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-                }}>Digital</span>
-                <br />
-                <span className="text-foreground">Excellence</span>
+              <h2 className="font-space-grotesk font-extrabold text-3xl sm:text-5xl text-white leading-tight mb-4">
+                Engineering Purposeful <br /> Mobile &amp; Hardware Solutions
               </h2>
-              <p className="font-inter text-sm leading-relaxed text-foreground/55 max-w-lg">
-                A <span className="font-semibold text-foreground">passionate Flutter developer</span> and{' '}
-                <span className="font-semibold text-foreground">software engineer</span> based in Riyadh — building
-                cross-platform apps, IoT systems, and web solutions that{' '}
-                <span style={{ color: '#9b5cff', fontWeight: 600 }}>blend creativity with engineering</span>.
+              <p className="font-inter text-slate-400 text-base leading-relaxed mb-4">
+                I am a <strong className="text-white font-semibold">Software Engineer and Flutter Specialist</strong> based in Pakistan.
+                With a strong background in cross-platform mobile development, embedded IoT systems, and user-centric UI design,
+                I translate complex technical requirements into elegant, high-impact products.
               </p>
             </div>
 
-            {/* Quote */}
-            <blockquote
-              className="pl-3 py-2 text-xs italic text-foreground/50 font-inter rounded-r-lg"
-              style={{ borderLeft: '3px solid #9b5cff', background: 'rgba(155,92,255,0.05)' }}
-            >
-              &ldquo;Great software isn&rsquo;t just built — it&rsquo;s engineered with purpose, precision, and passion.&rdquo;
+            <blockquote className="pl-4 py-3 text-sm italic text-slate-300 border-l-2 border-white bg-white/[0.02] rounded-r-lg">
+              &ldquo;Reliable software isn&rsquo;t accidental — it is engineered with clarity, precision, and architectural discipline.&rdquo;
             </blockquote>
 
-            {/* Tech Tags */}
-            <div>
-              <p className="text-[10px] text-foreground/40 font-inter font-semibold uppercase tracking-wider mb-2">
-                Technologies &amp; Tools
+            {/* Core Capability List Items */}
+            <div className="space-y-3 pt-2">
+              <p className="text-xs text-slate-400 font-space-grotesk font-semibold uppercase tracking-wider mb-2">
+                Core Disciplines
               </p>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="space-y-2">
+                {coreCapabilities.map((item, index) => (
+                  <div key={index} className="list-item-pro">
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs text-slate-400 font-space-grotesk font-semibold uppercase tracking-wider mb-3 mt-2">
+                Technologies &amp; Frameworks
+              </p>
+              <div className="flex flex-wrap gap-2">
                 {techTags.map((tag) => (
                   <TechTag key={tag.label} {...tag} />
                 ))}
               </div>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-space-grotesk font-bold text-sm text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
-                style={{ background: 'linear-gradient(135deg, #5b6ef5, #9b5cff)', boxShadow: '0 4px 16px rgba(155,92,255,0.3)' }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-space-grotesk font-bold text-sm bg-white text-slate-950 hover:bg-slate-200 transition-all duration-200"
               >
-                View My Projects
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
+                Explore Projects
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7-7 7M3 12h18" />
                 </svg>
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-1.5 font-space-grotesk font-bold text-sm transition-all duration-300 hover:gap-3"
-                style={{ color: '#9b5cff' }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-space-grotesk font-semibold text-sm border border-white/15 bg-white/[0.02] text-white hover:bg-white/[0.08] transition-all duration-200"
               >
-                Get In Touch
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                Contact Me
               </a>
             </div>
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT COLUMN: Stats & Highlights */}
           <div
             ref={rightRef}
-            className="flex flex-col gap-4"
+            className="lg:col-span-5 flex flex-col gap-5"
             style={{
               opacity: rightVisible ? 1 : 0,
-              transform: rightVisible ? 'translateX(0)' : 'translateX(28px)',
-              transition: 'opacity 0.65s ease 0.15s, transform 0.65s ease 0.15s',
+              transform: rightVisible ? 'translateX(0)' : 'translateX(20px)',
+              transition: 'opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s',
             }}
           >
-            {/* 2×2 Stat grid */}
-            <div ref={statsRef} className="grid grid-cols-2 gap-3">
+            {/* 2x2 Stats Grid */}
+            <div ref={statsRef} className="grid grid-cols-2 gap-4">
               {highlights.map((item, i) => (
                 <StatCard key={i} {...item} index={i} shouldAnimate={statsVisible} />
               ))}
             </div>
 
-            {/* 3D Info Card */}
-            <div
-              ref={cardRef}
-              onMouseMove={onCardMove}
-              onMouseLeave={onCardLeave}
-              className="relative rounded-2xl p-5 overflow-hidden transition-transform duration-200 ease-out"
-              style={{ background: 'rgba(155,92,255,0.05)', border: '1px solid rgba(155,92,255,0.16)', transformStyle: 'preserve-3d' }}
-            >
-              <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(155,92,255,0.45), transparent)' }} />
-              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,110,245,0.18) 0%, transparent 70%)' }} />
-
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'linear-gradient(135deg, #5b6ef5, #9b5cff)', boxShadow: '0 6px 20px rgba(155,92,255,0.4)', animation: 'glowPulse 3s ease-in-out infinite' }}
-                >
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
+            {/* Featured Focus Box */}
+            <div className="exec-card p-6 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white text-slate-950 flex items-center justify-center font-bold">
+                  ⚡
                 </div>
                 <div>
-                  <h3 className="font-space-grotesk font-bold text-sm text-foreground">Building the Future</h3>
-                  <p className="font-inter text-xs text-foreground/45">One line of code at a time</p>
+                  <h3 className="font-space-grotesk font-bold text-base text-white">Full-Lifecycle Engineering</h3>
+                  <p className="font-inter text-xs text-slate-400">From concept &amp; architecture to store publishing</p>
                 </div>
               </div>
 
-              <div className="flex gap-3 pt-3" style={{ borderTop: '1px solid rgba(155,92,255,0.1)' }}>
-                {[
-                  { label: 'Flutter Apps', value: '10+', color: '#5b6ef5' },
-                  { label: 'IoT Devices', value: '5+', color: '#9b5cff' },
-                  { label: 'Happy Clients', value: '100%', color: '#f059a8' },
-                ].map(({ label, value, color }) => (
-                  <div key={label} className="flex-1 text-center">
-                    <p className="font-space-grotesk font-black text-base" style={{ color }}>{value}</p>
-                    <p className="font-inter text-[10px] text-foreground/40 mt-0.5 leading-tight">{label}</p>
-                  </div>
-                ))}
+              <div className="grid grid-cols-3 gap-2 pt-4 border-t border-white/10 text-center">
+                <div>
+                  <p className="font-space-grotesk font-extrabold text-lg text-white">10+</p>
+                  <p className="font-inter text-[11px] text-slate-400">Mobile Apps</p>
+                </div>
+                <div>
+                  <p className="font-space-grotesk font-extrabold text-lg text-white">5+</p>
+                  <p className="font-inter text-[11px] text-slate-400">IoT Systems</p>
+                </div>
+                <div>
+                  <p className="font-space-grotesk font-extrabold text-lg text-white">100%</p>
+                  <p className="font-inter text-[11px] text-slate-400">Client Satisfaction</p>
+                </div>
               </div>
             </div>
 
-            {/* Currently Building */}
-            <div
-              className="flex items-start gap-3 p-4 rounded-xl"
-              style={{ background: 'rgba(34,211,238,0.04)', border: '1px solid rgba(34,211,238,0.14)' }}
-            >
-              <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm"
-                style={{ background: 'rgba(34,211,238,0.1)' }}>💡</div>
+            {/* Currently Active Note */}
+            <div className="exec-card p-5 flex items-start gap-3.5">
+              <span className="text-xl">📱</span>
               <div>
-                <p className="font-space-grotesk font-bold text-xs text-foreground mb-0.5">Currently Building</p>
-                <p className="font-inter text-xs text-foreground/50 leading-relaxed">
-                  <span style={{ color: '#22d3ee', fontWeight: 600 }}>Atomic Clock</span> — a smart
-                  habit tracking app to help you build better daily routines &amp; achieve your goals.
+                <p className="font-space-grotesk font-bold text-xs text-white mb-0.5 uppercase tracking-wider">Latest Flagship App</p>
+                <p className="font-inter text-xs text-slate-400 leading-relaxed">
+                  Published <strong className="text-white font-medium">As-Salah</strong> &amp; <strong className="text-white font-medium">Atomic Clock</strong> on Google Play Store — privacy-focused, performance-optimized Flutter apps.
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Background orbs */}
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-80 h-80 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(91,110,245,0.07) 0%, transparent 70%)', animation: 'orbFloat2 14s ease-in-out infinite' }} />
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(240,89,168,0.06) 0%, transparent 70%)', animation: 'orbFloat1 18s ease-in-out infinite' }} />
+          </div>
+
+        </div>
       </div>
     </section>
   );
