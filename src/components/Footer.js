@@ -75,7 +75,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-inter text-slate-500">
           <p>© {currentYear} Qamrosh Ali Nazar. All rights reserved.</p>
-          <p>Enhanced with <span className="text-emerald-400 font-medium">animatorlib</span> • Next.js Portfolio</p>
+          <p className="italic text-slate-400">“Turning complex ideas into elegant digital reality.”</p>
         </div>
       </div>
     </footer>
