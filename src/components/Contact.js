@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Reveal, GlowCard, Magnetic } from '@/lib/animatorlib';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -93,25 +94,31 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative w-full py-24 bg-[var(--background)]">
+    <section id="contact" className="relative w-full py-24 bg-[var(--background)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-white" />
-            <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
-              Get In Touch
-            </span>
-          </div>
+          <Reveal direction="down" delay={0.1}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-white" />
+              <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
+                Get In Touch
+              </span>
+            </div>
+          </Reveal>
 
-          <h2 className="text-3xl sm:text-5xl font-space-grotesk font-extrabold text-white leading-tight mb-4">
-            Let&apos;s Build Something Solid
-          </h2>
+          <Reveal direction="up" delay={0.2}>
+            <h2 className="text-3xl sm:text-5xl font-space-grotesk font-extrabold text-white leading-tight mb-4">
+              Let&apos;s Build Something Solid
+            </h2>
+          </Reveal>
 
-          <p className="text-slate-400 font-inter text-base leading-relaxed">
-            Have a project opportunity, architectural inquiry, or software proposal? Drop me a line below or reach out directly.
-          </p>
+          <Reveal direction="up" delay={0.3}>
+            <p className="text-slate-400 font-inter text-base leading-relaxed">
+              Have a project opportunity, architectural inquiry, or software proposal? Drop me a line below or reach out directly.
+            </p>
+          </Reveal>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -119,137 +126,149 @@ export default function Contact() {
           {/* Left Column: Direct Contact Info & Engagement Pillars */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="exec-card p-6 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-xl">
-                ✉️
-              </div>
-              <div>
-                <p className="text-xs font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider">Direct Email</p>
-                <p className="font-space-grotesk font-bold text-base text-white mt-0.5">qamrosh55@gmail.com</p>
-              </div>
-            </div>
+            <Reveal direction="left" delay={0.15}>
+              <GlowCard glowColor="rgba(255, 255, 255, 0.07)" maxTilt={8} className="exec-card p-6 flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-900/60">
+                <div className="w-12 h-12 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white text-xl shadow-md">
+                  ✉️
+                </div>
+                <div>
+                  <p className="text-xs font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider">Direct Email</p>
+                  <p className="font-space-grotesk font-bold text-base text-white mt-0.5">qamrosh55@gmail.com</p>
+                </div>
+              </GlowCard>
+            </Reveal>
 
-            <div className="exec-card p-6 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-xl">
-                💬
-              </div>
-              <div>
-                <p className="text-xs font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider">WhatsApp &amp; Direct Phone</p>
-                <p className="font-space-grotesk font-bold text-base text-white mt-0.5">+92 316 8661 932</p>
-              </div>
-            </div>
+            <Reveal direction="left" delay={0.25}>
+              <GlowCard glowColor="rgba(255, 255, 255, 0.07)" maxTilt={8} className="exec-card p-6 flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-900/60">
+                <div className="w-12 h-12 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white text-xl shadow-md">
+                  💬
+                </div>
+                <div>
+                  <p className="text-xs font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider">WhatsApp &amp; Direct Phone</p>
+                  <p className="font-space-grotesk font-bold text-base text-white mt-0.5">+92 316 8661 932</p>
+                </div>
+              </GlowCard>
+            </Reveal>
 
-            <div className="exec-card p-6 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-xl">
-                📍
-              </div>
-              <div>
-                <p className="text-xs font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider">Base Location</p>
-                <p className="font-space-grotesk font-bold text-base text-white mt-0.5">Kotli AJK, Pakistan</p>
-              </div>
-            </div>
+            <Reveal direction="left" delay={0.35}>
+              <GlowCard glowColor="rgba(255, 255, 255, 0.07)" maxTilt={8} className="exec-card p-6 flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-900/60">
+                <div className="w-12 h-12 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white text-xl shadow-md">
+                  📍
+                </div>
+                <div>
+                  <p className="text-xs font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider">Base Location</p>
+                  <p className="font-space-grotesk font-bold text-base text-white mt-0.5">Kotli AJK, Pakistan</p>
+                </div>
+              </GlowCard>
+            </Reveal>
 
             {/* Engagement Scope List */}
-            <div className="exec-card p-6 space-y-3">
-              <p className="font-space-grotesk font-bold text-xs text-white uppercase tracking-wider">
-                Collaboration Scope
-              </p>
-              <div className="space-y-2">
-                {engagementPillars.map((item, index) => (
-                  <div key={index} className="list-item-pro">
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <Reveal direction="left" delay={0.45}>
+              <GlowCard glowColor="rgba(255, 255, 255, 0.05)" maxTilt={6} className="exec-card p-6 space-y-3 rounded-2xl border border-white/10 bg-slate-900/60">
+                <p className="font-space-grotesk font-bold text-xs text-white uppercase tracking-wider">
+                  Collaboration Scope
+                </p>
+                <div className="space-y-2">
+                  {engagementPillars.map((item, index) => (
+                    <div key={index} className="list-item-pro">
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </GlowCard>
+            </Reveal>
 
           </div>
 
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="exec-card p-8">
-              <h3 className="text-xl font-space-grotesk font-bold text-white mb-6">
-                Send Direct Message
-              </h3>
+            <Reveal direction="right" delay={0.2}>
+              <GlowCard glowColor="rgba(255, 255, 255, 0.07)" maxTilt={6} className="exec-card p-8 rounded-2xl border border-white/10 bg-slate-900/60">
+                <h3 className="text-xl font-space-grotesk font-bold text-white mb-6">
+                  Send Direct Message
+                </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-xs font-space-grotesk font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="John Doe"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-white transition-colors text-sm font-inter"
+                      />
+                      {errors.name && <p className="text-rose-400 text-xs mt-1 font-inter">{errors.name}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-space-grotesk font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                        Your Email
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="john@example.com"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-white transition-colors text-sm font-inter"
+                      />
+                      {errors.email && <p className="text-rose-400 text-xs mt-1 font-inter">{errors.email}</p>}
+                    </div>
+                  </div>
+
                   <div>
                     <label className="block text-xs font-space-grotesk font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                      Your Name
+                      Subject / Project Context
                     </label>
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
+                      name="subject"
+                      value={formData.subject}
                       onChange={handleChange}
-                      placeholder="John Doe"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-white transition-colors text-sm font-inter"
+                      placeholder="Flutter App Inquiry / IoT Architecture"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-white transition-colors text-sm font-inter"
                     />
-                    {errors.name && <p className="text-rose-400 text-xs mt-1 font-inter">{errors.name}</p>}
+                    {errors.subject && <p className="text-rose-400 text-xs mt-1 font-inter">{errors.subject}</p>}
                   </div>
 
                   <div>
                     <label className="block text-xs font-space-grotesk font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                      Your Email
+                      Message
                     </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
+                    <textarea
+                      name="message"
+                      rows={4}
+                      value={formData.message}
                       onChange={handleChange}
-                      placeholder="john@example.com"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-white transition-colors text-sm font-inter"
+                      placeholder="Describe your project requirements, scope, timeline..."
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-white transition-colors text-sm font-inter resize-none"
                     />
-                    {errors.email && <p className="text-rose-400 text-xs mt-1 font-inter">{errors.email}</p>}
+                    {errors.message && <p className="text-rose-400 text-xs mt-1 font-inter">{errors.message}</p>}
                   </div>
-                </div>
 
-                <div>
-                  <label className="block text-xs font-space-grotesk font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                    Subject / Project Context
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="Flutter App Inquiry / IoT Architecture"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-white transition-colors text-sm font-inter"
-                  />
-                  {errors.subject && <p className="text-rose-400 text-xs mt-1 font-inter">{errors.subject}</p>}
-                </div>
+                  {submitMessage && (
+                    <p className="text-xs font-inter text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 p-3 rounded-lg">
+                      {submitMessage}
+                    </p>
+                  )}
 
-                <div>
-                  <label className="block text-xs font-space-grotesk font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Describe your project requirements, scope, timeline..."
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-white transition-colors text-sm font-inter resize-none"
-                  />
-                  {errors.message && <p className="text-rose-400 text-xs mt-1 font-inter">{errors.message}</p>}
-                </div>
-
-                {submitMessage && (
-                  <p className="text-xs font-inter text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 p-3 rounded-lg">
-                    {submitMessage}
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 rounded-xl font-space-grotesk font-bold text-sm bg-white text-slate-950 hover:bg-slate-200 transition-all duration-200 cursor-pointer shadow-md"
-                >
-                  {isSubmitting ? 'Preparing Email...' : 'Send Message'}
-                </button>
-              </form>
-            </div>
+                  <Magnetic strength={0.2} className="w-full">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-4 rounded-xl font-space-grotesk font-bold text-sm bg-white text-slate-950 hover:bg-slate-200 transition-all duration-200 cursor-pointer shadow-lg"
+                    >
+                      {isSubmitting ? 'Preparing Email...' : 'Send Message'}
+                    </button>
+                  </Magnetic>
+                </form>
+              </GlowCard>
+            </Reveal>
           </div>
 
         </div>

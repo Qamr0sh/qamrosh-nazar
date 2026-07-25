@@ -208,3 +208,62 @@ body {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
 }
+
+/* =====================================================
+   ANIMATORLIB ENHANCED KEYFRAMES & UTILITIES
+   ===================================================== */
+@keyframes ambientPulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.1) translate(-10px, 15px);
+  }
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes borderRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-ambientPulse {
+  animation: ambientPulse 8s ease-in-out infinite;
+}
+
+.animate-floatSlow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #ffffff 0%, #94a3b8 25%, #ffffff 50%, #64748b 75%, #ffffff 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textShimmer 6s linear infinite;
+}
+
+.glow-mesh-backdrop {
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+}

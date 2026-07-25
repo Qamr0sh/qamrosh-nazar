@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { Reveal, GlowCard, Magnetic } from '@/lib/animatorlib';
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -209,159 +210,178 @@ export default function Projects() {
   const displayedProjects = filteredProjects.slice(0, displayCount);
 
   return (
-    <section id="projects" className="relative w-full py-24 bg-[var(--background)]">
+    <section id="projects" className="relative w-full py-24 bg-[var(--background)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-white" />
-            <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
-              Selected Portfolio
-            </span>
-          </div>
+          <Reveal direction="down" delay={0.1}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-white" />
+              <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
+                Selected Portfolio
+              </span>
+            </div>
+          </Reveal>
 
-          <h2 className="text-3xl sm:text-5xl font-space-grotesk font-extrabold text-white leading-tight mb-4">
-            Engineering &amp; Hardware Showcase
-          </h2>
+          <Reveal direction="up" delay={0.2}>
+            <h2 className="text-3xl sm:text-5xl font-space-grotesk font-extrabold text-white leading-tight mb-4">
+              Engineering &amp; Hardware Showcase
+            </h2>
+          </Reveal>
 
-          <p className="text-slate-400 font-inter text-base leading-relaxed">
-            Production-ready mobile applications, hardware automation architectures, and enterprise software solutions.
-          </p>
+          <Reveal direction="up" delay={0.3}>
+            <p className="text-slate-400 font-inter text-base leading-relaxed">
+              Production-ready mobile applications, hardware automation architectures, and enterprise software solutions.
+            </p>
+          </Reveal>
         </div>
 
         {/* Filter Bar */}
-        <div className="flex flex-wrap gap-2.5 mb-12 border-b border-white/10 pb-6">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => {
-                setActiveFilter(category.id);
-                setDisplayCount(6);
-              }}
-              className={`px-5 py-2.5 rounded-xl font-space-grotesk text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
-                activeFilter === category.id
-                  ? 'bg-white text-slate-950 shadow-sm'
-                  : 'bg-white/[0.04] text-slate-300 border border-white/10 hover:border-white/30 hover:text-white'
-              }`}
-            >
-              {category.name}
-            </button>
-          ))}
-        </div>
+        <Reveal direction="up" delay={0.35}>
+          <div className="flex flex-wrap gap-2.5 mb-12 border-b border-white/10 pb-6">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => {
+                  setActiveFilter(category.id);
+                  setDisplayCount(6);
+                }}
+                className={`px-5 py-2.5 rounded-xl font-space-grotesk text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
+                  activeFilter === category.id
+                    ? 'bg-white text-slate-950 shadow-md scale-105'
+                    : 'bg-white/[0.04] text-slate-300 border border-white/10 hover:border-white/30 hover:text-white'
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+        </Reveal>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayedProjects.map((project) => (
-            <div
-              key={project.id}
-              className="exec-card p-6 flex flex-col justify-between"
-            >
-              <div>
-                {/* Header info */}
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="px-2.5 py-1 rounded-md text-[11px] font-space-grotesk font-semibold bg-white/[0.06] border border-white/10 text-slate-300">
-                    {project.type}
-                  </span>
-                  <span className="text-xs font-inter text-slate-500">{project.year}</span>
+          {displayedProjects.map((project, idx) => (
+            <Reveal key={project.id} direction="scale" delay={idx * 0.08} duration={0.5}>
+              <GlowCard
+                glowColor="rgba(255, 255, 255, 0.08)"
+                maxTilt={10}
+                className="exec-card p-6 flex flex-col justify-between h-full rounded-2xl border border-white/10 bg-slate-900/60"
+              >
+                <div>
+                  {/* Header info */}
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="px-2.5 py-1 rounded-md text-[11px] font-space-grotesk font-semibold bg-white/[0.06] border border-white/10 text-slate-300">
+                      {project.type}
+                    </span>
+                    <span className="text-xs font-inter text-slate-500">{project.year}</span>
+                  </div>
+
+                  <h3 className="text-xl font-space-grotesk font-bold text-white mb-2">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-slate-400 font-inter text-xs leading-relaxed mb-5">
+                    {project.description}
+                  </p>
+
+                  {/* Tech Tags */}
+                  <div className="mb-5">
+                    <p className="text-[10px] font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                      Technologies &amp; Tools
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tech.slice(0, 4).map((tech, i) => (
+                        <span
+                          key={i}
+                          className="exec-pill text-[11px] py-1 px-2.5"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.tech.length > 4 && (
+                        <span className="exec-pill text-[11px] py-1 px-2.5 text-slate-400">
+                          +{project.tech.length - 4}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Features List Items */}
+                  <div className="mb-6">
+                    <p className="text-[10px] font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                      Key Deliverables
+                    </p>
+                    <div className="space-y-2">
+                      {project.features.slice(0, 4).map((feature, i) => (
+                        <div key={i} className="list-item-pro">
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                <h3 className="text-xl font-space-grotesk font-bold text-white mb-2">
-                  {project.title}
-                </h3>
+                {/* Action Footer */}
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-inter text-slate-400">
+                    <span className={`w-2 h-2 rounded-full ${project.status === 'Live' || project.status === 'Deployed' ? 'bg-emerald-500 animate-pulse' : 'bg-slate-500'}`} />
+                    {project.status}
+                  </span>
 
-                <p className="text-slate-400 font-inter text-xs leading-relaxed mb-5">
-                  {project.description}
-                </p>
-
-                {/* Tech Tags */}
-                <div className="mb-5">
-                  <p className="text-[10px] font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                    Technologies &amp; Tools
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tech.slice(0, 4).map((tech, i) => (
-                      <span
-                        key={i}
-                        className="exec-pill text-[11px] py-1 px-2.5"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.tech.length > 4 && (
-                      <span className="exec-pill text-[11px] py-1 px-2.5 text-slate-400">
-                        +{project.tech.length - 4}
-                      </span>
+                  <div className="flex items-center gap-2">
+                    {project.category === 'design' && (
+                      <Magnetic strength={0.2}>
+                        <button
+                          onClick={() => openDesignModal(project.id)}
+                          className="px-3.5 py-1.5 bg-white text-slate-950 text-xs font-space-grotesk font-bold rounded-lg hover:bg-slate-200 transition-colors cursor-pointer"
+                        >
+                          View Branding
+                        </button>
+                      </Magnetic>
+                    )}
+                    {project.link && (
+                      <Magnetic strength={0.2}>
+                        <a
+                          href={project.link}
+                          className="px-3.5 py-1.5 bg-white text-slate-950 text-xs font-space-grotesk font-bold rounded-lg hover:bg-slate-200 transition-colors inline-flex items-center gap-1 cursor-pointer shadow-sm"
+                        >
+                          View Details
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7-7 7M3 12h18" />
+                          </svg>
+                        </a>
+                      </Magnetic>
                     )}
                   </div>
                 </div>
-
-                {/* Features List Items */}
-                <div className="mb-6">
-                  <p className="text-[10px] font-space-grotesk font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                    Key Deliverables
-                  </p>
-                  <div className="space-y-2">
-                    {project.features.slice(0, 4).map((feature, i) => (
-                      <div key={i} className="list-item-pro">
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Action Footer */}
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 text-xs font-inter text-slate-400">
-                  <span className={`w-2 h-2 rounded-full ${project.status === 'Live' || project.status === 'Deployed' ? 'bg-emerald-500' : 'bg-slate-500'}`} />
-                  {project.status}
-                </span>
-
-                <div className="flex items-center gap-2">
-                  {project.category === 'design' && (
-                    <button
-                      onClick={() => openDesignModal(project.id)}
-                      className="px-3.5 py-1.5 bg-white text-slate-950 text-xs font-space-grotesk font-bold rounded-lg hover:bg-slate-200 transition-colors cursor-pointer"
-                    >
-                      View Branding
-                    </button>
-                  )}
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      className="px-3.5 py-1.5 bg-white text-slate-950 text-xs font-space-grotesk font-bold rounded-lg hover:bg-slate-200 transition-colors inline-flex items-center gap-1 cursor-pointer"
-                    >
-                      View Details
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7-7 7M3 12h18" />
-                      </svg>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
+              </GlowCard>
+            </Reveal>
           ))}
         </div>
 
         {/* Load More Button */}
         {filteredProjects.length > displayCount && (
-          <div className="flex justify-center mt-12">
-            <button
-              onClick={() => setDisplayCount(prev => prev + 3)}
-              className="px-7 py-3.5 bg-white text-slate-950 font-space-grotesk font-bold text-sm rounded-xl hover:bg-slate-200 transition-all duration-200 cursor-pointer"
-            >
-              Load More Projects ({filteredProjects.length - displayCount} remaining)
-            </button>
-          </div>
+          <Reveal direction="up" delay={0.2}>
+            <div className="flex justify-center mt-12">
+              <Magnetic strength={0.25}>
+                <button
+                  onClick={() => setDisplayCount(prev => prev + 3)}
+                  className="px-7 py-3.5 bg-white text-slate-950 font-space-grotesk font-bold text-sm rounded-xl hover:bg-slate-200 transition-all duration-200 cursor-pointer shadow-lg"
+                >
+                  Load More Projects ({filteredProjects.length - displayCount} remaining)
+                </button>
+              </Magnetic>
+            </div>
+          </Reveal>
         )}
 
       </div>
 
       {/* Design Showcase Modal */}
       {selectedDesign && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-          <div className="exec-card p-6 max-w-xl w-full space-y-6 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
+          <div className="exec-card p-6 max-w-xl w-full space-y-6 shadow-2xl rounded-2xl border border-white/10 animate-scaleIn">
             <div className="flex items-center justify-between">
               <h3 className="text-xl font-space-grotesk font-bold text-white">
                 {selectedDesign.title}
@@ -394,7 +414,7 @@ export default function Projects() {
                 href={selectedDesign.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 px-4 py-2.5 bg-white text-slate-950 font-space-grotesk font-bold text-xs rounded-lg hover:bg-slate-200 text-center transition-colors"
+                className="flex-1 px-4 py-2.5 bg-white text-slate-950 font-space-grotesk font-bold text-xs rounded-lg hover:bg-slate-200 text-center transition-colors shadow-sm"
               >
                 Visit Website
               </a>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
+import { Reveal, GlowCard, Magnetic } from '@/lib/animatorlib';
 
 const skillCategories = [
   {
@@ -86,118 +87,93 @@ function SkillCard({ category, index }) {
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className="exec-card p-6 flex flex-col justify-between"
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-        transition: `opacity 0.5s ease ${index * 70}ms, transform 0.5s ease ${index * 70}ms`,
-      }}
-    >
-      <div>
-        {/* Category Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-xl">
-            {category.icon}
-          </div>
-          <h3 className="text-lg font-space-grotesk font-bold text-white">
-            {category.title}
-          </h3>
-        </div>
-
-        {/* Skills Bars */}
-        <div className="space-y-4">
-          {category.skills.map((skill, skillIndex) => (
-            <div key={skillIndex} className="space-y-1.5">
-              <div className="flex justify-between items-center text-xs">
-                <span className="font-inter font-medium text-slate-300">
-                  {skill.name}
-                </span>
-                <span className="font-space-grotesk font-bold text-slate-400">
-                  {skill.level}%
-                </span>
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-white rounded-full transition-all duration-1000 ease-out"
-                  style={{
-                    width: isVisible ? `${skill.level}%` : '0%',
-                    transitionDelay: `${index * 70 + skillIndex * 100}ms`,
-                  }}
-                />
-              </div>
+    <div ref={ref}>
+      <GlowCard
+        glowColor="rgba(255, 255, 255, 0.07)"
+        maxTilt={8}
+        className="exec-card p-6 flex flex-col justify-between h-full rounded-2xl border border-white/10 bg-slate-900/60"
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+          transition: `opacity 0.5s ease ${index * 80}ms, transform 0.5s ease ${index * 80}ms`,
+        }}
+      >
+        <div>
+          {/* Category Header */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-xl shadow-md">
+              {category.icon}
             </div>
-          ))}
-        </div>
-      </div>
+            <h3 className="text-lg font-space-grotesk font-bold text-white">
+              {category.title}
+            </h3>
+          </div>
 
-      {/* Footer summary */}
-      <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center text-xs text-slate-500 font-inter">
-        <span>{category.skills.length} Specialties</span>
-        <span className="font-space-grotesk font-semibold text-slate-400">
-          Avg {Math.round(category.skills.reduce((acc, s) => acc + s.level, 0) / category.skills.length)}%
-        </span>
-      </div>
+          {/* Skills Bars */}
+          <div className="space-y-4">
+            {category.skills.map((skill, skillIndex) => (
+              <div key={skillIndex} className="space-y-1.5">
+                <div className="flex justify-between items-center text-xs">
+                  <span className="font-inter font-medium text-slate-300">
+                    {skill.name}
+                  </span>
+                  <span className="font-space-grotesk font-bold text-slate-400">
+                    {skill.level}%
+                  </span>
+                </div>
+                <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-slate-200 to-white rounded-full transition-all duration-1000 ease-out"
+                    style={{
+                      width: isVisible ? `${skill.level}%` : '0%',
+                      transitionDelay: `${index * 80 + skillIndex * 90}ms`,
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer summary */}
+        <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center text-xs text-slate-500 font-inter">
+          <span>{category.skills.length} Specialties</span>
+          <span className="font-space-grotesk font-semibold text-slate-400">
+            Avg {Math.round(category.skills.reduce((acc, s) => acc + s.level, 0) / category.skills.length)}%
+          </span>
+        </div>
+      </GlowCard>
     </div>
   );
 }
 
 export default function Skills() {
-  const headerRef = useRef(null);
-  const [headerVisible, setHeaderVisible] = useState(false);
-
-  useEffect(() => {
-    const el = headerRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setHeaderVisible(true); observer.disconnect(); }
-    }, { threshold: 0.2 });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="skills" className="relative w-full py-24 bg-[var(--background)]">
+    <section id="skills" className="relative w-full py-24 bg-[var(--background)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div ref={headerRef} className="max-w-3xl mb-16">
-          <div
-            className="flex items-center gap-3 mb-4"
-            style={{
-              opacity: headerVisible ? 1 : 0,
-              transform: headerVisible ? 'translateY(0)' : 'translateY(12px)',
-              transition: 'opacity 0.5s ease, transform 0.5s ease',
-            }}
-          >
-            <div className="h-px w-8 bg-white" />
-            <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
-              Technical Capabilities
-            </span>
-          </div>
+        <div className="max-w-3xl mb-16">
+          <Reveal direction="down" delay={0.1}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-white" />
+              <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
+                Technical Capabilities
+              </span>
+            </div>
+          </Reveal>
 
-          <h2
-            className="text-3xl sm:text-5xl font-space-grotesk font-extrabold text-white leading-tight mb-4"
-            style={{
-              opacity: headerVisible ? 1 : 0,
-              transform: headerVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.5s ease 0.08s, transform 0.5s ease 0.08s',
-            }}
-          >
-            Comprehensive Engineering Stack
-          </h2>
+          <Reveal direction="up" delay={0.2}>
+            <h2 className="text-3xl sm:text-5xl font-space-grotesk font-extrabold text-white leading-tight mb-4">
+              Comprehensive Engineering Stack
+            </h2>
+          </Reveal>
 
-          <p
-            className="text-slate-400 font-inter text-base leading-relaxed"
-            style={{
-              opacity: headerVisible ? 1 : 0,
-              transform: headerVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: 'opacity 0.5s ease 0.15s, transform 0.5s ease 0.15s',
-            }}
-          >
-            A disciplined approach to mobile software architecture, hardware system design, and network infrastructure.
-          </p>
+          <Reveal direction="up" delay={0.3}>
+            <p className="text-slate-400 font-inter text-base leading-relaxed">
+              A disciplined approach to mobile software architecture, hardware system design, and network infrastructure.
+            </p>
+          </Reveal>
         </div>
 
         {/* Skills Grid */}
@@ -208,24 +184,25 @@ export default function Skills() {
         </div>
 
         {/* Competency Badges */}
-        <div className="mt-16 pt-10 border-t border-white/10 flex flex-wrap items-center justify-between gap-6">
-          <p className="text-xs font-space-grotesk font-semibold text-slate-400 uppercase tracking-wider">
-            Additional Domains &amp; Competencies
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {[
-              'Agile & Scrum', 'RESTful API Design', 'State Management (Provider/Riverpod)',
-              'Payment Gateway Integration', 'Enterprise Network Design', 'Technical Documentation'
-            ].map((skill, index) => (
-              <span
-                key={index}
-                className="exec-pill"
-              >
-                {skill}
-              </span>
-            ))}
+        <Reveal direction="up" delay={0.4}>
+          <div className="mt-16 pt-10 border-t border-white/10 flex flex-wrap items-center justify-between gap-6">
+            <p className="text-xs font-space-grotesk font-semibold text-slate-400 uppercase tracking-wider">
+              Additional Domains &amp; Competencies
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                'Agile & Scrum', 'RESTful API Design', 'State Management (Provider/Riverpod)',
+                'Payment Gateway Integration', 'Enterprise Network Design', 'Technical Documentation'
+              ].map((skill, index) => (
+                <Magnetic key={index} strength={0.15}>
+                  <span className="exec-pill cursor-pointer hover:border-white/30 transition-all">
+                    {skill}
+                  </span>
+                </Magnetic>
+              ))}
+            </div>
           </div>
-        </div>
+        </Reveal>
 
       </div>
     </section>

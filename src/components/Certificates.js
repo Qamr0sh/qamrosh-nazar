@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { Reveal, GlowCard, Magnetic } from '@/lib/animatorlib';
 
 export default function Certificates() {
     const [selectedCert, setSelectedCert] = useState(null);
@@ -73,123 +74,149 @@ export default function Certificates() {
     const displayedCertificates = certificates.slice(0, displayCount);
 
     return (
-        <section id="certificates" className="relative w-full py-24 bg-[var(--background)]">
+        <section id="certificates" className="relative w-full py-24 bg-[var(--background)] overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Section Header */}
                 <div className="max-w-3xl mb-12">
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="h-px w-8 bg-white" />
-                        <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
-                            Credentials
-                        </span>
-                    </div>
+                    <Reveal direction="down" delay={0.1}>
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="h-px w-8 bg-white" />
+                            <span className="text-xs font-bold font-space-grotesk uppercase tracking-[0.2em] text-white">
+                                Credentials
+                            </span>
+                        </div>
+                    </Reveal>
 
-                    <h2 className="text-3xl sm:text-5xl font-space-grotesk font-extrabold text-white leading-tight mb-4">
-                        Verified Certifications
-                    </h2>
+                    <Reveal direction="up" delay={0.2}>
+                        <h2 className="text-3xl sm:text-5xl font-space-grotesk font-extrabold text-white leading-tight mb-4">
+                            Verified Certifications
+                        </h2>
+                    </Reveal>
 
-                    <p className="text-slate-400 font-inter text-base leading-relaxed">
-                        Industry-recognized accreditations in programming, networking, system administration, and computer hardware.
-                    </p>
+                    <Reveal direction="up" delay={0.3}>
+                        <p className="text-slate-400 font-inter text-base leading-relaxed">
+                            Industry-recognized accreditations in programming, networking, system administration, and computer hardware.
+                        </p>
+                    </Reveal>
                 </div>
 
                 {/* Certificates Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {displayedCertificates.map((cert, index) => (
-                        <div
-                            key={index}
-                            onClick={() => openCert(cert)}
-                            className="exec-card overflow-hidden cursor-pointer flex flex-col group"
-                        >
-                            {/* Image Preview */}
-                            <div className="relative aspect-[4/3] bg-slate-900 overflow-hidden border-b border-white/10">
-                                <Image
-                                    src={`/certificates/${cert.file}`}
-                                    alt={cert.title}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
-                                />
-                                <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span className="px-4 py-2 bg-white text-slate-950 rounded-lg font-space-grotesk font-bold text-xs">
-                                        Inspect Certificate
-                                    </span>
+                        <Reveal key={index} direction="up" delay={index * 0.08} duration={0.5}>
+                            <GlowCard
+                                glowColor="rgba(255, 255, 255, 0.08)"
+                                maxTilt={10}
+                                onClick={() => openCert(cert)}
+                                className="exec-card overflow-hidden cursor-pointer flex flex-col group rounded-2xl border border-white/10 bg-slate-900/60"
+                            >
+                                {/* Image Preview */}
+                                <div className="relative aspect-[4/3] bg-slate-950 overflow-hidden border-b border-white/10">
+                                    <Image
+                                        src={`/certificates/${cert.file}`}
+                                        alt={cert.title}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
+                                    />
+                                    <div className="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-xs">
+                                        <span className="px-4 py-2 bg-white text-slate-950 rounded-lg font-space-grotesk font-bold text-xs shadow-lg">
+                                            Inspect Certificate
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            {/* Content */}
-                            <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
-                                <div>
-                                    <span className="exec-pill text-[10px] uppercase font-semibold">
-                                        {cert.issuer}
-                                    </span>
-                                    <h3 className="text-base font-space-grotesk font-bold text-white mt-2 line-clamp-2">
-                                        {cert.title}
-                                    </h3>
+                                {/* Content */}
+                                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                                    <div>
+                                        <span className="exec-pill text-[10px] uppercase font-semibold">
+                                            {cert.issuer}
+                                        </span>
+                                        <h3 className="text-base font-space-grotesk font-bold text-white mt-2 line-clamp-2">
+                                            {cert.title}
+                                        </h3>
+                                    </div>
+                                    <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                                        <span className="text-[11px] font-inter text-slate-500 uppercase tracking-wider">
+                                            Verified Credential
+                                        </span>
+                                        <span className="text-xs text-slate-400 font-space-grotesk font-semibold group-hover:text-white transition-colors">
+                                            View →
+                                        </span>
+                                    </div>
                                 </div>
-                                <div className="flex items-center justify-between pt-2 border-t border-white/5">
-                                    <span className="text-[11px] font-inter text-slate-500 uppercase tracking-wider">
-                                        Verified Credential
-                                    </span>
-                                    <span className="text-xs text-slate-400 font-space-grotesk font-semibold group-hover:text-white transition-colors">
-                                        View →
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                            </GlowCard>
+                        </Reveal>
                     ))}
                 </div>
 
                 {/* Load More Button */}
                 {certificates.length > displayCount && (
-                    <div className="flex justify-center mt-12">
-                        <button
-                            onClick={() => setDisplayCount(prev => Math.min(prev + 3, certificates.length))}
-                            className="px-7 py-3.5 bg-white text-slate-950 font-space-grotesk font-bold text-sm rounded-xl hover:bg-slate-200 transition-all duration-200 cursor-pointer"
-                        >
-                            View More Credentials ({certificates.length - displayCount} remaining)
-                        </button>
-                    </div>
+                    <Reveal direction="up" delay={0.2}>
+                        <div className="flex justify-center mt-12">
+                            <Magnetic strength={0.25}>
+                                <button
+                                    onClick={() => setDisplayCount(prev => Math.min(prev + 3, certificates.length))}
+                                    className="px-7 py-3.5 bg-white text-slate-950 font-space-grotesk font-bold text-sm rounded-xl hover:bg-slate-200 transition-all duration-200 cursor-pointer shadow-lg"
+                                >
+                                    Load More Credentials ({certificates.length - displayCount} remaining)
+                                </button>
+                            </Magnetic>
+                        </div>
+                    </Reveal>
                 )}
 
-                {/* Modal Viewer */}
-                {selectedCert && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-slate-950/85 backdrop-blur-md">
-                        <div className="relative w-full max-w-4xl max-h-[90vh] flex flex-col exec-card p-6 space-y-4 shadow-2xl">
-                            
-                            {/* Modal Header */}
-                            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                                <div>
-                                    <h3 className="text-xl font-space-grotesk font-bold text-white">
-                                        {selectedCert.title}
-                                    </h3>
-                                    <p className="text-xs text-slate-400 font-inter uppercase tracking-widest mt-0.5">
-                                        {selectedCert.issuer}
-                                    </p>
-                                </div>
-                                <button
-                                    onClick={closeCert}
-                                    className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
-                                >
-                                    ✕
-                                </button>
-                            </div>
+            </div>
 
-                            {/* Certificate Image */}
-                            <div className="relative flex-1 min-h-[350px] bg-slate-900 rounded-xl overflow-hidden border border-white/10">
-                                <Image
-                                    src={`/certificates/${selectedCert.file}`}
-                                    alt={selectedCert.title}
-                                    fill
-                                    className="object-contain p-4"
-                                    priority
-                                />
+            {/* Modal */}
+            {selectedCert && (
+                <div
+                    onClick={closeCert}
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn"
+                >
+                    <div
+                        onClick={(e) => e.stopPropagation()}
+                        className="exec-card p-6 max-w-3xl w-full space-y-4 shadow-2xl rounded-2xl border border-white/10 animate-scaleIn"
+                    >
+                        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div>
+                                <span className="exec-pill text-[10px] uppercase font-semibold mb-1">
+                                    {selectedCert.issuer}
+                                </span>
+                                <h3 className="text-lg font-space-grotesk font-bold text-white">
+                                    {selectedCert.title}
+                                </h3>
                             </div>
+                            <button
+                                onClick={closeCert}
+                                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+                            >
+                                ✕
+                            </button>
+                        </div>
+
+                        <div className="relative aspect-[4/3] w-full bg-slate-950 rounded-xl overflow-hidden border border-white/10 flex items-center justify-center">
+                            <Image
+                                src={`/certificates/${selectedCert.file}`}
+                                alt={selectedCert.title}
+                                fill
+                                className="object-contain p-2"
+                                sizes="100vw"
+                            />
+                        </div>
+
+                        <div className="flex justify-end pt-2">
+                            <button
+                                onClick={closeCert}
+                                className="px-5 py-2.5 bg-white text-slate-950 font-space-grotesk font-bold text-xs rounded-lg hover:bg-slate-200 transition-colors cursor-pointer"
+                            >
+                                Close Preview
+                            </button>
                         </div>
                     </div>
-                )}
-            </div>
+                </div>
+            )}
         </section>
     );
 }
