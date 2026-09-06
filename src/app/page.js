@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Certificates from "@/components/Certificates";
+import SocialHub from "@/components/SocialHub";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next"
@@ -19,6 +20,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Certificates />
+        <SocialHub />
         <Contact />
       </main>
       <Footer />

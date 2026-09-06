@@ -138,7 +138,7 @@ export function GlowCard({
   className = '',
   glowColor = 'rgba(255, 255, 255, 0.08)',
   tilt = true,
-  maxTilt = 10,
+  maxTilt = 8,
   onClick,
   ...props
 }) {
@@ -147,7 +147,7 @@ export function GlowCard({
   const [isHovered, setIsHovered] = useState(false);
   const { cardRef, style: tiltStyle, handleMouseMove: tiltMove, handleMouseLeave: tiltLeave } = use3DTilt({
     max: maxTilt,
-    scale: 1.015,
+    scale: 1.01,
   });
 
   const handleMouseMove = (e) => {
@@ -183,23 +183,17 @@ export function GlowCard({
       className={`relative overflow-hidden transition-all duration-300 ${className}`}
       style={{
         ...(tilt ? tiltStyle : {}),
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
       }}
       {...props}
     >
       {/* Radiant Cursor Glow Layer */}
       <div
-        className="pointer-events-none absolute -inset-px transition-opacity duration-300 rounded-[inherit]"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300 rounded-[inherit]"
         style={{
           opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(450px circle at ${mousePos.x}px ${mousePos.y}px, ${glowColor}, transparent 60%)`,
-        }}
-      />
-
-      {/* Border Highlight Effect */}
-      <div
-        className="pointer-events-none absolute inset-0 rounded-[inherit] border border-white/0 transition-colors duration-300 z-20"
-        style={{
-          borderColor: isHovered ? 'rgba(255, 255, 255, 0.18)' : 'transparent',
+          background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, ${glowColor}, transparent 60%)`,
         }}
       />
 

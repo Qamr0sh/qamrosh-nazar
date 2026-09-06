@@ -11,6 +11,7 @@ export default function Footer() {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Certificates', href: '#certificates' },
+    { name: 'Socials', href: '#socials' },
     { name: 'Contact', href: '#contact' }
   ];
 
