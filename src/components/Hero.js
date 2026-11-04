@@ -1,12 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import ParticleCanvas from './ParticleCanvas';
 import Hero3DCanvas from './Hero3DCanvas';
 import { Reveal, GlowCard, Magnetic, Typewriter } from '@/lib/animatorlib';
 
 // High-fidelity vector SVG platform icons
 const PlatformIcons = {
+  apple: (props) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-.9.04-2.02.61-2.66 1.36-.57.65-1.06 1.71-.93 2.74 1.01.08 2.06-.5 2.67-1.23z" />
+    </svg>
+  ),
+  googleplay: (props) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M3.609 1.814L13.793 12 3.61 22.186a2.36 2.36 0 0 1-.22-.988V2.802c0-.363.08-.7.22-.988zm11.306 11.307l2.25 2.25-11.75 6.784 9.5-9.034zm0-2.242L5.415 1.845l11.75 6.784-2.25 2.25zM17.38 12l2.47-1.427a1.693 1.693 0 0 1 0 2.854L17.38 12z"/>
+    </svg>
+  ),
   snapchat: (props) => (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
       <path d="M12.004 2c-3.79 0-6.22 2.766-6.22 5.56 0 1.25.42 2.45.87 3.29.13.25.17.48.06.74-.2.48-.99 1.11-2.09 1.34-.34.07-.48.28-.46.46.06.49.65.74 1.32.79.22.02.43.08.57.25.26.31.25.86.23 1.35-.04.88-.13 1.94-.96 2.37-.36.19-.53.49-.44.82.11.41.65.65 1.28.65.68 0 1.38-.28 2.05-.62.33-.17.65-.28.98-.12.82.39 1.76.69 2.88.69 1.11 0 2.06-.3 2.88-.69.33-.16.65-.05.98.12.67.34 1.37.62 2.05.62.63 0 1.17-.24 1.28-.65.09-.33-.08-.63-.44-.82-.83-.43-.92-1.49-.96-2.37-.02-.49-.03-1.04.23-1.35.14-.17.35-.23.57-.25.67-.05 1.26-.3 1.32-.79.02-.18-.12-.39-.46-.46-1.1-.23-1.89-.86-2.09-1.34-.11-.26-.07-.49.06-.74.45-.84.87-2.04.87-3.29C18.224 4.766 15.794 2 12.004 2z" />
@@ -224,7 +236,7 @@ const SOCIAL_PLATFORMS = [
 export default function Hero() {
   const [selectedPlatformIndex, setSelectedPlatformIndex] = useState(0);
   const [universalCopied, setUniversalCopied] = useState(false);
-  const [activeRightTab, setActiveRightTab] = useState('socials'); // 'socials' | 'spec'
+  const [activeRightTab, setActiveRightTab] = useState('apps'); // 'apps' | 'socials' | 'spec'
   const [isAutoCycling, setIsAutoCycling] = useState(true);
 
   // Auto-cycle platform showcase when user is not manually hovering
@@ -245,14 +257,14 @@ export default function Hero() {
   };
 
   const stats = [
-    { value: '2+', label: 'Years Exp.' },
-    { value: '15+', label: 'Projects Completed' },
-    { value: '8+', label: 'Tech Stacks' },
+    { value: '2+', label: 'Years Experience' },
+    { value: '15+', label: 'Shipped Systems' },
+    { value: '2 Live', label: 'Store Flagships' },
   ];
 
   const dynamicRoles = [
-    'Software Engineer',
     'Flutter Mobile Architect',
+    'Software Engineer',
     'IoT Hardware Developer',
     'Full-Stack Systems Engineer',
   ];
@@ -260,31 +272,28 @@ export default function Hero() {
   const activePlatform = SOCIAL_PLATFORMS[selectedPlatformIndex];
   const ActivePlatformIcon = activePlatform.icon;
 
-  // Seamless infinite marquee data
-  const marqueeRow1 = [...SOCIAL_PLATFORMS, ...SOCIAL_PLATFORMS];
-  const marqueeRow2 = [...[...SOCIAL_PLATFORMS].reverse(), ...[...SOCIAL_PLATFORMS].reverse()];
-
   return (
     <section
       id="home"
       className="relative min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 pt-24 pb-12 overflow-hidden bg-[var(--background)]"
     >
-      {/* ─── Dynamic Particle Canvas Backdrop ─── */}
+      {/* Dynamic Particle Canvas Backdrop */}
       <div className="absolute inset-0 opacity-40 pointer-events-auto">
         <ParticleCanvas />
       </div>
 
-      {/* ─── Architectural Grid Overlay ─── */}
+      {/* Architectural Grid Overlay */}
       <div className="absolute inset-0 hero-grid opacity-25 pointer-events-none" />
 
-      {/* ─── Ambient Glow Orbs ─── */}
-      <div className="absolute top-1/4 right-1/3 w-[500px] h-[500px] rounded-full bg-emerald-500/[0.03] blur-3xl pointer-events-none animate-ambientPulse" />
-      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-blue-500/[0.02] blur-3xl pointer-events-none animate-ambientPulse delay-300" />
+      {/* Ambient Glow Orbs */}
+      <div className="absolute top-1/4 right-1/3 w-[500px] h-[500px] rounded-full bg-emerald-500/[0.04] blur-3xl pointer-events-none animate-ambientPulse" />
+      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-[#93A5D5]/[0.04] blur-3xl pointer-events-none animate-ambientPulse delay-300" />
+      <div className="absolute top-1/2 right-10 w-[450px] h-[450px] rounded-full bg-[#BC13FE]/[0.03] blur-3xl pointer-events-none" />
 
-      {/* ─── Main Content Grid Wrapper ─── */}
+      {/* Main Content Grid Wrapper */}
       <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center my-auto pt-6 pb-12">
 
-        {/* LEFT COLUMN: Main Text, Bio & CTAs */}
+        {/* LEFT COLUMN: Main Text, Bio, Live Pills & CTAs */}
         <div className="lg:col-span-7 space-y-7">
 
           {/* Availability & Universal Tag Pill */}
@@ -306,7 +315,7 @@ export default function Hero() {
                 </svg>
               </a>
 
-              {/* Universal Handle Fast-Copy Badge with Dynamic Platform Gradient Shimmer */}
+              {/* Universal Handle Fast-Copy Badge */}
               <button
                 onClick={handleCopyUniversal}
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border transition-all duration-300 cursor-pointer shadow-sm hover:scale-105 group"
@@ -321,7 +330,7 @@ export default function Hero() {
                     <span className="text-emerald-300 font-bold">✓ Copied @qamr0sh!</span>
                   ) : (
                     <>
-                      One Universal Tag:{' '}
+                      Universal Handle:{' '}
                       <span
                         className="font-bold font-space-grotesk inline-block"
                         style={{
@@ -366,13 +375,70 @@ export default function Hero() {
 
             <Reveal direction="up" delay={0.35} duration={0.6}>
               <p className="font-inter text-base sm:text-lg text-slate-400 max-w-2xl font-normal leading-relaxed">
-                Specialized in engineering robust <strong className="text-white font-semibold">Flutter mobile apps</strong>,
-                scalable <strong className="text-white font-semibold">IoT &amp; embedded hardware solutions</strong>, and high-performance web systems.
+                Specialized in engineering robust <strong className="text-white font-semibold">Flutter mobile systems</strong>,
+                production <strong className="text-white font-semibold">IoT &amp; embedded hardware solutions</strong>, and modern full-stack web applications.
               </p>
             </Reveal>
           </div>
 
-          {/* CTAs */}
+          {/* Shipped Productions Quick Bar */}
+          <Reveal direction="up" delay={0.4} duration={0.6}>
+            <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/10 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-space-grotesk uppercase tracking-wider text-slate-400 font-bold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Featured Live Flagships
+                </span>
+                <span className="text-[10px] font-space-grotesk text-slate-500 font-semibold">Tap to view</span>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {/* As-Salah Pill Link */}
+                <Link
+                  href="/as-salah"
+                  className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/5 hover:border-[#93A5D5]/40 transition-all group cursor-pointer"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-[#152542] ring-1 ring-white/15 p-0.5 flex-shrink-0">
+                      <Image src="/as-salah/logo.png" alt="As-Salah" fill className="object-contain" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-xs font-space-grotesk font-bold text-white group-hover:text-[#93A5D5] transition-colors leading-tight">
+                        As-Salah
+                      </div>
+                      <div className="text-[10px] text-slate-400 font-inter">Quran &amp; Prayer Times</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 text-[10px] font-bold font-space-grotesk px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                    <span>iOS &amp; Android</span>
+                  </div>
+                </Link>
+
+                {/* Atomic Clock Pill Link */}
+                <Link
+                  href="/atomic-clock"
+                  className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/5 hover:border-[#D4AF37]/40 transition-all group cursor-pointer"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-slate-900 ring-1 ring-white/15 p-0.5 flex-shrink-0">
+                      <Image src="/atomic_clock/logos/logos with varient/dark_mode_logo.png" alt="Atomic Clock" fill className="object-contain" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-xs font-space-grotesk font-bold text-white group-hover:text-[#D4AF37] transition-colors leading-tight">
+                        Atomic Clock
+                      </div>
+                      <div className="text-[10px] text-slate-400 font-inter">Offline Habit Tracker</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 text-[10px] font-bold font-space-grotesk px-2 py-0.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37]">
+                    <span>Play Store Live</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Primary Action Buttons */}
           <Reveal direction="up" delay={0.45} duration={0.6}>
             <div className="flex flex-wrap items-center gap-4 pt-1">
               <Magnetic strength={0.2}>
@@ -380,7 +446,7 @@ export default function Hero() {
                   href="#projects"
                   className="px-7 py-3.5 rounded-xl font-space-grotesk font-bold text-sm bg-white text-slate-950 hover:bg-slate-200 transition-all duration-200 shadow-xl hover:shadow-2xl flex items-center gap-2 group"
                 >
-                  View Featured Projects
+                  Explore All Projects
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7-7 7M3 12h18" />
                   </svg>
@@ -414,16 +480,16 @@ export default function Hero() {
 
               <div className="flex items-center gap-2">
                 <span className="text-xs font-space-grotesk font-medium text-slate-400">
-                  {SOCIAL_PLATFORMS.length} Active Channels Connected
+                  {SOCIAL_PLATFORMS.length} Active Channels
                 </span>
               </div>
             </div>
           </Reveal>
         </div>
 
-        {/* RIGHT COLUMN: Interactive Executive Social Hub & Architecture Showcase Card */}
+        {/* RIGHT COLUMN: Interactive Executive Showcase Card (Apps / Socials / Stack) */}
         <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
-          {/* Ambient 3D WebGL Sphere Layer (Centered Backdrop) */}
+          {/* Ambient 3D WebGL Canvas Layer (Centered Backdrop) */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
             <div className="w-full h-full max-w-[420px] max-h-[420px] opacity-40 blur-[1px]">
               <Hero3DCanvas />
@@ -431,35 +497,53 @@ export default function Hero() {
           </div>
 
           {/* Executive Cyber Obsidian Showcase Card */}
-          <Reveal direction="scale" delay={0.3} duration={0.7} className="w-full max-w-[480px] relative z-10">
+          <Reveal direction="scale" delay={0.3} duration={0.7} className="w-full max-w-[490px] relative z-10">
             <GlowCard
-              glowColor={activeRightTab === 'socials' ? activePlatform.bgGlow : 'rgba(16, 185, 129, 0.12)'}
+              glowColor={
+                activeRightTab === 'apps'
+                  ? 'rgba(147, 165, 213, 0.15)'
+                  : activeRightTab === 'socials'
+                  ? activePlatform.bgGlow
+                  : 'rgba(16, 185, 129, 0.15)'
+              }
               tilt={false}
-              className="p-6 space-y-5 shadow-2xl rounded-2xl border border-white/10 bg-[#090b10] backdrop-blur-xl transition-all duration-300"
+              className="p-5 sm:p-6 space-y-5 shadow-2xl rounded-2xl border border-white/10 bg-[#090b10] backdrop-blur-xl transition-all duration-300"
             >
-              {/* Card Top Navigation Bar */}
+              {/* Card Top Navigation Bar: 3 Specialized Modes */}
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                {/* Mode Switcher Tabs */}
-                <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/[0.04] border border-white/5">
+                <div className="flex items-center gap-1 p-1 rounded-xl bg-white/[0.04] border border-white/5">
                   <button
-                    onClick={() => setActiveRightTab('socials')}
-                    className={`px-3 py-1 rounded-lg text-xs font-space-grotesk font-bold transition-all cursor-pointer flex items-center gap-1.5 ${activeRightTab === 'socials'
+                    onClick={() => setActiveRightTab('apps')}
+                    className={`px-3 py-1 rounded-lg text-xs font-space-grotesk font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                      activeRightTab === 'apps'
                         ? 'bg-white text-slate-950 shadow-md'
                         : 'text-slate-400 hover:text-white'
-                      }`}
+                    }`}
                   >
-                    <span>@qamr0sh Hub</span>
+                    <span>Featured Apps</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   </button>
 
                   <button
-                    onClick={() => setActiveRightTab('spec')}
-                    className={`px-3 py-1 rounded-lg text-xs font-space-grotesk font-bold transition-all cursor-pointer flex items-center gap-1.5 ${activeRightTab === 'spec'
+                    onClick={() => setActiveRightTab('socials')}
+                    className={`px-3 py-1 rounded-lg text-xs font-space-grotesk font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                      activeRightTab === 'socials'
                         ? 'bg-white text-slate-950 shadow-md'
                         : 'text-slate-400 hover:text-white'
-                      }`}
+                    }`}
                   >
-                    <span>Profile &amp; Stack</span>
+                    <span>@qamr0sh</span>
+                  </button>
+
+                  <button
+                    onClick={() => setActiveRightTab('spec')}
+                    className={`px-3 py-1 rounded-lg text-xs font-space-grotesk font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                      activeRightTab === 'spec'
+                        ? 'bg-white text-slate-950 shadow-md'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    <span>Stack</span>
                   </button>
                 </div>
 
@@ -470,7 +554,145 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* ─── TAB 1: SOCIAL ECOSYSTEM (@qamr0sh) ─── */}
+              {/* ─── TAB 1: FEATURED LIVE APPS (As-Salah & Atomic Clock) ─── */}
+              {activeRightTab === 'apps' && (
+                <div className="space-y-3.5 animate-fadeIn">
+                  
+                  {/* As-Salah Spotlight Card */}
+                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-[#93A5D5]/40 transition-all space-y-3 group">
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-[#152542] ring-2 ring-[#93A5D5]/30 p-1 flex-shrink-0">
+                          <Image src="/as-salah/logo.png" alt="As-Salah Logo" fill className="object-contain" />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h3 className="font-space-grotesk font-extrabold text-base text-white group-hover:text-[#93A5D5] transition-colors">
+                              As-Salah
+                            </h3>
+                            <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[9px] font-bold uppercase tracking-wider">
+                              Live
+                            </span>
+                          </div>
+                          <p className="text-[11px] text-slate-400 font-inter">
+                            Holy Quran • On-Demand Audio • Prayer Times
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] text-amber-300 font-bold font-space-grotesk">5.0 ★</span>
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-slate-300 font-inter leading-relaxed line-clamp-2">
+                      Complete Quran reader with audio streaming, offline downloads, location-aware prayer times, and Qibla compass.
+                    </p>
+
+                    <div className="pt-2 border-t border-white/5 flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-1.5">
+                        <span className="px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/10 text-[10px] text-slate-300 font-medium">
+                          Flutter
+                        </span>
+                        <span className="px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/10 text-[10px] text-slate-300 font-medium">
+                          Audio Stream
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <a
+                          href="https://apps.apple.com/pk/app/as-salah-prayer-times-quran/id6818953512"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-1.5 rounded-lg bg-white/10 hover:bg-white text-white hover:text-black transition-all"
+                          title="Download on Apple App Store"
+                        >
+                          <PlatformIcons.apple className="w-3.5 h-3.5" />
+                        </a>
+                        <a
+                          href="https://play.google.com/store/apps/details?id=online.qamrosh.assalah"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-1.5 rounded-lg bg-white/10 hover:bg-[#93A5D5] text-white hover:text-black transition-all"
+                          title="Get on Google Play Store"
+                        >
+                          <PlatformIcons.googleplay className="w-3.5 h-3.5" />
+                        </a>
+                        <Link
+                          href="/as-salah"
+                          className="px-2.5 py-1 rounded-lg bg-[#93A5D5] hover:bg-white text-slate-950 text-[11px] font-space-grotesk font-bold transition-colors cursor-pointer"
+                        >
+                          Overview →
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Atomic Clock Spotlight Card */}
+                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-[#D4AF37]/40 transition-all space-y-3 group">
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-slate-900 ring-2 ring-[#D4AF37]/30 p-1 flex-shrink-0">
+                          <Image src="/atomic_clock/logos/logos with varient/dark_mode_logo.png" alt="Atomic Clock Logo" fill className="object-contain" />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h3 className="font-space-grotesk font-extrabold text-base text-white group-hover:text-[#D4AF37] transition-colors">
+                              Atomic Clock
+                            </h3>
+                            <span className="px-2 py-0.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] text-[9px] font-bold uppercase tracking-wider">
+                              Live
+                            </span>
+                          </div>
+                          <p className="text-[11px] text-slate-400 font-inter">
+                            Identity Habits • On-Device SQLite
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] text-amber-300 font-bold font-space-grotesk">5.0 ★</span>
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-slate-300 font-inter leading-relaxed line-clamp-2">
+                      James Clear habit stacking philosophy backed by encrypted offline storage and exact hardware alarm triggers.
+                    </p>
+
+                    <div className="pt-2 border-t border-white/5 flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-1.5">
+                        <span className="px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/10 text-[10px] text-slate-300 font-medium">
+                          Offline First
+                        </span>
+                        <span className="px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-[10px] text-amber-300 font-medium">
+                          iOS in review
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <a
+                          href="https://play.google.com/store/apps/details?id=online.qamrosh.atomicclock"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-1.5 rounded-lg bg-white/10 hover:bg-[#D4AF37] text-white hover:text-black transition-all"
+                          title="Get on Google Play Store"
+                        >
+                          <PlatformIcons.googleplay className="w-3.5 h-3.5" />
+                        </a>
+                        <Link
+                          href="/atomic-clock"
+                          className="px-2.5 py-1 rounded-lg bg-[#D4AF37] hover:bg-white text-slate-950 text-[11px] font-space-grotesk font-bold transition-colors cursor-pointer"
+                        >
+                          Overview →
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              )}
+
+              {/* ─── TAB 2: SOCIAL ECOSYSTEM (@qamr0sh) ─── */}
               {activeRightTab === 'socials' && (
                 <div
                   className="space-y-4 animate-fadeIn"
@@ -513,10 +735,11 @@ export default function Hero() {
                     <Magnetic strength={0.25}>
                       <button
                         onClick={handleCopyUniversal}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-space-grotesk font-bold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${universalCopied
+                        className={`px-3 py-1.5 rounded-lg text-xs font-space-grotesk font-bold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${
+                          universalCopied
                             ? 'bg-emerald-500 text-slate-950 scale-105'
                             : 'bg-white text-slate-950 hover:bg-slate-200'
-                          }`}
+                        }`}
                       >
                         {universalCopied ? (
                           <>
@@ -589,7 +812,7 @@ export default function Hero() {
                   {/* 11 Platform Fast Matrix Icons Grid */}
                   <div className="space-y-1.5 pt-1">
                     <p className="text-[10px] font-space-grotesk uppercase tracking-wider text-slate-500 font-bold">
-                      Select Platform to Preview ({SOCIAL_PLATFORMS.length} total)
+                      Select Platform ({SOCIAL_PLATFORMS.length} total)
                     </p>
                     <div className="flex flex-wrap gap-1.5 pt-0.5 justify-between">
                       {SOCIAL_PLATFORMS.map((platform, idx) => {
@@ -599,10 +822,11 @@ export default function Hero() {
                           <button
                             key={platform.id}
                             onClick={() => setSelectedPlatformIndex(idx)}
-                            className={`w-9 h-9 rounded-xl border flex items-center justify-center transition-all cursor-pointer relative group ${isSelected
+                            className={`w-9 h-9 rounded-xl border flex items-center justify-center transition-all cursor-pointer relative group ${
+                              isSelected
                                 ? 'border-white/60 bg-white/15 scale-105 shadow-md'
                                 : 'border-white/10 bg-white/[0.03] hover:border-white/30 hover:bg-white/10'
-                              }`}
+                            }`}
                             style={{
                               color: isSelected ? platform.accentColor : '#94A3B8',
                             }}
@@ -623,11 +847,11 @@ export default function Hero() {
                 </div>
               )}
 
-              {/* ─── TAB 2: NATURAL ENGINEERING PROFILE & STACK ─── */}
+              {/* ─── TAB 3: ENGINEERING STACK & ARCHITECTURE ─── */}
               {activeRightTab === 'spec' && (
                 <div className="space-y-4 animate-fadeIn">
 
-                  {/* Natural Bio Summary */}
+                  {/* Bio Summary */}
                   <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 space-y-1.5">
                     <div className="flex items-center justify-between">
                       <h4 className="font-space-grotesk font-extrabold text-base text-white">
@@ -638,7 +862,7 @@ export default function Hero() {
                       </span>
                     </div>
                     <p className="text-xs text-slate-300 font-inter leading-relaxed">
-                      Software engineer passionate about crafting high-performance mobile apps, embedded IoT hardware, and modern full-stack web platforms.
+                      Software engineer passionate about high-performance mobile apps, embedded IoT hardware, and modern full-stack web platforms.
                     </p>
                   </div>
 
@@ -675,7 +899,7 @@ export default function Hero() {
 
                   {/* Availability Status */}
                   <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs">
-                    <span className="text-slate-400 font-inter font-medium">Collaboration:</span>
+                    <span className="text-slate-400 font-inter font-medium">Availability:</span>
                     <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-space-grotesk font-bold flex items-center gap-1.5 shadow-sm">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                       Open for Contracts &amp; Projects

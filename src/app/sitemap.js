@@ -30,6 +30,7 @@ export default function sitemap() {
             changeFrequency: "weekly",
             priority: 0.9,
         },
+        // As-Salah Routes
         {
             url: `${baseUrl}/as-salah`,
             lastModified: currentDate,
@@ -47,6 +48,43 @@ export default function sitemap() {
             lastModified: currentDate,
             changeFrequency: "yearly",
             priority: 0.3,
+        },
+        {
+            url: `${baseUrl}/as-salah/trader-status`,
+            lastModified: currentDate,
+            changeFrequency: "yearly",
+            priority: 0.4,
+        },
+        // Atomic Clock Routes
+        {
+            url: `${baseUrl}/atomic-clock`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/atomic-clock/privacy-policy`,
+            lastModified: currentDate,
+            changeFrequency: "yearly",
+            priority: 0.3,
+        },
+        {
+            url: `${baseUrl}/atomic-clock/terms-and-conditions`,
+            lastModified: currentDate,
+            changeFrequency: "yearly",
+            priority: 0.3,
+        },
+        {
+            url: `${baseUrl}/atomic-clock/pre-register-terms`,
+            lastModified: currentDate,
+            changeFrequency: "yearly",
+            priority: 0.3,
+        },
+        {
+            url: `${baseUrl}/atomic-clock/trader-status`,
+            lastModified: currentDate,
+            changeFrequency: "yearly",
+            priority: 0.4,
         },
         {
             url: `${baseUrl}#contact`,
