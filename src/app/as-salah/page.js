@@ -645,7 +645,8 @@ export default function AsSalahPage() {
                         <div>
                             <h3 className="font-bold text-white mb-4 font-space-grotesk tracking-widest uppercase text-xs">Legal</h3>
                             <ul className="space-y-2 text-slate-400 text-sm">
-                                <li><Link href="/as-salah/privacy-policy" className="hover:text-[#93A5D5] transition-colors">Privacy Policy</Link></li>
+                                <li><Link href="/as-salah/privacy-policy" className="hover:text-[#93A5D5] transition-colors">Privacy Policy (EN)</Link></li>
+                                <li><Link href="/as-salah/privacy-policy/tr" className="hover:text-[#93A5D5] transition-colors">Gizlilik Politikası (TR)</Link></li>
                                 <li><Link href="/as-salah/terms-and-conditions" className="hover:text-[#93A5D5] transition-colors">Terms of Service</Link></li>
                                 <li><Link href="/as-salah/trader-status" className="hover:text-[#93A5D5] transition-colors">Trader Status (DSA)</Link></li>
                             </ul>
@@ -653,7 +654,9 @@ export default function AsSalahPage() {
                         <div>
                             <h3 className="font-bold text-white mb-4 font-space-grotesk tracking-widest uppercase text-xs">Support</h3>
                             <ul className="space-y-2 text-slate-400 text-sm">
-                                <li><a href="mailto:qamrosh55@gmail.com" className="hover:text-[#93A5D5] transition-colors">Contact Developer</a></li>
+                                <li><Link href="/as-salah/support" className="hover:text-[#93A5D5] transition-colors">Help &amp; FAQ (EN)</Link></li>
+                                <li><Link href="/as-salah/support/tr" className="hover:text-[#93A5D5] transition-colors">Destek &amp; Yardım (TR)</Link></li>
+                                <li><a href="mailto:qamrosh.dev@gmail.com" className="hover:text-[#93A5D5] transition-colors">Contact Developer</a></li>
                                 <li><Link href="/" className="hover:text-[#93A5D5] transition-colors">Portfolio Home</Link></li>
                             </ul>
                         </div>

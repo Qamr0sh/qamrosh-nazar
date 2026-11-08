@@ -12,7 +12,8 @@ import {
     FileCheck,
     CreditCard,
     Headphones,
-    DownloadCloud
+    DownloadCloud,
+    Languages
 } from 'lucide-react';
 
 export const metadata = {
@@ -61,10 +62,30 @@ export default function AsSalahPrivacyPolicy() {
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        {/* Language Switcher */}
+                        <div className="flex items-center p-1 rounded-xl bg-white/5 border border-white/10 text-xs">
+                            <span className="px-2.5 py-1 rounded-lg bg-[#C6A266] text-black font-semibold shadow-sm">
+                                EN
+                            </span>
+                            <Link
+                                href="/as-salah/privacy-policy/tr"
+                                className="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-colors"
+                                title="Türkçe Gizlilik Politikası (KVKK)"
+                            >
+                                TR
+                            </Link>
+                        </div>
+
+                        <Link
+                            href="/as-salah/support"
+                            className="text-xs font-medium text-slate-400 hover:text-white px-3 py-1.5 rounded-lg hover:bg-white/5 transition-colors hidden md:block"
+                        >
+                            Support
+                        </Link>
                         <Link
                             href="/as-salah/terms-and-conditions"
-                            className="text-xs font-medium text-slate-400 hover:text-white px-3 py-1.5 rounded-lg hover:bg-white/5 transition-colors hidden sm:block"
+                            className="text-xs font-medium text-slate-400 hover:text-white px-3 py-1.5 rounded-lg hover:bg-white/5 transition-colors hidden lg:block"
                         >
                             Terms of Service
                         </Link>
@@ -73,7 +94,8 @@ export default function AsSalahPrivacyPolicy() {
                             className="text-xs font-semibold text-[#C6A266] bg-[#C6A266]/10 border border-[#C6A266]/30 px-3 py-1.5 rounded-lg hover:bg-[#C6A266]/20 transition-all inline-flex items-center gap-1.5"
                         >
                             <ShieldCheck className="w-3.5 h-3.5" />
-                            <span>Trader Status (DSA)</span>
+                            <span className="hidden sm:inline">Trader Status (DSA)</span>
+                            <span className="sm:hidden">DSA</span>
                         </Link>
                     </div>
                 </div>
@@ -86,7 +108,7 @@ export default function AsSalahPrivacyPolicy() {
                 <div className="text-center space-y-4">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold tracking-wide">
                         <Lock className="w-3.5 h-3.5" />
-                        Privacy-First &amp; Zero Religious Data Sale
+                        Privacy-First &bull; Zero Religious Data Sale
                     </div>
                     
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-space-grotesk tracking-tight text-white">
@@ -104,6 +126,20 @@ export default function AsSalahPrivacyPolicy() {
                         <span className="px-3 py-1 rounded-full bg-white/[0.03] border border-white/10">
                             Effective: November 2026
                         </span>
+                    </div>
+
+                    {/* Turkish Language Alternate Banner */}
+                    <div className="max-w-xl mx-auto p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between text-xs text-slate-400">
+                        <div className="flex items-center gap-2">
+                            <Languages className="w-4 h-4 text-[#C6A266]" />
+                            <span>Türkçe Gizlilik Politikası ve KVKK Aydınlatma Metni mevcuttur.</span>
+                        </div>
+                        <Link 
+                            href="/as-salah/privacy-policy/tr"
+                            className="text-[#C6A266] hover:text-white underline underline-offset-2 transition-colors font-medium"
+                        >
+                            Türkçe Oku &rarr;
+                        </Link>
                     </div>
                 </div>
 
@@ -252,11 +288,15 @@ export default function AsSalahPrivacyPolicy() {
 
                     <div className="flex flex-wrap items-center gap-4">
                         <Link href="/as-salah" className="hover:text-white transition-colors">App Overview</Link>
-                        <span className="text-white/20">•</span>
+                        <span className="text-white/20">&bull;</span>
+                        <Link href="/as-salah/support" className="hover:text-white transition-colors">Support</Link>
+                        <span className="text-white/20">&bull;</span>
+                        <Link href="/as-salah/privacy-policy/tr" className="hover:text-[#C6A266] transition-colors">Türkçe (TR)</Link>
+                        <span className="text-white/20">&bull;</span>
                         <Link href="/as-salah/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
-                        <span className="text-white/20">•</span>
+                        <span className="text-white/20">&bull;</span>
                         <Link href="/as-salah/trader-status" className="text-[#C6A266] hover:underline font-medium">Trader Status</Link>
-                        <span className="text-white/20">•</span>
+                        <span className="text-white/20">&bull;</span>
                         <Link href="/" className="hover:text-white transition-colors">Portfolio</Link>
                     </div>
                 </footer>

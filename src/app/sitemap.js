@@ -38,7 +38,31 @@ export default function sitemap() {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/as-salah/support`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.5,
+        },
+        {
+            url: `${baseUrl}/as-salah/support/tr`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.5,
+        },
+        {
+            url: `${baseUrl}/as-salah/destek`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.5,
+        },
+        {
             url: `${baseUrl}/as-salah/privacy-policy`,
+            lastModified: currentDate,
+            changeFrequency: "yearly",
+            priority: 0.3,
+        },
+        {
+            url: `${baseUrl}/as-salah/privacy-policy/tr`,
             lastModified: currentDate,
             changeFrequency: "yearly",
             priority: 0.3,

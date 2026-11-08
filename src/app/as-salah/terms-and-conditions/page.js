@@ -443,6 +443,8 @@ export default function AsSalahTermsAndConditions() {
                         <span className="text-white/20">•</span>
                         <Link href="/as-salah/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <span className="text-white/20">•</span>
+                        <Link href="/as-salah/privacy-policy/tr" className="hover:text-[#C6A266] transition-colors">Gizlilik Politikası (TR)</Link>
+                        <span className="text-white/20">•</span>
                         <Link href="/as-salah/trader-status" className="text-[#C6A266] hover:underline font-medium">Trader Status</Link>
                         <span className="text-white/20">•</span>
                         <Link href="/" className="hover:text-white transition-colors">Portfolio</Link>
